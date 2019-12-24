@@ -1,3 +1,4 @@
+<script src="<?= base_url() ?>assets/js/app.min.js"></script>
 <div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
@@ -53,16 +54,9 @@
         </div>
         
         <?php endforeach ?>
-        <script>
-            function myFunction(event) {
-              var jwb = document.getElementById('jwb_1');
-              var x = event.which || event.keyCode;
-              if (x == 49) {
-                jwb.click();
-              }
-            }
-            
-        </script>
+        
+
+        <script src="<?= base_url() ?>assets/js/app-polling/tiga/keypress.js"></script>
 
         <?php } elseif ($this->session->userdata('sess_hr_versi') == 'empat') { ?>
         
@@ -89,8 +83,12 @@
 
                     </button>
                 </div>
-        
             <?php endforeach ?>
+            
+            <script src="<?= base_url() ?>assets/js/app-polling/empat/keypress.js"></script>
+
+
+            
         <?php } elseif ($this->session->userdata('sess_hr_versi') == 'lima') { ?>
             <?php 
             $back=['deeppink','aqua','yellow','#ddf171','red'];
@@ -117,6 +115,7 @@
                 </div>
         
             <?php endforeach ?>
+            <script src="<?= base_url() ?>assets/js/app-polling/lima/keypress.js"></script>
 
         <?php } ?>
 

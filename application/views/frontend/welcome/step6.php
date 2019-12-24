@@ -23,7 +23,7 @@
 
         <script>
         function myFunction() {
-            var root = window.origin + '/App-Polling/';
+            var root = window.origin + '/app-polling/';
             location.replace(root+'step-1');
         }
             
