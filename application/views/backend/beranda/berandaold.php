@@ -1,10 +1,4 @@
 <?php error_reporting(0) ?>
-<script src="<?= base_url() ?>/assets/js/highchart/jquery-3.1.1.min.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/export-data.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
             <div class="row">
                 <div class="col-md-8">
                     <h4>Laporan hari ini : <?= date_indo(date('Y-m-d')) ?></h4>
@@ -280,12 +274,14 @@
             <div class="card-body">
                     <div class="row">
                         <div class="col-md-5">
-                            <div id="chartDonut" style="min-width: 440px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                            <canvas id="chartDonut" width="400" height="400"></canvas>
 
                         </div>
-                        <div class="col-md-1"></div>
+                        <div class="col-md-2">
+                            
+                        </div>
                         <div class="col-md-5">
-                                <div id="chartBar"  style="min-width: 470px; height: 400px; max-width: 600px; "></div>
+                                <canvas id="chartBar" width="400" height="400"></canvas>
                                 
                         </div>
                     </div>
@@ -297,97 +293,102 @@
                     <?php if ($this->session->userdata('sess_hr_versi')=='tiga'): ?>
                                 
                                 <script>
-                                
-Highcharts.chart('chartDonut', {
-  chart: {
-    plotBackgroundColor: null,
-    plotBorderWidth: null,
-    plotShadow: false,
-    type: 'pie'
-  },
-  title: {
-    text: 'Grafik Persentase'
-  },
-  tooltip: {
-    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-  },
-  plotOptions: {
-    pie: {
-      allowPointSelect: true,
-      cursor: 'pointer',
-      dataLabels: {
-        enabled: true,
-        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-      }
-    }
-  },
-  series: [{
-    name: 'Jumlah',
-    colorByPoint: true,
-    data: [{
-      name: 'Puas',
-      y: <?= $baikpersen ?>,
-      sliced: true,
-      selected: true
-    }, {
-      name: 'Cukup Puas',
-      y: <?= $cukuppersen ?>
-    }, {
-      name: 'Tidak Puas',
-      y:  <?= $burukpersen ?>
-    }]
-  }]
-});
+                                var ctx = document.getElementById('chartDonut').getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                    type: 'doughnut',
+                                    data: {
+                                        labels: ['Puas', 'Cukup Puas', 'Tidak Puas'],
+                                        datasets: [{
+                                            label: ' % ',
+                                            data: [<?= $baikpersen ?>, <?= $cukuppersen ?>, <?= $burukpersen ?>],
+                                            backgroundColor: [
+                                                '#5fff81b0',
+                                                '#fffa5fa3',
+                                                '#ff571587',
+                                            ],
+                                            borderColor: [
+                                                'green',
+                                                'yellow',
+                                                'red',
+                                                'black',
+                                            ],
+                                            borderWidth: 1 ,
+
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                        },
+                                        legend: {
+                                        display: true, 
+                                        position:'top',
+                                        labels: {
+                                          fontFamily: "myriadpro-regular",
+                                          boxWidth: 15,
+                                          boxHeight: 2,
+                                            }
+                                        },
+                                        tooltips: {
+                                            callbacks: {
+                                                label: function(tooltipItem, data) {
+                                                    var allData = data.datasets[tooltipItem.datasetIndex].data;
+                                                    var tooltipLabel = data.labels[tooltipItem.index];
+                                                    var tooltipData = allData[tooltipItem.index];
+                                                    var total = 0;
+                                                    for (var i in allData) {
+                                                        total += allData[i];
+                                                    }
+                                                    var tooltipPercentage = Math.round((tooltipData / total) * 100);
+                                                    return tooltipLabel + ': ' + tooltipData + '%';
+                                                }
+                                            }
+                                        }  
+
+
+                                    }
+                                });
                                 </script>
 
-
-
-<script>
-    var chart = new Highcharts.Chart({
-
-      chart: {
-        animation : false,
-        renderTo: 'chartBar',
-        type: 'column',
-        options3d: {
-          enabled: true,
-          alpha: 20,
-          beta: 20,
-          depth: 40,
-          viewDistance: 25
-        }
-      },
-      title: {
-        text: 'Grafik Jumlah Vote'
-      },
-      xAxis: {
-        categories: ['Puas', 'Cukup Puas', 'Tidak Puas'],
-        labels: {
-          skew3d: true,
-          style: {
-            fontSize: '16px'
-          }
-        }
-      },
-      // subtitle: {
-      //   text: 'Test options by dragging the sliders below'
-      // },
-      plotOptions: {
-        column: {
-          depth: 25
-        }
-      },
-      series: [{
-        name: 'Jumlah',
-        data: [<?= $baikvotes ?>, <?= $cukupvotes ?>, <?= $burukvotes ?>]
-      }]
-    }); 
-
-
-
+                                <script>
+                                var ctx = document.getElementById('chartBar').getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: ['Puas', 'Cukup Puas', 'Tidak Puas'],
+                                        datasets: [{
+                                            label: '# Total Vote',
+                                            data: [<?= $baikvotes ?>, <?= $cukupvotes ?>, <?= $burukvotes ?>],
+                                            backgroundColor: [
+                                                '#5fff81b0',
+                                                '#fffa5fa3',
+                                                '#ff571587',
+                                            ],
+                                            borderColor: [
+                                                'green',
+                                                'yellow',
+                                                'red',
+                                                'black',
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true,
+                                                    stepSize: 1
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
                                 </script>
-
-
                 <?php endif ?>
 
                 <?php if ($this->session->userdata('sess_hr_versi')=='empat'): ?>

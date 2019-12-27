@@ -89,7 +89,7 @@
 
 
             
-        <?php } elseif ($this->session->userdata('sess_hr_versi') == 'lima') { ?>
+        <?php } elseif ($this->session->userdata('sess_hr_versi') == 'lima') {  ?>
             <?php 
             $back=['deeppink','aqua','yellow','#ddf171','red'];
             foreach ($jawaban as $key => $jwb): ?>

@@ -18,6 +18,8 @@
     <script src="<?= base_url() ?>assets/js/form.min.js"></script>
     <script src="<?= base_url() ?>assets/js/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
     <script src="<?= base_url() ?>assets/js/pages/forms/advanced-form-elements.js"></script>
+
+    <script src="<?= base_url() ?>assets/js/sweetalert2.js"></script>
     
 <!--     <script src="<?= base_url() ?>assets/js/jquery-1.12.4.js"></script>
     <script src="<?= base_url() ?>assets/js/jquery-ui.js"></script> -->
@@ -37,6 +39,21 @@ $(document).ready(function(){
 </script>
 
 <script>
+    function confirmLogout(){
+        Swal.fire({
+          title: 'Apakah yakin ingin keluar?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yakin !'
+        }).then((result) => {
+          if (result.value) {
+            var root = window.origin + '/app-polling/';
+            location.replace(root+'logout');
+          }
+        })
+    }
     function printContent() {
         $('#kop').css('display','block');
         window.print();

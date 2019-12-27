@@ -16,5 +16,6 @@
     <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
     <script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
+    <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 </head>
 <body class="light" >

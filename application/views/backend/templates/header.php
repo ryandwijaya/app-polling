@@ -76,7 +76,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?= base_url() ?>logout" >
+                                        <a onClick="confirmLogout()" href="#" >
                                             <i class="material-icons">power_settings_new</i>Logout
                                         </a>
                                     </li>
@@ -171,6 +171,9 @@
                             <li>
                                  <a href="<?= base_url() ?>set/monitor2"> Monitor 2</a>
                             </li>
+                            <li>
+                                 <a href="#"> Android (Cooming Soon)</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -185,6 +188,9 @@
                             </li>
                             <li>
                                  <a href="<?= base_url() ?>step-1" target="_blank"> Monitor 2</a>
+                            </li>
+                            <li>
+                                 <a href="<?= base_url() ?>mntr3/step1" target="_blank"> Monitor 3</a>
                             </li>
                         </ul>
                     </li>

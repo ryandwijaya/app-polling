@@ -93,12 +93,27 @@ class ExtModel extends CI_Model {
 		return $this->db->get();
 	}
 
+
+	public function getAllVoteByVersi($versi){
+		$this->db->select('*');
+		$this->db->from('hr_kpsn');
+        $this->db->join('hr_jwb','hr_jwb.jwb_id = hr_kpsn.kpsn_jwb');
+		$this->db->where('jwb_kategori', $versi);
+		return $this->db->get();
+	}
+
 	public function getVoteStatNow($ket,$now,$lyn){
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
 		$this->db->where('kpsn_jwb',$ket);
 		$this->db->where('kpsn_lynn', $lyn);	
 		$this->db->where('date(kpsn_dcreated)', $now);
+		return $this->db->get();
+	}
+	public function getVoteByJwb($ket){
+		$this->db->select('*');
+		$this->db->from('hr_kpsn');
+		$this->db->where('kpsn_jwb',$ket);
 		return $this->db->get();
 	}
 
@@ -164,6 +179,11 @@ class ExtModel extends CI_Model {
         $this->db->where($key,$id);
         return $this->db->update($table,$data);
     }
+    public function updateMonitor3($id,$data){
+		$this->db->where('mnt3_id',$id);
+		$this->db->update('hr_lynn',$data);
+		return $this->db->affected_rows();
+	}
 
     
 

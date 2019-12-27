@@ -50,51 +50,61 @@
     </table>
   </div>
 </figure>
+<button id="update">Update chart</button>
 
 
 
 <script>
-function go(){
 
+var i = 1;
 	// Set up the chart
-var chart = new Highcharts.Chart({
+$('#update').click(function () {
+    var chart = new Highcharts.Chart({
 
-  chart: {
-    renderTo: 'container',
-    type: 'column',
-    options3d: {
-      enabled: true,
-      alpha: 15,
-      beta: 15,
-      depth: 50,
-      viewDistance: 25
-    }
-  },
-  title: {
-    text: 'Chart rotation demo'
-  },
-  xAxis: {
-    categories: ['Apples', 'Oranges', 'Pears'],
-    labels: {
-      skew3d: true,
-      style: {
-        fontSize: '16px'
-      }
-    }
-  },
-  subtitle: {
-    text: 'Test options by dragging the sliders below'
-  },
-  plotOptions: {
-    column: {
-      depth: 25
-    }
-  },
-  series: [{
-    data: [29.9, 71.5, 106.4]
-  }]
-});	
-}	
+      chart: {
+        animation : false,
+        renderTo: 'container',
+        type: 'column',
+        options3d: {
+          enabled: true,
+          alpha: 15,
+          beta: 15,
+          depth: 50,
+          viewDistance: 25
+        }
+      },
+      title: {
+        text: 'Chart rotation demo'
+      },
+      xAxis: {
+        categories: ['Apples', 'Oranges', 'Pears'],
+        labels: {
+          skew3d: true,
+          style: {
+            fontSize: '16px'
+          }
+        }
+      },
+      subtitle: {
+        text: 'Test options by dragging the sliders below'
+      },
+      plotOptions: {
+        column: {
+          depth: 25
+        }
+      },
+      series: [{
+        data: [29.9, 71.5, 106.4]
+      }]
+    });	
+
+    chart.series[0].data[0].update();
+});
+
+
+function clickBtn(){
+  $('#update').click();
+}
 
 function showValues() {
   $('#alpha-value').html(chart.options.chart.options3d.alpha);
@@ -108,7 +118,7 @@ $('#sliders input').on('input change', function () {
   showValues();
   chart.redraw(false);
 });
-go();
-setInterval(go, 3000);
+
+setInterval(clickBtn,2000);
 showValues();
 </script>

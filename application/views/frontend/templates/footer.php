@@ -1,5 +1,5 @@
     <!-- Plugins Js -->
-    <script src="<?= base_url() ?>assets/js/app.min.js"></script>
+    
     <script src="<?= base_url() ?>assets/js/table.min.js"></script>
     <script src="<?= base_url() ?>assets/js/pages/tables/jquery-datatable.js"></script>
     

@@ -84,6 +84,9 @@ $route['beranda'] = 'Welcome';
 
 
 $route['monitor'] = 'Welcome/monitor';
+$route['tes_chart'] = 'Welcome/tes_chart';
+$route['monitor3/(:any)'] = 'Monitor3Controller/index/$1';
+$route['mntr3/step1'] = 'Monitor3Controller/step1';
 
 
 $route['instansi'] = 'InstansiController/index';
@@ -113,6 +116,7 @@ $route['laporan/ajaxGet/(:any)/(:any)/(:any)/(:any)'] = 'LprnController/ajaxGetL
 
 
 $route['ajax/getVotes'] = 'Welcome/ajaxGetVotes';
+$route['ajaxUpdate/(:any)/(:any)/(:any)'] = 'Monitor3Controller/ajaxUpdate/$1/$2/$3';
 
 
 //API

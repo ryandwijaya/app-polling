@@ -48,7 +48,7 @@
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
 						<select class="input100"  name="layanan">
-							<option>- Pilih Layanan -</option>
+							<option disabled selected value="0">- Pilih Layanan -</option>
 							<?php foreach ($lyn as $value): ?>
 								<option value="<?= $value['lynn_id'] ?>"><?= $value['lynn_nm'] ?></option>
 							<?php endforeach ?>
@@ -71,6 +71,7 @@
 	
 
 	<div id="dropDownSelect1"></div>
+
 	
 <!--===============================================================================================-->
 	<script src="<?= base_url() ?>assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -80,6 +81,26 @@
 	<script src="<?= base_url() ?>assets/login/vendor/bootstrap/js/popper.js"></script>
 	<script src="<?= base_url() ?>assets/login/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?= base_url() ?>assets/login/js/main.js"></script>
+    <script src="<?= base_url() ?>assets/js/sweetalert2.js"></script>
+	   
 
+	   <?php if ($this->session->flashdata('alert') == 'fail_login') { ?>
+		    <script>
+		    	Swal.fire({
+				  icon: 'error',
+				  title: 'Oops...',
+				  text: 'Username atau password salah !'
+				})
+		    </script>
+	    <?php } ?>
+	    <?php if ($this->session->flashdata('alert') == 'layanan_null') { ?>
+		    <script>
+		    	Swal.fire({
+				  icon: 'warning',
+				  title: 'Oops...',
+				  text: 'Silahkan Pilih Layanan Terlebih Dahulu !'
+				})
+		    </script>
+	    <?php } ?>
 </body>
 </html>

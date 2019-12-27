@@ -25,11 +25,11 @@ class Welcome extends CI_Controller {
 
         if ($this->session->userdata('sess_hr_versi') == 'tiga') {
         //Votes num
-        $data['total_vote'] = $this->ExtModel->getAllVoteByVersi($this->session->userdata('sess_hr_versi'))->num_rows();
+        $data['total_vote'] = $this->ExtModel->getAllVoteByVersi($now,$this->session->userdata('sess_hr_lyn'),$this->session->userdata('sess_hr_versi'))->num_rows();
         $allvotes = $data['total_vote'];
-        $baikvotes = $this->ExtModel->getVoteByJwb(1)->num_rows();
-        $cukupvotes = $this->ExtModel->getVoteByJwb(2)->num_rows();
-        $burukvotes = $this->ExtModel->getVoteByJwb(3)->num_rows();
+        $baikvotes = $this->ExtModel->getVoteStatNow(1,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $cukupvotes = $this->ExtModel->getVoteStatNow(2,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $burukvotes = $this->ExtModel->getVoteStatNow(3,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
         //votes %
         $data['baikpersen'] = round($baikvotes/$allvotes * 100,2);
         $data['cukuppersen'] = round($cukupvotes/$allvotes * 100, 2);
@@ -43,12 +43,12 @@ class Welcome extends CI_Controller {
         }elseif($this->session->userdata('sess_hr_versi') == 'empat'){
 
         //Votes num
-        $data['total_vote'] = $this->ExtModel->getAllVoteByVersi($this->session->userdata('sess_hr_versi'))->num_rows();
+        $data['total_vote'] = $this->ExtModel->getVotesNow($now,$this->session->userdata('sess_hr_lyn'),$this->session->userdata('sess_hr_versi'))->num_rows();
         $allvotes = $data['total_vote'];
-        $sangat = $this->ExtModel->getVoteByJwb(5)->num_rows();
-        $puas = $this->ExtModel->getVoteByJwb(6)->num_rows();
-        $cukup = $this->ExtModel->getVoteByJwb(7)->num_rows();
-        $tidak = $this->ExtModel->getVoteByJwb(8)->num_rows();
+        $sangat = $this->ExtModel->getVoteStatNow(5,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $puas = $this->ExtModel->getVoteStatNow(6,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $cukup = $this->ExtModel->getVoteStatNow(7,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $tidak = $this->ExtModel->getVoteStatNow(8,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
         //votes %
         $data['sangatpersen'] = round($sangat/$allvotes * 100,2);
         $data['puaspersen'] = round($puas/$allvotes * 100, 2);
@@ -65,13 +65,13 @@ class Welcome extends CI_Controller {
         }elseif($this->session->userdata('sess_hr_versi') == 'lima'){
 
         //Votes num
-        $data['total_vote'] = $this->ExtModel->getAllVoteByVersi($this->session->userdata('sess_hr_versi'))->num_rows();
+        $data['total_vote'] = $this->ExtModel->getVotesNow($now,$this->session->userdata('sess_hr_lyn'),$this->session->userdata('sess_hr_versi'))->num_rows();
         $allvotes = $data['total_vote'];
-        $sangat = $this->ExtModel->getVoteByJwb(9)->num_rows();
-        $puas = $this->ExtModel->getVoteByJwb(10)->num_rows();
-        $cukup = $this->ExtModel->getVoteByJwb(11)->num_rows();
-        $tidak = $this->ExtModel->getVoteByJwb(12)->num_rows();
-        $stidak = $this->ExtModel->getVoteByJwb(13)->num_rows();
+        $sangat = $this->ExtModel->getVoteStatNow(9,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $puas = $this->ExtModel->getVoteStatNow(10,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $cukup = $this->ExtModel->getVoteStatNow(11,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $tidak = $this->ExtModel->getVoteStatNow(12,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
+        $stidak = $this->ExtModel->getVoteStatNow(13,$now,$this->session->userdata('sess_hr_lyn'))->num_rows();
         //votes %
         $data['sangatpersen'] = round($sangat/$allvotes * 100,2);
         $data['puaspersen'] = round($puas/$allvotes * 100, 2);
