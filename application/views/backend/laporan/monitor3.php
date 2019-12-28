@@ -1,3 +1,20 @@
+<style>
+    @media screen {
+         p.bodyText {font-family:verdana, arial, sans-serif;}
+      }
+
+      @media print {
+          .table-responsive {
+            zoom:70%;
+          }
+          .card{
+            margin-top: -40px;
+          }
+      }
+      @media screen, print {
+         p.bodyText {font-size:10pt}
+      }
+</style>
 <div class="row d-print-none">
     <div class="col-md-12">
         <div class="card">
@@ -41,8 +58,8 @@
             <div class="card-body" style="font-size: 12pt;">
                 
 
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
                         <h5 class="text-center">Laporan Polling Kepuasan Layanan</h5>
                         <div style="display: flex;margin-top: 20px;">
                             <div style="width: 200px;">Tanggal</div>
@@ -68,8 +85,8 @@
                 </div>
 
 
-                <div class="row mt-5">
-                    <div class="col-md-12">
+                <div class="row mt-5 justify-content-md-center">
+                    <div class="col-md-10">
                     
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -90,6 +107,7 @@
                             </thead>
                             <tbody>
                                 <?php 
+                                $array_persen = array();
                                 $no = 1;
                                 $date_now = date('Y-m-d');
                                 for ($i = 0; $i < 15; $i++) { ?>
@@ -101,15 +119,27 @@
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $date_now,$date_now); ?> </td>
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $date_now,$date_now); ?> </td>
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $date_now,$date_now); ?> </td>
+
+
+
+
+                                                <?php $persenB = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $date_now,$date_now)*3.3);  ?>
+                                                <?php $persenC = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $date_now,$date_now)*6.6);  ?>
+                                                <?php $persenD = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $date_now,$date_now)*10);  ?>
                                             <?php }else{ ?>
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'A', $this->input->post('start'),$this->input->post('end')); ?> </td>
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $this->input->post('start'),$this->input->post('end')); ?> </td>
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $this->input->post('start'),$this->input->post('end')); ?> </td>
                                                 <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $this->input->post('start'),$this->input->post('end')); ?> </td>
+
+                                                <?php $persenB = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $this->input->post('start'),$this->input->post('end'))*3.3);  ?>
+                                                <?php $persenC = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $this->input->post('start'),$this->input->post('end'))*6.6);  ?>
+                                                <?php $persenD = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $this->input->post('start'),$this->input->post('end'))*10);  ?>
                                             <?php } ?>
-                                        <td> </td>
+                                        <td class="text-center"> <?= round($persenB+$persenC+$persenD,0) ?> </td>
                                     </tr>
                                 <?php 
+                                array_push($array_persen, round($persenB+$persenC+$persenD,0));
                                 $no++ ; } ?>
                                 
                             </tbody>
@@ -117,13 +147,22 @@
                     </div>
                     </div>
                 </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div id="chartBar" style="margin-left: 0;"></div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </div>  
 </div>
-
+<script src="<?= base_url() ?>/assets/js/highchart/jquery-3.1.1.min.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/export-data.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
 <script>
-    <script>
     var chart = new Highcharts.Chart({
 
       chart: {
@@ -132,8 +171,8 @@
         type: 'column',
         options3d: {
           enabled: true,
-          alpha: 20,
-          beta: 20,
+          alpha: 0,
+          beta: 0,
           depth: 40,
           viewDistance: 25
         }
@@ -142,7 +181,7 @@
         text: 'Grafik Jumlah Vote'
       },
       xAxis: {
-        categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+        categories: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],
         labels: {
           skew3d: true,
           style: {
@@ -160,11 +199,15 @@
       },
       series: [{
         name: 'Jumlah',
-        data: [<?= $baikvotes ?>, <?= $cukupvotes ?>, <?= $burukvotes ?>]
+        data: [<?php 
+            for($i=0;$i< count($array_persen);$i++){
+
+                echo $array_persen[$i].','; 
+            }
+            ?>
+            ]
       }]
     }); 
 
 
-
-                                </script>
 </script>
