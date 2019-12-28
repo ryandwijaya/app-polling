@@ -110,7 +110,7 @@
                 <div class="row mt-5">
                     <div class="col-md-12 p-4">
                         <div class="table-responsive">
-                            <table class="table-bordered table-striped table">
+                            <table class="table-bordered table-striped table js-basic-example dataTable">
                                 <thead>
                                     <tr>
                                         <th>Layanan</th>

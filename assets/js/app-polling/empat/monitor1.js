@@ -41,78 +41,50 @@ var root = window.location.origin+'/app-polling/';
 
 
                         // SETTING CHART
-                            var data1 = {
-                                          labels: ['Sangat Puas','Puas','Cukup Puas', 'Tidak Puas'],
-                                          datasets: [{
-                                            data: [sangatpuas,puas,cukup,tidak],
-                                            backgroundColor: [
-                                                        'deeppink','aqua','yellow','#ddf171','red'
-                                                    ],
-                                                    borderColor: [
-                                                        'green',
-                                                        'yellow',
-                                                        'red',
-                                                        'black',
-                                                        'black',
-                                                    ],
-                                          }]
-                                        }
-
-                            var optionsBar = {
-                                    hover: {
-                                      animationDuration: 0
-                                    },
-                                    animation: {
-                                      duration: 1,
-                                      onComplete: function() {
-                                        var chartInstance = this.chart,
-                                          ctx = chartInstance.ctx;
-
-                                        ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                                        ctx.textAlign = 'center';
-                                        ctx.textBaseline = 'bottom';
-
-                                        this.data.datasets.forEach(function(dataset, i) {
-                                          var meta = chartInstance.controller.getDatasetMeta(i);
-                                          meta.data.forEach(function(bar, index) {
-                                            var data = dataset.data[index];
-                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                                          });
-                                        });
-                                      }
-                                    },
-                                    legend: {
-                                      display: false
-                                    },
-                                    tooltips: {
-                                      enabled: false
-                                    },
-                                    scales: {
-                                        yAxes: [{
-                                           ticks: {
-                                                beginAtZero: true,
-                                                stepSize: 1
-                                            }
-                                        }],
-                                        xAxes: [{
-                                            gridLines: {
-                                              display: false
-                                            },
-                                            ticks: {
-                                              beginAtZero: true
-                                            }
-                                          }]
-                                    }
-
+                            var chart = new Highcharts.Chart({
+                              chart: {
+                                backgroundColor: "rgba(0,0,0,0)",
+                                renderTo: 'grafik-kpsn',
+                                type: 'column',
+                                animation : false,
+                                options3d: {
+                                  enabled: true,
+                                  alpha: 10,
+                                  beta: 10,
+                                  depth: 40,
+                                  viewDistance: 25
                                 }
-
-                            // CHART LAPORAN
-                            var lprn1 = document.getElementById('grafik-kpsn').getContext('2d');
-                            var lpChart = new Chart(lprn1, {
-                                type: 'bar',
-                                data: data1,
-                                options: optionsBar
-                            });
+                              },
+                              title: {
+                                text: 'Grafik Jumlah Vote'
+                              },
+                              xAxis: {
+                                categories: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas'],
+                                labels: {
+                                  skew3d: true,
+                                  style: {
+                                    fontSize: '16px'
+                                  }
+                                }
+                              },
+                              // subtitle: {
+                              //   text: 'Test options by dragging the sliders below'
+                              // },
+                              plotOptions: {
+                                column: {
+                                  depth: 25
+                                },
+                                series: {
+                                  animation: {
+                                    duration: 0
+                                  }
+                                }
+                              },
+                              series: [{
+                                name: 'Jumlah',
+                                data: [sangatpuas,puas,cukup,tidak]
+                              }]
+                            }); 
 
 
 

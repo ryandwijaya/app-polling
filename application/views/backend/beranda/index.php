@@ -393,198 +393,194 @@ Highcharts.chart('chartDonut', {
                 <?php if ($this->session->userdata('sess_hr_versi')=='empat'): ?>
                                 
                                 <script>
-                                var ctx = document.getElementById('chartDonut').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'doughnut',
-                                    data: {
-                                        labels: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas'],
-                                        datasets: [{
-                                            label: ' % ',
-                                            data: [<?= $sangatpersen ?>, <?= $puaspersen ?>, <?= $cukuppersen ?>, <?= $tidakpersen ?>],
-                                            backgroundColor: [
-                                                '#5fff81b0',
-                                                '#1effeab5',
-                                                '#fffa5fa3',
-                                                '#ff571587',
-                                            ],
-                                            borderColor: [
-                                                'green',
-                                                'yellow',
-                                                'red',
-                                                'black',
-                                            ],
-                                            borderWidth: 1 ,
+                                
+Highcharts.chart('chartDonut', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'Grafik Persentase'
+  },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+      }
+    }
+  },
+  series: [{
+    name: 'Jumlah',
+    colorByPoint: true,
+    data: [{
+      name: 'Sangat Puas',
+      y: <?= $sangatpersen ?>,
+      sliced: true,
+      selected: true
+    }, {
+      name: 'Puas',
+      y: <?= $puaspersen ?>
+    }, {
+      name: 'Cukup Puas',
+      y: <?= $cukuppersen ?>
+    }, {
+      name: 'Tidak Puas',
+      y:  <?= $tidakpersen ?>
+    }]
+  }]
+});
 
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            yAxes: [{
-                                                ticks: {
-                                                    beginAtZero: true
-                                                }
-                                            }]
-                                        },
-                                        legend: {
-                                        display: true, 
-                                        position:'top',
-                                        labels: {
-                                          fontFamily: "myriadpro-regular",
-                                          boxWidth: 15,
-                                          boxHeight: 2,
-                                            }
-                                        },
-                                        tooltips: {
-                                            callbacks: {
-                                                label: function(tooltipItem, data) {
-                                                    var allData = data.datasets[tooltipItem.datasetIndex].data;
-                                                    var tooltipLabel = data.labels[tooltipItem.index];
-                                                    var tooltipData = allData[tooltipItem.index];
-                                                    var total = 0;
-                                                    for (var i in allData) {
-                                                        total += allData[i];
-                                                    }
-                                                    var tooltipPercentage = Math.round((tooltipData / total) * 100);
-                                                    return tooltipLabel + ': ' + tooltipData + '%';
-                                                }
-                                            }
-                                        }  
-
-
-                                    }
-                                });
                                 </script>
 
                                 <script>
-                                var ctx = document.getElementById('chartBar').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas'],
-                                        datasets: [{
-                                            label: '# Total Vote',
-                                            data: [<?= $sangat ?>, <?= $puas ?>, <?= $cukup ?>, <?= $tidak ?>],
-                                            backgroundColor: [
-                                                '#5fff81b0',
-                                                '#1effeab5',
-                                                '#fffa5fa3',
-                                                '#ff571587',
-                                            ],
-                                            borderColor: [
-                                                'green',
-                                                'yellow',
-                                                'red',
-                                                'black',
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            yAxes: [{
-                                                ticks: {
-                                                    beginAtZero: true,
-                                                    stepSize:1
-                                                }
-                                            }]
-                                        }
-                                    }
-                                });
+
+var chart = new Highcharts.Chart({
+
+      chart: {
+        animation : false,
+        renderTo: 'chartBar',
+        type: 'column',
+        options3d: {
+          enabled: true,
+          alpha: 20,
+          beta: 20,
+          depth: 40,
+          viewDistance: 25
+        }
+      },
+      title: {
+        text: 'Grafik Jumlah Vote'
+      },
+      xAxis: {
+        categories: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas'],
+        labels: {
+          skew3d: true,
+          style: {
+            fontSize: '16px'
+          }
+        }
+      },
+      // subtitle: {
+      //   text: 'Test options by dragging the sliders below'
+      // },
+      plotOptions: {
+        column: {
+          depth: 25
+        }
+      },
+      series: [{
+        name: 'Jumlah',
+        data: [<?= $sangat ?>, <?= $puas ?>, <?= $cukup ?>, <?= $tidak ?>]
+      }]
+    }); 
+
                                 </script>
+
                 <?php endif ?>
+
                 <?php if ($this->session->userdata('sess_hr_versi')=='lima'): ?>
                                 
                                 <script>
-                                var ctx = document.getElementById('chartDonut').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'doughnut',
-                                    data: {
-                                        labels: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas', 'Sangat Tidak Puas'],
-                                        datasets: [{
-                                            label: ' % ',
-                                            data: [<?= $sangatpersen ?>, <?= $puaspersen ?>, <?= $cukuppersen ?>, <?= $tidakpersen ?>, <?= $stidakpersen ?>],
-                                            backgroundColor: [
-                                                'deeppink','aqua','yellow','#ddf171','red'
-                                            ],
-                                            borderColor: [
-                                                'green',
-                                                'yellow',
-                                                'red',
-                                                'black',
-                                            ],
-                                            borderWidth: 1 ,
-
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            yAxes: [{
-                                                ticks: {
-                                                    beginAtZero: true
-                                                }
-                                            }]
-                                        },
-                                        legend: {
-                                        display: true, 
-                                        position:'top',
-                                        labels: {
-                                          fontFamily: "myriadpro-regular",
-                                          boxWidth: 15,
-                                          boxHeight: 2,
-                                            }
-                                        },
-                                        tooltips: {
-                                            callbacks: {
-                                                label: function(tooltipItem, data) {
-                                                    var allData = data.datasets[tooltipItem.datasetIndex].data;
-                                                    var tooltipLabel = data.labels[tooltipItem.index];
-                                                    var tooltipData = allData[tooltipItem.index];
-                                                    var total = 0;
-                                                    for (var i in allData) {
-                                                        total += allData[i];
-                                                    }
-                                                    var tooltipPercentage = Math.round((tooltipData / total) * 100);
-                                                    return tooltipLabel + ': ' + tooltipData + '%';
-                                                }
-                                            }
-                                        }  
+                                
 
 
-                                    }
-                                });
+Highcharts.chart('chartDonut', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'Grafik Persentase'
+  },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+      }
+    }
+  },
+  series: [{
+    name: 'Jumlah',
+    colorByPoint: true,
+    data: [{
+      name: 'Sangat Puas',
+      y: <?= $sangatpersen ?>,
+      sliced: true,
+      selected: true
+    }, {
+      name: 'Puas',
+      y: <?= $puaspersen ?>
+    }, {
+      name: 'Cukup Puas',
+      y: <?= $cukuppersen ?>
+    }, {
+      name: 'Tidak Puas',
+      y:  <?= $tidakpersen ?>
+    }, {
+      name: 'Sangat Tidak Puas',
+      y:  <?= $stidakpersen ?>
+    }]
+  }]
+});
                                 </script>
 
                                 <script>
-                                var ctx = document.getElementById('chartBar').getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas', 'Sangat Tidak Puas'],
-                                        datasets: [{
-                                            label: '# Total Vote',
-                                            data: [<?= $sangat ?>, <?= $puas ?>, <?= $cukup ?>, <?= $tidak ?>, <?= $stidak ?>],
-                                            backgroundColor: [
-                                                'deeppink','aqua','yellow','#ddf171','red'
-                                            ],
-                                            borderColor: [
-                                                'green',
-                                                'yellow',
-                                                'red',
-                                                'black',
-                                            ],
-                                            borderWidth: 1
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            yAxes: [{
-                                                ticks: {
-                                                    beginAtZero: true,
-                                                    stepSize:1
-                                                }
-                                            }]
-                                        }
-                                    }
-                                });
+
+
+var chart = new Highcharts.Chart({
+
+      chart: {
+        animation : false,
+        renderTo: 'chartBar',
+        type: 'column',
+        options3d: {
+          enabled: true,
+          alpha: 20,
+          beta: 20,
+          depth: 40,
+          viewDistance: 25
+        }
+      },
+      title: {
+        text: 'Grafik Jumlah Vote'
+      },
+      xAxis: {
+        categories: ['Sangat Puas','Puas', 'Cukup Puas', 'Tidak Puas', 'Sangat Tidak Puas'],
+        labels: {
+          skew3d: true,
+          style: {
+            fontSize: '16px'
+          }
+        }
+      },
+      // subtitle: {
+      //   text: 'Test options by dragging the sliders below'
+      // },
+      plotOptions: {
+        column: {
+          depth: 25
+        }
+      },
+      series: [{
+        name: 'Jumlah',
+        data: [<?= $sangat ?>, <?= $puas ?>, <?= $cukup ?>, <?= $tidak ?>, <?= $stidak ?>]
+      }]
+    }); 
                                 </script>
                 <?php endif ?>

@@ -17,6 +17,7 @@
     <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
     <script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
+    <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 </head>
 <body class="light" >
  
@@ -135,6 +136,9 @@
                             <li>
                                  <a href="<?= base_url() ?>responden"> Responden</a>
                             </li>
+                            <li>
+                                 <a href="<?= base_url() ?>laporan/monitor3"> Monitor3</a>
+                            </li>
                         </ul>
                     </li>
                     <li >
@@ -172,6 +176,9 @@
                                  <a href="<?= base_url() ?>set/monitor2"> Monitor 2</a>
                             </li>
                             <li>
+                                 <a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
+                            </li>
+                            <li>
                                  <a href="#"> Android (Cooming Soon)</a>
                             </li>
                         </ul>
@@ -191,6 +198,9 @@
                             </li>
                             <li>
                                  <a href="<?= base_url() ?>mntr3/step1" target="_blank"> Monitor 3</a>
+                            </li>
+                            <li>
+                                 <a href="<?= base_url() ?>monitor4/1" target="_blank"> Monitor 4</a>
                             </li>
                         </ul>
                     </li>

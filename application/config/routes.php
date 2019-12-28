@@ -86,6 +86,7 @@ $route['beranda'] = 'Welcome';
 $route['monitor'] = 'Welcome/monitor';
 $route['tes_chart'] = 'Welcome/tes_chart';
 $route['monitor3/(:any)'] = 'Monitor3Controller/index/$1';
+$route['monitor4/(:any)'] = 'Monitor4Controller/index/$1';
 $route['mntr3/step1'] = 'Monitor3Controller/step1';
 
 
@@ -94,6 +95,8 @@ $route['instansi'] = 'InstansiController/index';
 $route['umum'] = 'UmumController/index';
 
 $route['set/monitor2'] = 'SettingController/monitor2';
+$route['set/monitor4'] = 'SettingController/monitor4';
+$route['set/monitor4/add'] = 'SettingController/add_monitor4';
 
 
 $route['step-1'] = 'UmumController/step1';
@@ -106,6 +109,7 @@ $route['wizard'] = 'UmumController/wizard';
 
 $route['laporan'] = 'LprnController/index';
 $route['laporan/semua'] = 'LprnController/semua';
+$route['laporan/monitor3'] = 'LprnController/monitor3';
 // $route['laporan/export/semua/(:any)/(:any)/(:any)'] = 'LprnController/exportSemua/$1/$2/$3';
 $route['laporan/export/semua'] = 'LprnController/exportSemua';
 $route['laporan/export/layanan'] = 'LprnController/exportLayanan';

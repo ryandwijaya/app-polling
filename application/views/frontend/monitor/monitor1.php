@@ -10,6 +10,12 @@
     <!-- Favicon-->
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css">
     <script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
+    <script src="<?= base_url() ?>/assets/js/highchart/jquery-3.1.1.min.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/export-data.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
 </head>
 <style>
     *{
@@ -66,7 +72,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h5>Grafik Kepuasan </h5>
-                        <canvas id="grafik-kpsn" height="190"></canvas>
+                        <div id="grafik-kpsn" style="min-width: 400px; height: 350px; max-width: 600px; margin: 0 auto"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -100,6 +106,14 @@
             </div>
         </div>
         <script src="<?= base_url() ?>assets/js/app.min.js"></script>
+
+
+        <script src="<?= base_url() ?>/assets/js/highchart/jquery-3.1.1.min.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/export-data.js"></script>
+<script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
 
 
 </body>

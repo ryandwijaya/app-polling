@@ -12,6 +12,7 @@ class LprnController extends CI_Controller {
         $this->load->model('PtnModel');
         $this->load->model('LynModel');
         $this->load->model('ExtModel');
+        $this->load->model('Monitor3Model');
         $this->load->model('RespondenModel');
 
         if (!$this->session->has_userdata('sess_hr_id')) {
@@ -158,6 +159,43 @@ class LprnController extends CI_Controller {
 		}
         
 	}
+
+    public function monitor3()
+    {
+
+            $data['title'] = 'Laporan';
+            if ($this->input->post('start')=='') {   
+            $data['responden'] = $this->Monitor3Model->getJmlResponden(date('Y-m-d'),date('Y-m-d'));
+            }else{
+            $data['responden'] = $this->Monitor3Model->getJmlResponden($this->input->post('start'),$this->input->post('end'));
+            }
+            $data['ptn'] = 
+            [   
+                "Bagaimana pemahaman Saudara tentang prosedur pelayanandi unit ini?",
+                "Bagaimana pendapat saudara tentang kesamaan persyaratan pelayanan dengan jenis pelayanan?",
+                "Bagaimana pendapat Saudara tentang kejelasan dan kepastian petugas yang melayanai?",
+                "Bagaimana pendapat Saudara tentang kedisiplinan petugas dalam memberikan pelayanan?",
+                "Bagaimana pendapat Saudara tentang tanggung jawab petugas dalam memberikan pelayanan?",
+                "Bagaimana pendapat Saudara tentang kemampuan petugas dalam memberikan pelayanan?",
+                "Bagaimana pendapat Saudara tentang kecepatan pelayanan di unit ini?",
+                "Bagaimana pendapat Saudara tentang keadilan untuk mendapatkan pelayanan disini?",
+                "Bagaimana pendapat Saudara tentang kesopanan dan keramahan petugas dalam memberikan pelayanan?",
+                "Bagaimana pendapat Saudara tentang kewajaran biaya untuk mendapatkan pelayanan?",
+                "Bagaimana pendapat Saudara tentang kesesuaian antara biaya yang dibayarkan dengan yang telah di tetapkan?",
+                "Bagaimana pendapat Saudara tentang ketetapan pelaksanaan terhadap jadwal waktu pelayanan?",
+                "Bagaimana pendapat Saudara tentang kenyamanan di lingkungan unit pelayanan?",
+                "Bagaimana pendapat Saudara tentang keamanan pelayanan di unit ini?",
+                "Puaskan anda dengan pelayanan di sini?"
+            ];
+       
+            $this->load->view('backend/templates/header',$data);
+            $this->load->view('backend/laporan/monitor3',$data);
+            $this->load->view('backend/templates/footer',$data); 
+
+
+        
+ 
+    }
 	public function ajaxGetLaporan($ptn,$lyn,$start,$end){
 		$data = $this->ExtModel->getVoteReport($ptn,$lyn,$start,$end,$this->session->userdata('sess_hr_versi'))->result_array();
 		echo json_encode($data);
