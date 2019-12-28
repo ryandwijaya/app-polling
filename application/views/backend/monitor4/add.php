@@ -6,26 +6,26 @@
 			</div>
 			<div class="card-body">
 				<form action="<?= base_url() ?>set/monitor4/add" method="POST">
-				<div class="row">
-					<div class="col-md-7">
+				<div class="row  justify-content-md-center">
+					<div class="col-md-6">
 						<div class="form-group">
 							<label>Pertanyaan</label>
-							<input type="text" name="ptn" placeholder="type here" class="form-control">
+							<input type="text" name="ptn" placeholder="type here" required class="form-control">
 						</div>
 						
 					</div>
 				</div>
 				
 
-				<h5>List Jawaban : </h5> <br>	<hr>
-				<div class="row">
+				<h5 class="text-center">List Jawaban : </h5> <br>
+				<div class="row  justify-content-md-center">
 					<div class="col-md-1 form-group">
 						<label>Option</label>
-						<input type="text" name="option[]" class="form-control">
+						<input type="text" name="option[]" placeholder="A~Z" required class="form-control">
 					</div>
 					<div class="col-md-4 form-group">
 						<label>Jawaban</label>
-						<input type="text" name="jwb[]" class="form-control">
+						<input type="text" name="jwb[]" placeholder="Ketik Jawaban Disini" required class="form-control">
 					</div>
 					<div class="col-md-1">
 						<button id="add_button">tambah</button>
@@ -40,6 +40,8 @@
 		</div>
 	</div>
 </div>
+ <script
+  src="<?= base_url() ?>assets/js/jquery-3.4.1.slim.js"></script>
 
 <script>
 			var x = 1; //initlal text box count
@@ -51,12 +53,12 @@
             	 e.preventDefault();
 
                 
-                $(wrapper).append('<div class="row mt-2 mb-3"><div class="col-md-1 form-group">'+
+                $(wrapper).append('<div class="row mt-2 mb-3  justify-content-md-center"><div class="col-md-1 form-group">'+
                 	'<label>Option</label>'+
-                	'<input type="text" name="option[]" class="form-control"></div>'+
+                	'<input type="text" name="option[]" required placeholder="A~Z" class="form-control"></div>'+
                 	'<div class="col-md-4 form-group">'+
                 	'<label>Jawaban</label>'+
-                	'<input type="text" name="jwb[]" class="form-control"></div>'+
+                	'<input type="text" name="jwb[]" required placeholder="Ketik Jawaban Disini" class="form-control"></div>'+
                 	'<div class="col-md-1">'+
                 	'<a href="#" class="remove_field">Remove</a></div></div>'+
                 	'</div></div>'); //add input box

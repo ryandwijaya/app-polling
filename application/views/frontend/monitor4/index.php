@@ -41,7 +41,7 @@
                 $get_jwb = $this->Monitor4Model->getJwb($var['ptn4_id']);
                  ?>            
                 <?php foreach ($get_jwb as $value): ?>
-                <button class="btn btn-success btn-lg lanjut" style="width: auto;height: auto;margin: 10px;"><h5><?= $value['jwb4_option'] ?>. <?= $value['jwb4_ket'] ?></h5></button> 
+                <button class="btn btn-success btn-lg lanjut" id="<?= $var['ptn4_id'] ?>" value="<?= $value['jwb4_id'] ?>" style="width: auto;height: auto;margin: 10px;"><h5><?= $value['jwb4_option'] ?>. <?= $value['jwb4_ket'] ?></h5></button> 
                 <?php endforeach ?>
 
                 
@@ -51,7 +51,7 @@
 
       <?php }?>
 
-       <div class="row mt-5" id="<?= "ptn1" ?>" style="display: none;">
+       <div class="row mt-5" id="<?= "ptn".count($ptn) ?>" style="display: none;">
             <div class="col-md-12 text-center">
                 <h1 class="mt-5 pesan">Survey Telah Selesai !!</h1>
                 <h1 class="mt-5 pesan">Terimakasih Telah Mengisi Survei Ini !!</h1>
@@ -65,15 +65,15 @@
 <script>
     function myFunction() {
             var root = window.origin + '/app-polling/';
-            location.replace(root+'mntr3/step1');
+            location.replace(root+'mntr4/step1');
     }
             
         
     $(document).ready(function () {
             var a=0;
-            var max = 15
+            var max = <?= count($ptn) ?>;
             $('.lanjut').click(function(){
-                if (a<15) {
+                if (a<max) {
                     $('#ptn'+(a)).hide();
                     $('#ptn'+(a+1)).show();
 
@@ -81,7 +81,7 @@
                     $('#jwb'+(a)).hide();
                     $('#jwb'+(a+1)).show();
                     $('#jwb'+(a+1)).addClass("intro");
-                        if (a==14) {
+                        if (a==(max-1)) {
                             setInterval(myFunction, 2000);
                         }
                     a=a+1; 
@@ -99,20 +99,20 @@
         var root = window.location.origin+'/app-polling/';
         
         $('.lanjut').click(function () {
+            var ptn = $(this).attr('id');
             var jwb = $(this).val();
-            var field = $('.intro').attr('id');
             var url = window.location.pathname;
             var id = url.substring(url.lastIndexOf('/') + 1);
-            var getUrl = root + 'ajaxUpdate/' + id +'/'+ field+ '/' + jwb  ;
+            var getUrl = root + 'ajaxInsert/' + ptn +'/'+ jwb +'/' +id ;
         
             $.ajax({
             url: getUrl,
             type: "POST",
             cache: false,
             data:{
-                jwb: jwb,
-                field: field,
+                ptn: ptn,
                 id: id,
+                jwb: jwb
             },
             success: function(dataResult){
                 

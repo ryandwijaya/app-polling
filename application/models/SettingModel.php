@@ -16,6 +16,14 @@ class SettingModel extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function getByMonitor($lynn){
+		$this->db->select('*');
+		$this->db->from('hr_set_monitor2');
+		$this->db->where('set_lyn',$lynn);
+		$this->db->order_by('set_dcreated','DESC');
+		return $this->db->get();
+	}
+
 	public function lihat_satu($id){
 		$this->db->select('*');
 		$this->db->from('hr_set_monitor2');

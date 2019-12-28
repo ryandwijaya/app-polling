@@ -88,6 +88,7 @@ $route['tes_chart'] = 'Welcome/tes_chart';
 $route['monitor3/(:any)'] = 'Monitor3Controller/index/$1';
 $route['monitor4/(:any)'] = 'Monitor4Controller/index/$1';
 $route['mntr3/step1'] = 'Monitor3Controller/step1';
+$route['mntr4/step1'] = 'Monitor4Controller/step1';
 
 
 $route['instansi'] = 'InstansiController/index';
@@ -97,6 +98,7 @@ $route['umum'] = 'UmumController/index';
 $route['set/monitor2'] = 'SettingController/monitor2';
 $route['set/monitor4'] = 'SettingController/monitor4';
 $route['set/monitor4/add'] = 'SettingController/add_monitor4';
+$route['set/monitor4/hapus/(:any)'] = 'SettingController/hapus_monitor4/$1';
 
 
 $route['step-1'] = 'UmumController/step1';
@@ -121,6 +123,7 @@ $route['laporan/ajaxGet/(:any)/(:any)/(:any)/(:any)'] = 'LprnController/ajaxGetL
 
 $route['ajax/getVotes'] = 'Welcome/ajaxGetVotes';
 $route['ajaxUpdate/(:any)/(:any)/(:any)'] = 'Monitor3Controller/ajaxUpdate/$1/$2/$3';
+$route['ajaxInsert/(:any)/(:any)/(:any)'] = 'Monitor4Controller/ajaxInsert/$1/$2/$3';
 
 
 //API

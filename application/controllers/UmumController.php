@@ -169,7 +169,7 @@ class UmumController extends CI_Controller {
     public function step4()
     {
            
-        // var_dump($no_responden);exit();
+       
         
         if (isset($_POST['jwb_1'])) {
             $jwb = 1;
@@ -183,6 +183,7 @@ class UmumController extends CI_Controller {
             $responden = $this->RespondenModel->getRespondenByData($nama,$umur,$jk,$pnd);
             $no_responden =  $responden['responden_id'];
 
+             // var_dump($data1);exit();
 
             $data1 = [
                 'kpsn_responden' => $no_responden, 

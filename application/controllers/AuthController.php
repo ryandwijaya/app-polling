@@ -21,7 +21,7 @@
 			if (isset($_POST['login'])){
 				$username = $this->input->post('username');
 				$password = $this->input->post('password');
-				$layanan = $this->input->post('layanan');
+				$layanan = 5;
 				// var_dump($layanan);exit();
 				$loginData = $this->UsrModel->get_by_usrnm($username);
 				$existsStatus = $loginData->num_rows();

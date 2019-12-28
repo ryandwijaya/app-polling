@@ -26,10 +26,17 @@ class Monitor4Model extends CI_Model {
 	}
 	public function getJwb($ptn){
 		$this->db->select('*');
+		$this->db->order_by('jwb4_option','ASC');
 		$this->db->from('hr_jwb4');
 		$this->db->where('jwb4_ptn',$ptn);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-	
+	public function hapus($id){
+		$this->db->where('ptn4_id', $id);
+		$this->db->delete('hr_ptn4');
+		$this->db->where('jwb4_ptn', $id);
+		$this->db->delete('hr_jwb4');
+		return $this->db->affected_rows();
+	}
 }

@@ -13,10 +13,10 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8 input-field col s12">
                         <select name="id_lynn"  required>
-                            <option disabled selected>- Pilih Layanan -</option>
-                            <?php foreach ($lyn as $va): ?>
+                            <option value="<?= $set_monitor['set_lyn'] ?>" selected>- Monitor -</option>
+                            <!-- <?php foreach ($lyn as $va): ?>
                                 <option value="<?= $va['lynn_id'] ?>"><?= $va['lynn_nm'] ?></option>
-                            <?php endforeach ?>
+                            <?php endforeach ?> -->
                         </select>
                         <label>Layanan</label>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8 input-field col s12">
                         <select name="ptn" required>
-                            <option disabled selected>- Pilih Pertanyaan -</option>
+                            <option value="<?= $set_monitor['set_ptn'] ?>" selected>- Pilih Pertanyaan -</option>
                             <?php foreach ($ptn as $var): ?>
                                 <option value="<?= $var['ptn_id'] ?>"><?= $var['ptn_txt'] ?></option>
                             <?php endforeach ?>
@@ -44,7 +44,7 @@
                         <label> Background Monitor </label>
                         <div class="input-group colorpicker">
                             <div class="form-line">
-                                <input type="text" name="background" class="form-control" value="grey">
+                                <input type="text" name="background" class="form-control" value="<?= $set_monitor['set_background'] ?>">
                             </div>
                             <span class="input-group-addon">
                                 <i></i>
@@ -73,7 +73,7 @@
 </div>
 
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         
         <div class="card">
@@ -119,6 +119,6 @@
     </div>
 </div>
 
-
+ -->
 
 		

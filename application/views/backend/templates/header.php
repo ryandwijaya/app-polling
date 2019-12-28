@@ -17,7 +17,7 @@
     <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
     <script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
-    <script src="<?= base_url() ?>assets/js/app.min.js"></script>
+    
 </head>
 <body class="light" >
  
@@ -73,7 +73,7 @@
                                     
                                     <li>
                                         <a href="#" onClick="return false;">
-                                            <i class="material-icons">help</i>Help
+                                            <i class="material-icons">help</i> <?= $this->session->userdata('sess_hr_lyn') ?>
                                         </a>
                                     </li>
                                     <li>
@@ -200,7 +200,7 @@
                                  <a href="<?= base_url() ?>mntr3/step1" target="_blank"> Monitor 3</a>
                             </li>
                             <li>
-                                 <a href="<?= base_url() ?>monitor4/1" target="_blank"> Monitor 4</a>
+                                 <a href="<?= base_url() ?>mntr4/step1" target="_blank"> Monitor 4</a>
                             </li>
                         </ul>
                     </li>

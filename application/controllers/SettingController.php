@@ -54,6 +54,7 @@ class SettingController extends CI_Controller {
             $data['lyn'] = $this->LynModel->lihat();
 
             $data['set2'] = $this->SettingModel->lihat()->result_array();
+            $data['set_monitor'] = $this->SettingModel->getByMonitor(5)->row_array();
 
             // var_dump($data['set2']);
             // exit();
@@ -114,6 +115,16 @@ class SettingController extends CI_Controller {
         }
 
         
+    }
+
+    public function hapus_monitor4($id){
+        $hapus = $this->Monitor4Model->hapus($id);
+        if ($hapus > 0){
+            $this->session->set_flashdata('alert', 'success_delete');
+            redirect('set/monitor4');
+        }else{
+            redirect('set/monitor4');
+        }
     }
 
     

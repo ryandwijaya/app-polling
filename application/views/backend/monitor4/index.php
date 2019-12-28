@@ -20,14 +20,17 @@
                         	<?php 
                         	$no = 1;
                         	foreach ($ptn as $var): ?>
-                        		
+                        		<?php $jwb = $this->Monitor4Model->getJwb($var['ptn4_id']); ?>
                             <tr>
                                 <td><?= $no ?></td>
-                                <td><?= $var['ptn4_txt'] ?></td>
-                                <td class="text-center">
+                                <td><?= $var['ptn4_txt'] ?> <br>
+                                    <?php foreach ($jwb as $value): ?>
+                                            <?= $value['jwb4_option'].'. '.$value['jwb4_ket'].'<br>'; ?>
+                                    <?php endforeach ?>
 
-                                <button type="button" value="<?= $var['ptn4_id'] ?>" class="edit-lyn btn bg-lime btn-circle waves-effect waves-circle waves-float" data-toggle="modal" data-target="#mdl_edit_ptn"><i class="material-icons">mode_edit</i></button>
-                                <a href="<?= base_url() ?>mntr4/hapus/<?= $var['ptn4_id'] ?>" onclick="return confirm('Yakin ingin menghapus ?')" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
+                                </td>
+                                <td class="text-center">
+                                <a href="<?= base_url() ?>set/monitor4/hapus/<?= $var['ptn4_id'] ?>" onclick="return confirm('Yakin ingin menghapus ?')" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
                         		<i class="material-icons">delete</i></a>
 
                             	</td>

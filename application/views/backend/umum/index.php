@@ -68,7 +68,7 @@
                             <div class="form-line">
                                 <input type="text" name="bg_header" class="form-control" value="<?= $umum[0]['umum_bg_header'] ?>">
                             </div>
-                            <span class="input-group-addon">
+                            <span class="input-group-addon border bg-light">
                                 <i></i>
                             </span>
                         </div>
@@ -79,7 +79,7 @@
                             <div class="form-line">
                                 <input type="text" name="bg_video" class="form-control" value="<?= $umum[0]['umum_bg_video'] ?>">
                             </div>
-                            <span class="input-group-addon">
+                            <span class="input-group-addon border bg-light">
                                 <i></i>
                             </span>
                         </div>
@@ -95,7 +95,7 @@
                             <div class="form-line">
                                 <input type="text" name="bg_marquee" class="form-control" value="<?= $umum[0]['umum_bg_marquee'] ?>">
                             </div>
-                            <span class="input-group-addon">
+                            <span class="input-group-addon border bg-light">
                                 <i></i>
                             </span>
                         </div>
@@ -106,7 +106,7 @@
                             <div class="form-line">
                                 <input type="text" name="bg_chart" class="form-control" value="<?= $umum[0]['umum_bg_video'] ?>">
                             </div>
-                            <span class="input-group-addon">
+                            <span class="input-group-addon border bg-light">
                                 <i></i>
                             </span>
                         </div>
