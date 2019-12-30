@@ -136,10 +136,10 @@
                                                 <?php $persenC = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $this->input->post('start'),$this->input->post('end'))*6.6);  ?>
                                                 <?php $persenD = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $this->input->post('start'),$this->input->post('end'))*10);  ?>
                                             <?php } ?>
-                                        <td class="text-center"> <?= round($persenB+$persenC+$persenD,0) ?> </td>
+                                        <td class="text-center"> <?= round($persenB+$persenC+$persenD,2) ?> </td>
                                     </tr>
                                 <?php 
-                                array_push($array_persen, round($persenB+$persenC+$persenD,0));
+                                array_push($array_persen, round($persenB+$persenC+$persenD,2));
                                 $no++ ; } ?>
                                 
                             </tbody>

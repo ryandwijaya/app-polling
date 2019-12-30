@@ -14,6 +14,11 @@ class ExtModel extends CI_Model {
 		$this->db->from('hr_kpsn');
 		return $this->db->get();
 	}
+	public function getVideo(){
+		$this->db->select('*');
+		$this->db->from('hr_video');
+		return $this->db->get();
+	}
 
 	public function getVotesBetween($start,$end,$ptn,$versi){
 		$this->db->select('*');

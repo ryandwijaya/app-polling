@@ -108,6 +108,7 @@ class Welcome extends CI_Controller {
         $data['title'] = 'Layar Monitor';
         $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
         $data['getData'] = $this->ExtModel->getSetUmum()->row_array();
+        $data['getVideo'] = $this->ExtModel->getVideo()->result_array();
         $data['getLynn'] = $this->LynModel->lihat();
         $this->load->view('frontend/monitor/monitor1',$data);
     }

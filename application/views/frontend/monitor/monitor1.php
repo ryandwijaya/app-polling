@@ -63,10 +63,13 @@
         <div class="row body-monitor justify-content-md-center">
             <div class="col-md-5 rounded body-video pt-3 pb-3">
                 <h5>Video :</h5>
-                <video width="100%" autoplay="true">
+                <video id="videoarea" width="100%" autoplay="true">
                 <source src="<?= base_url() ?>assets/upload/video/<?= $getData['umum_video'] ?>">
                   Your browser does not support HTML5 video.
-            </video>
+                </video>
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  Playlist
+                </button>
             </div>
             <div class="col-md-5 rounded  body-chart pt-3 pb-3">
                 <div class="row">
@@ -98,7 +101,7 @@
                 </div>
             </div>
         </div>
-    
+        
         <div class="row footer-monitor justify-content-md-center mt-2">
 
             <div class="col-md-10 footer-marquee pt-1">
@@ -107,16 +110,93 @@
         </div>
         <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 
-
         <script src="<?= base_url() ?>/assets/js/highchart/jquery-3.1.1.min.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/export-data.js"></script>
-<script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
+        <script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
+        <script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
+        <script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
+        <script src="<?= base_url() ?>/assets/js/highchart/export-data.js"></script>
+        <script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">List Video</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <style>
+                  #playlist {
+                        display:table;
+                    }
+                    #playlist li{
+                        cursor:pointer;
+                        padding:8px;
+                    }
+
+                    #playlist li:hover{
+                        color:blue;                        
+                    }
+              </style>
+              <div class="modal-body">
+                <ul id="playlist" style="list-style-type: none;">
+                    <?php foreach ($getVideo as $num => $video): ?>
+                        <li class="<?= 'a'.$num ?>" movieurl="<?= base_url() ?>assets/upload/video/<?= $video['video_judul'] ?>"><?= $video['video_judul'] ?></li>
+                    <?php endforeach ?>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 </body>
+
+<script type="text/javascript">
+  $(function() {
+      $("#playlist li").on("click", function() {
+      $("#videoarea").attr({
+          "src": $(this).attr("movieurl"),
+          "autoplay": "autoplay",
+          "type": "video/mp4"
+        })
+      })
+      $("#videoarea").attr({
+      "src": $("#playlist li").eq(0).attr("movieurl"),
+  })
+  });
+        
+  var no= 1;
+  function next(){
+    $("#videoarea").attr({
+                "autoplay": "autoplay",
+                "type": "video/mp4"
+    });
+    $("#videoarea").attr({"src": $(".a"+no).eq(0).attr("movieurl") }) ;
+    no++;  
+  }
+  $(document).ready(function(){
+  $("#videoarea").on(
+    "timeupdate", 
+    function(event){
+      onTrackedVideoFrame(this.currentTime, this.duration);
+      if (this.currentTime == this.duration) {
+        next();
+      }
+    });
+  });
+
+  function onTrackedVideoFrame(currentTime, duration){
+      $("#current").text(currentTime); //Change #current to currentTime
+      $("#duration").text(duration);
+  }
+</script>
 <script>
 
 function requestFullScreen(element) {
