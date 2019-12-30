@@ -137,7 +137,10 @@
                                  <a href="<?= base_url() ?>responden"> Responden</a>
                             </li>
                             <li>
-                                 <a href="<?= base_url() ?>laporan/monitor3"> Monitor3</a>
+                                 <a href="<?= base_url() ?>laporan/monitor3"> Monitor 3</a>
+                            </li>
+                            <li>
+                                 <a href="<?= base_url() ?>laporan/monitor4"> Monitor 4</a>
                             </li>
                         </ul>
                     </li>

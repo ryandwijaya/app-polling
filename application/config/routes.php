@@ -112,6 +112,7 @@ $route['wizard'] = 'UmumController/wizard';
 $route['laporan'] = 'LprnController/index';
 $route['laporan/semua'] = 'LprnController/semua';
 $route['laporan/monitor3'] = 'LprnController/monitor3';
+$route['laporan/monitor4'] = 'LprnController/monitor4';
 // $route['laporan/export/semua/(:any)/(:any)/(:any)'] = 'LprnController/exportSemua/$1/$2/$3';
 $route['laporan/export/semua'] = 'LprnController/exportSemua';
 $route['laporan/export/layanan'] = 'LprnController/exportLayanan';

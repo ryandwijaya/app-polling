@@ -103,44 +103,64 @@
                                         <th>D</th>
                                     </tr>
                                 </tr>
-                                
                             </thead>
                             <tbody>
-                                <?php 
-                                $array_persen = array();
-                                $no = 1;
-                                $date_now = date('Y-m-d');
-                                for ($i = 0; $i < 15; $i++) { ?>
-                                    <tr>
-                                        <td><?= $no ?></td>
-                                        <td><?= $ptn[$i] ?></td>
-                                            <?php if ($this->input->post('start')==''){ ?>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'A', $date_now,$date_now); ?> </td>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $date_now,$date_now); ?> </td>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $date_now,$date_now); ?> </td>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $date_now,$date_now); ?> </td>
+                            <?php 
+                            $no=1;
+                            $array_persen= array();
+                            $array_pertanyaan= array();
+                            foreach ($ptn as  $key => $var): 
+                            $a = 0;$b = 0;$c = 0;$d= 0;
+
+                            ?>
+                                  
+                                  <?php foreach ($kpsn as $value): ?>
+                                        <?php if ($value['kpsn4_ptn'] == $var['ptn4_id']): 
+                                              
+
+                                                  if ($value['kpsn4_A']=='1') {
+                                                    $a+=1;
+                                                  }
+                                                  elseif ($value['kpsn4_B']=='1') {
+                                                    $b+=1;
+                                                  }
+                                                  elseif ($value['kpsn4_C']=='1') {
+                                                    $c+=1;
+                                                  }
+                                                  elseif ($value['kpsn4_D']=='1') {
+                                                    $c+=1;
+                                                  }
+
+                                        ?>
+                                        <?php endif ?>
+                                  <?php endforeach ?>
+                                  <tr>
+                                    <td class="text-center"><?= $no ?></td>
+                                    <td><?= $var['ptn4_txt'] ?></td>
+                                    
+                                    <td class="text-center"><?= $a ?></td>
+                                    <td class="text-center"><?= $b ?></td>
+                                    <td class="text-center"><?= $c ?></td>
+                                    <td class="text-center"><?= $d ?></td>
+                                    <?php $persentase = ($b*3.3)+($c*6.6)+($c*10);  ?>
+                             
+                                    <td class="text-center"><?= round($persentase,2) ?></td>
+
+                                  </tr>  
 
 
-
-
-                                                <?php $persenB = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $date_now,$date_now)*3.33);  ?>
-                                                <?php $persenC = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $date_now,$date_now)*6.66);  ?>
-                                                <?php $persenD = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $date_now,$date_now)*10);  ?>
-                                            <?php }else{ ?>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'A', $this->input->post('start'),$this->input->post('end')); ?> </td>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $this->input->post('start'),$this->input->post('end')); ?> </td>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $this->input->post('start'),$this->input->post('end')); ?> </td>
-                                                <td class="text-center"> <?= $this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $this->input->post('start'),$this->input->post('end')); ?> </td>
-
-                                                <?php $persenB = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'B', $this->input->post('start'),$this->input->post('end'))*3.33);  ?>
-                                                <?php $persenC = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'C', $this->input->post('start'),$this->input->post('end'))*6.66);  ?>
-                                                <?php $persenD = ($this->Monitor3Model->getJwbKet('mnt3_jwb'.$i ,'D', $this->input->post('start'),$this->input->post('end'))*10);  ?>
-                                            <?php } ?>
-                                        <td class="text-center"> <?= round($persenB+$persenC+$persenD,2) ?> </td>
-                                    </tr>
-                                <?php 
-                                array_push($array_persen, round($persenB+$persenC+$persenD,2));
-                                $no++ ; } ?>
+                            <?php 
+                            if ($key == count($ptn)-1) {
+                              $a_last = $a;
+                              $b_last = $b;
+                              $c_last = $c;
+                              $d_last = $d;
+                            }
+                            array_push($array_persen, round($persentase,2));
+                            array_push($array_pertanyaan, $no);
+                            $no++; 
+                            endforeach ?>                                
+                                  
                                 
                             </tbody>
                         </table>
@@ -153,6 +173,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div id="chartPie" style="margin-left: 0;"></div>
+                    </div>
+                </div>
         </div>
     </div>  
 </div>
@@ -181,7 +206,14 @@
         text: 'Grafik Jumlah Vote'
       },
       xAxis: {
-        categories: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],
+        categories: [
+        <?php 
+            for($i=0;$i< count($array_pertanyaan);$i++){
+
+                echo $array_pertanyaan[$i].','; 
+            }
+        ?>
+            ],
         labels: {
           skew3d: true,
           style: {
@@ -210,4 +242,54 @@
     }); 
 
 
+// PIE CHART
+
+Highcharts.chart('chartPie', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Chart'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: ' jumlah'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} '
+            }
+        }
+    },
+    series: [{
+        name: 'Jumlah',
+        colorByPoint: true,
+        data: [{
+            name: 'A',
+            y: <?= $a_last ?>,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'B',
+            y: <?= $b_last ?>
+        }, {
+            name: 'C',
+            y: <?= $c_last ?>
+        }, {
+            name: 'D',
+            y: <?= $d_last ?>
+        }]
+    }]
+});
 </script>

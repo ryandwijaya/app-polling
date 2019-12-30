@@ -13,6 +13,7 @@ class LprnController extends CI_Controller {
         $this->load->model('LynModel');
         $this->load->model('ExtModel');
         $this->load->model('Monitor3Model');
+        $this->load->model('Monitor4Model');
         $this->load->model('RespondenModel');
 
         if (!$this->session->has_userdata('sess_hr_id')) {
@@ -192,9 +193,22 @@ class LprnController extends CI_Controller {
             $this->load->view('backend/laporan/monitor3',$data);
             $this->load->view('backend/templates/footer',$data); 
 
+    }
+    public function monitor4()
+    {
 
-        
- 
+            $data['title'] = 'Laporan Monitor 4';
+            if ($this->input->post('start')=='') {   
+            $data['kpsn'] = $this->Monitor4Model->getKpsn(date('Y-m-d'),date('Y-m-d'));
+            }else{
+            $data['kpsn'] = $this->Monitor4Model->getKPsn($this->input->post('start'),$this->input->post('end'));
+            }
+            $data['ptn'] = $this->Monitor4Model->getPtn();
+            // var_dump($data['kpsn']);exit();
+            $this->load->view('backend/templates/header',$data);
+            $this->load->view('backend/laporan/monitor4',$data);
+            $this->load->view('backend/templates/footer',$data); 
+
     }
 	public function ajaxGetLaporan($ptn,$lyn,$start,$end){
 		$data = $this->ExtModel->getVoteReport($ptn,$lyn,$start,$end,$this->session->userdata('sess_hr_versi'))->result_array();

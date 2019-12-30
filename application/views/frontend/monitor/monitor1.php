@@ -181,6 +181,7 @@
     $("#videoarea").attr({"src": $(".a"+no).eq(0).attr("movieurl") }) ;
     no++;  
   }
+  
   $(document).ready(function(){
   $("#videoarea").on(
     "timeupdate", 

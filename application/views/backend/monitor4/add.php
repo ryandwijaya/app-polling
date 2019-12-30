@@ -21,15 +21,51 @@
 				<div class="row  justify-content-md-center">
 					<div class="col-md-1 form-group">
 						<label>Option</label>
-						<input type="text" name="option[]" placeholder="A~Z" required class="form-control">
+						<input type="text" name="option[]" placeholder="A~Z" value="A" required class="form-control text-center" readonly>
 					</div>
 					<div class="col-md-4 form-group">
 						<label>Jawaban</label>
 						<input type="text" name="jwb[]" placeholder="Ketik Jawaban Disini" required class="form-control">
 					</div>
-					<div class="col-md-1">
+					<!-- <div class="col-md-1">
 						<button id="add_button">tambah</button>
+					</div> -->
+				</div><div class="row  justify-content-md-center">
+					<div class="col-md-1 form-group">
+						<label>Option</label>
+						<input type="text" name="option[]" placeholder="A~Z" value="B" required class="form-control text-center" readonly>
 					</div>
+					<div class="col-md-4 form-group">
+						<label>Jawaban</label>
+						<input type="text" name="jwb[]" placeholder="Ketik Jawaban Disini" required class="form-control">
+					</div>
+					<!-- <div class="col-md-1">
+						<button id="add_button">tambah</button>
+					</div> -->
+				</div><div class="row  justify-content-md-center">
+					<div class="col-md-1 form-group">
+						<label>Option</label>
+						<input type="text" name="option[]" placeholder="A~Z" value="C" required class="form-control text-center" readonly>
+					</div>
+					<div class="col-md-4 form-group">
+						<label>Jawaban</label>
+						<input type="text" name="jwb[]" placeholder="Ketik Jawaban Disini" required class="form-control">
+					</div>
+					<!-- <div class="col-md-1">
+						<button id="add_button">tambah</button>
+					</div> -->
+				</div><div class="row  justify-content-md-center">
+					<div class="col-md-1 form-group">
+						<label>Option</label>
+						<input type="text" name="option[]" placeholder="A~Z" required  value="D" class="form-control text-center" readonly>
+					</div>
+					<div class="col-md-4 form-group">
+						<label>Jawaban</label>
+						<input type="text" name="jwb[]" placeholder="Ketik Jawaban Disini" required class="form-control">
+					</div>
+					<!-- <div class="col-md-1">
+						<button id="add_button">tambah</button>
+					</div> -->
 				</div>
 				<div class="wrap">
 				</div>
@@ -42,7 +78,7 @@
 </div>
  <script src="<?= base_url() ?>assets/js/jquery-3.4.1.slim.js"></script>
 
-<script>
+<!-- <script>
 			var x = 1; //initlal text box count
             var max_fields      = 20; //maximum input boxes allowed
             var wrapper = $(".wrap"); //Fields wrapper
@@ -51,7 +87,6 @@
 			$(add_button).click(function(e){ //on add input button click
             	 e.preventDefault();
 
-                
                 $(wrapper).append('<div class="row mt-2 mb-3  justify-content-md-center"><div class="col-md-1 form-group">'+
                 	'<label>Option</label>'+
                 	'<input type="text" name="option[]" required placeholder="A~Z" class="form-control"></div>'+
@@ -68,4 +103,4 @@
                 e.preventDefault(); $(this).parent('div').remove(); x--;
                 
             });
-</script>
+</script> -->

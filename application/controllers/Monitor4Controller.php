@@ -68,12 +68,39 @@ class Monitor4Controller extends CI_Controller {
 
 	
 	public function ajaxInsert($ptn,$jwb,$responden){
-    	
-			$data = array(
-				'kpsn4_responden' => $responden,
+    	if ($jwb == 'A') {
+            $data = array(
+                'kpsn4_responden' => $responden,
                 'kpsn4_ptn' => $ptn,
-                'kpsn4_jwb' => $jwb
-			);
+                'kpsn4_A' => '1'
+            );
+        }
+        else if($jwb == 'B'){
+            $data = array(
+                'kpsn4_responden' => $responden,
+                'kpsn4_ptn' => $ptn,
+                'kpsn4_B' => '1'
+            );
+        }
+        else if($jwb == 'C'){
+            $data = array(
+                'kpsn4_responden' => $responden,
+                'kpsn4_ptn' => $ptn,
+                'kpsn4_C' => '1'
+            );
+        }
+        else if($jwb == 'D'){
+            $data = array(
+                'kpsn4_responden' => $responden,
+                'kpsn4_ptn' => $ptn,
+                'kpsn4_D' => '1'
+            );
+        }
+			// $data = array(
+			// 	'kpsn4_responden' => $responden,
+   //              'kpsn4_ptn' => $ptn,
+   //              'kpsn4_jwb' => $jwb
+			// );
 			$simpan = $this->ExtModel->insert('hr_kpsn4',$data);
 			if ($simpan > 0){
 				echo 'success post';
