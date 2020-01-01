@@ -75,6 +75,18 @@ class SettingController extends CI_Controller {
         $this->load->view('backend/monitor4/index',$data);
         $this->load->view('backend/templates/footer',$data);
     }
+
+    public function android(){
+        $data['title'] = 'Setting Android';
+        $data['setting'] = $this->ExtModel->getGlobal('hr_set_android');
+        // echo '<pre>';
+        // var_dump($data['jwb']);exit();
+
+        $this->load->view('backend/templates/header',$data);
+        $this->load->view('backend/android/index',$data);
+        $this->load->view('backend/templates/footer',$data);
+    }
+
     public function add_monitor4(){
 
         if (isset($_POST['add'])) {

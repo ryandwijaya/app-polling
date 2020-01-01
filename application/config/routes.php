@@ -94,9 +94,11 @@ $route['mntr4/step1'] = 'Monitor4Controller/step1';
 $route['instansi'] = 'InstansiController/index';
 
 $route['umum'] = 'UmumController/index';
+$route['playlist/hapus/(:any)'] = 'UmumController/deleteVideo/$1';
 
 $route['set/monitor2'] = 'SettingController/monitor2';
 $route['set/monitor4'] = 'SettingController/monitor4';
+$route['set/android'] = 'SettingController/android';
 $route['set/monitor4/add'] = 'SettingController/add_monitor4';
 $route['set/monitor4/hapus/(:any)'] = 'SettingController/hapus_monitor4/$1';
 

@@ -60,17 +60,23 @@ class UmumController extends CI_Controller {
                     $video = $this->upload->data('file_name');
 
                     $data = array(
-                        'umum_text_top' => $text_top,
+                            'umum_text_top' => $text_top,
                             'umum_text_bot' => $text_bot,
                             'umum_bg_video' => $bg_video,
                             'umum_bg_header' => $bg_header,
                             'umum_bg_chart' => $bg_chart,
+                            'umum_video' => $video,
                             'umum_bg_marquee' => $bg_marquee,
                             'umum_font' => $font
                     );
+                    $playlist_Video = [
+                        'video_judul' => $video, 
+                        'video_monitor' => 1 
+                    ];
 
                     $simpan = $this->ExtModel->update('umum_id',1,'hr_umum',$data);
-                    if ($simpan > 0){
+                    $simpan_playlist = $this->ExtModel->insert('hr_video',$playlist_Video);
+                    if ($simpan > 0 && $simpan_playlist > 1){
                         $this->session->set_flashdata('alert', 'success_post');
                         redirect('umum');
                     } else {
@@ -84,6 +90,7 @@ class UmumController extends CI_Controller {
         }else{
             $data['title'] = 'Instansi';
             $data['umum'] = $this->ExtModel->getUmum()->result_array();
+            $data['playlist'] = $this->ExtModel->getGlobal('hr_video');
             
             $this->load->view('backend/templates/header',$data);
             $this->load->view('backend/umum/index',$data);
@@ -91,6 +98,25 @@ class UmumController extends CI_Controller {
         }
            
 	}
+
+    public function deleteVideo($id){
+        $config['upload_path'] = './assets/upload/video/';
+        $config['allowed_types'] = 'mkv|mp4|3gp|MKV|MP4|3GP';
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);        
+        $video = $this->ExtModel->getOneGlobal('video_id',$id,'hr_video');
+        $path = 'assets/upload/video/'.$video['video_judul'];
+
+        unlink($path);
+        $hapus = $this->ExtModel->hapus('video_id',$id,'hr_video');
+        if ($hapus > 0){
+            $this->session->set_flashdata('alert', 'success_delete');
+            redirect('umum');
+        }else{
+            redirect('umum');
+        }
+
+    }
 
     public function ajaxGetLayanan($id){
         $data = $this->ExtModel->getVoteReport($ptn,$lyn,$start,$end)->result_array();

@@ -190,6 +190,23 @@ class ExtModel extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+	public function getGlobal($table){
+		$this->db->select('*');
+		$this->db->from($table);
+		return $this->db->get()->result_array();
+	}
+	public function getOneGlobal($references,$key,$table){
+		$this->db->select('*');
+		$this->db->from($table);
+		$this->db->where($references,$key);
+		return $this->db->get()->row_array();
+	}
+	public function hapus($key,$id,$table){
+		$this->db->where($key, $id);
+		$this->db->delete($table);
+		return $this->db->affected_rows();
+	}
+
     
 
 }

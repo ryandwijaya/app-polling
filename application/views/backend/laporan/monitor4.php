@@ -22,7 +22,7 @@
                 <h4>Filter</h4>
             </div>
             <div class="card-body">
-                <form action="<?= base_url() ?>laporan/monitor3" method="POST">
+                <form action="<?= base_url() ?>laporan/monitor4" method="POST">
                 
                 <hr>
                 <div class="row mt-3 p-2">
@@ -142,7 +142,7 @@
                                     <td class="text-center"><?= $b ?></td>
                                     <td class="text-center"><?= $c ?></td>
                                     <td class="text-center"><?= $d ?></td>
-                                    <?php $persentase = ($b*3.3)+($c*6.6)+($c*10);  ?>
+                                    <?php $persentase = ($b*3.33)+($c*6.66)+($c*10);  ?>
                              
                                     <td class="text-center"><?= round($persentase,2) ?></td>
 
@@ -255,7 +255,7 @@ Highcharts.chart('chartPie', {
         text: 'Chart'
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}</b>'
     },
     accessibility: {
         point: {

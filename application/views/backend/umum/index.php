@@ -146,8 +146,23 @@
                                 </video>
                             </div>
                             <div class="col-md-7 ml-3">
-                                <label>Ganti Video ?</label><br>
-                                <input type="file" name="video" value="<?= $umum[0]['umum_video'] ?>" >
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Tambah Playlist ?</label><br>
+                                        <input type="file" name="video" value="<?= $umum[0]['umum_video'] ?>" >
+                                    </div>
+                                    
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                            <ul>
+                                        <?php foreach ($playlist as $value): ?>
+                                                <li style="font-size: 12pt;"> - <?= $value['video_judul'] ?> <a href="<?= base_url() ?>playlist/hapus/<?= $value['video_id'] ?>" class="float-right text-danger" data-toggle="tooltip" data-placement="right" title="Hapus ?" onclick="return confirm('Yakin ingin menghapus video ini?')"><i class="far fa-times-circle"></i></a></li>
+                                        <?php endforeach ?>
+                                            </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
