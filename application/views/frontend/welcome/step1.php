@@ -20,10 +20,23 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-12 text-center">
-            <a href="<?= base_url() ?>step-2" class="btn btn-success btn-lg" style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
+            <a href="<?= base_url() ?>step-2"  class="btn btn-success btn-lg lanjut" style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+                var root = window.location.origin+'/app-polling/';
+                $(document).keypress(function (key) {
+                    let btnSetting = key.originalEvent.charCode;
+                    
+                    if (btnSetting === 13){
+                        window.location.href = root+'step-2';
+                    }
+                });
+            })
+</script>
 <!-- <script type="text/javascript">
 
     function requestFullScreen(element) {

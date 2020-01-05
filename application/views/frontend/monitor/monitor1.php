@@ -29,6 +29,7 @@
         background: url('<?= base_url() ?>/assets/upload/bg/Digtive.png');
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: fixed;
     }
     .header-monitor{
         background : <?= $getData['umum_bg_header'] ?> ; 
@@ -41,6 +42,11 @@
     }
     .footer-marquee{
         background : <?= $getData['umum_bg_marquee'] ?> ; 
+    }
+    @media all and (display-mode: fullscreen) {
+      body {
+        zoom:107%;
+      }
     }
 
 </style>
@@ -173,13 +179,24 @@
   });
         
   var no= 1;
+  var max = <?= count($getVideo) ?>;
   function next(){
     $("#videoarea").attr({
                 "autoplay": "autoplay",
                 "type": "video/mp4"
     });
     $("#videoarea").attr({"src": $(".a"+no).eq(0).attr("movieurl") }) ;
+    if (no == max) {
+      $("#videoarea").attr({
+                "autoplay": "autoplay",
+                "type": "video/mp4"
+    });
+    $("#videoarea").attr({"src": $(".a0").eq(0).attr("movieurl") }) ;
+    no=1;
+    }else{
+
     no++;  
+    }
   }
   
   $(document).ready(function(){

@@ -26,6 +26,18 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+                var root = window.location.origin+'/app-polling/';
+                $(document).keypress(function (key) {
+                    let btnSetting = key.originalEvent.charCode;
+                    
+                    if (btnSetting === 13){
+                        window.location.href = root+'step-3';
+                    }
+                });
+            })
+</script>
 <!-- <script type="text/javascript">
 
     function requestFullScreen(element) {

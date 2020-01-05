@@ -70,8 +70,7 @@
 
 
 			}else{
-				$data['lyn'] = $this->LynModel->lihat();
-				$this->load->view('auth/index',$data);
+				$this->load->view('auth/new',$data);
 			}
 		}
         
