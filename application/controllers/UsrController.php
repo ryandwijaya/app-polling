@@ -51,7 +51,7 @@ class UsrController extends CI_Controller {
 				$this->session->set_flashdata('alert', 'success_post');
 				redirect('user');
 			} else {
-				$this->session->set_flashdata('alert', 'fail_edit');
+				$this->session->set_flashdata('alert', 'fail_post');
 				redirect('user');
 			}
 		}

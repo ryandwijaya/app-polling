@@ -54,7 +54,7 @@ class LynController extends CI_Controller {
 			);
 			$simpan = $this->LynModel->update($id,$data);
 			if ($simpan > 0){
-				$this->session->set_flashdata('alert', 'success_post');
+				$this->session->set_flashdata('alert', 'success_edit');
 				redirect('layanan');
 			} else {
 				$this->session->set_flashdata('alert', 'fail_edit');
@@ -64,11 +64,16 @@ class LynController extends CI_Controller {
 	}
 
 	public function hapus($id){
-		$hapus = $this->LynModel->hapus($id);
-		if ($hapus > 0){
-			$this->session->set_flashdata('alert', 'success_delete');
-			redirect('layanan');
+		if($id != 5){
+			$hapus = $this->LynModel->hapus($id);
+			if ($hapus > 0){
+				$this->session->set_flashdata('alert', 'success_delete');
+				redirect('layanan');
+			}else{
+				redirect('layanan');
+			}
 		}else{
+			$this->session->set_flashdata('alert', 'cannot_delete');
 			redirect('layanan');
 		}
 	}
