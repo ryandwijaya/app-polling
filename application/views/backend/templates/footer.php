@@ -161,8 +161,6 @@
 
 </script>
 
-
-
-
+<!-- Ryan DWijaya Efendi -->
 
 </body>
