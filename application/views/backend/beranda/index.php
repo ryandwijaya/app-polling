@@ -188,7 +188,7 @@
 
 <!-- BATAS -->
 <?php if ($this->session->userdata('sess_hr_versi')=='lima'): ?>
-<div class="col col ">
+<div class="col ">
 	<div width="100%" class="info-box5 animate-bar bg-b-purple">
 		<div class="knob-icon">
 			<img src="<?= base_url() ?>assets/images/jwb/lima/9.png" width="80" height="80" alt="User">
@@ -206,7 +206,7 @@
 		<!-- /.info-box-content -->
 	</div>
 </div>
-<div class="col col ">
+<div class="col ">
 	<div width="100%" class="info-box5 animate-bar bg-b-purple">
 		<div class="knob-icon">
 			<img src="<?= base_url() ?>assets/images/jwb/lima/10.png" width="80" height="80" alt="User">
@@ -224,7 +224,7 @@
 		<!-- /.info-box-content -->
 	</div>
 </div>
-<div class="col col ">
+<div class="col ">
 	<div width="100%" class="info-box5 animate-bar bg-b-purple">
 		<div class="knob-icon">
 			<img src="<?= base_url() ?>assets/images/jwb/lima/11.png" width="80" height="80" alt="User">
@@ -242,7 +242,7 @@
 		<!-- /.info-box-content -->
 	</div>
 </div>
-<div class="col col ">
+<div class="col ">
 	<div width="100%" class="info-box5 animate-bar bg-b-purple">
 		<div class="knob-icon">
 			<img src="<?= base_url() ?>assets/images/jwb/lima/12.png" width="80" height="80" alt="User">
@@ -260,7 +260,7 @@
 		<!-- /.info-box-content -->
 	</div>
 </div>
-<div class="col col ">
+<div class="col">
 	<div width="100%" class="info-box5 animate-bar bg-b-purple">
 		<div class="knob-icon">
 			<img src="<?= base_url() ?>assets/images/jwb/lima/13.png" width="80" height="80" alt="User">
@@ -338,15 +338,15 @@
 			colorByPoint: true,
 			data: [{
 				name: 'Puas',
-				y: < ? = $baikpersen ? > ,
+				y: <?= $baikpersen ?> ,
 				sliced: true,
 				selected: true
 			}, {
 				name: 'Cukup Puas',
-				y: < ? = $cukuppersen ? >
+				y: <?= $cukuppersen ?>
 			}, {
 				name: 'Tidak Puas',
-				y: < ? = $burukpersen ? >
+				y: <?= $burukpersen ?>
 			}]
 		}]
 	});
@@ -392,7 +392,7 @@
 		},
 		series: [{
 			name: 'Jumlah',
-			data: [ < ? = $baikvotes ? > , < ? = $cukupvotes ? > , < ? = $burukvotes ? > ]
+			data: [ <?= $baikvotes ?> , <?= $cukupvotes ?> , <?= $burukvotes ?> ]
 		}]
 	});
 
@@ -432,18 +432,18 @@
 			colorByPoint: true,
 			data: [{
 				name: 'Sangat Puas',
-				y: < ? = $sangatpersen ? > ,
+				y: <?= $sangatpersen ?> ,
 				sliced: true,
 				selected: true
 			}, {
 				name: 'Puas',
-				y: < ? = $puaspersen ? >
+				y: <?= $puaspersen ?>
 			}, {
 				name: 'Cukup Puas',
-				y: < ? = $cukuppersen ? >
+				y: <?= $cukuppersen ?>
 			}, {
 				name: 'Tidak Puas',
-				y: < ? = $tidakpersen ? >
+				y: <?= $tidakpersen ?>
 			}]
 		}]
 	});
@@ -487,7 +487,7 @@
 		},
 		series: [{
 			name: 'Jumlah',
-			data: [ < ? = $sangat ? > , < ? = $puas ? > , < ? = $cukup ? > , < ? = $tidak ? > ]
+			data: [ <?= $sangat ?> , <?= $puas ?> , <?= $cukup ?> , <?= $tidak ?> ]
 		}]
 	});
 
@@ -526,21 +526,21 @@
 			colorByPoint: true,
 			data: [{
 				name: 'Sangat Puas',
-				y: < ? = $sangatpersen ? > ,
+				y: <?= $sangatpersen ?> ,
 				sliced: true,
 				selected: true
 			}, {
 				name: 'Puas',
-				y: < ? = $puaspersen ? >
+				y: <?= $puaspersen ?>
 			}, {
 				name: 'Cukup Puas',
-				y: < ? = $cukuppersen ? >
+				y: <?= $cukuppersen ?>
 			}, {
 				name: 'Tidak Puas',
-				y: < ? = $tidakpersen ? >
+				y: <?= $tidakpersen ?>
 			}, {
 				name: 'Sangat Tidak Puas',
-				y: < ? = $stidakpersen ? >
+				y: <?= $stidakpersen ?>
 			}]
 		}]
 	});
@@ -584,7 +584,7 @@
 		},
 		series: [{
 			name: 'Jumlah',
-			data: [ < ? = $sangat ? > , < ? = $puas ? > , < ? = $cukup ? > , < ? = $tidak ? > , < ? = $stidak ? > ]
+			data: [ <?= $sangat ?> , <?= $puas ?> , <?= $cukup ?> , <?= $tidak ?> , <?= $stidak ?> ]
 		}]
 	});
 

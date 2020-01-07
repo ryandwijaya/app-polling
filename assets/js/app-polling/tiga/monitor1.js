@@ -94,4 +94,4 @@ var root = window.location.origin+'/app-polling/';
             });
         }
         getVotes();
-        setInterval(getVotes, 5000);
+        setInterval(getVotes, 2000);
