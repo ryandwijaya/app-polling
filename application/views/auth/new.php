@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Aplikasi IKM</title>
+	<link rel="icon" href="<?= base_url() ?>assets/images/interview.png" type="image/x-icon">
+    
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/login/new/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/login/new/css/fontawesome-all.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/login/new/css/iofrm-style.css">

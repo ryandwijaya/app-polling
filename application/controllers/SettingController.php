@@ -77,6 +77,23 @@ class SettingController extends CI_Controller {
     }
 
     public function android(){
+        if (isset($_POST['set'])) {
+            $data = [
+                'andro_text' => $this->input->post('andro_text'), 
+                'andro_font' => $this->input->post('andro_font'), 
+                'andro_font_size' => $this->input->post('andro_font_size'), 
+                'andro_font_color' => $this->input->post('andro_font_color'), 
+            ];
+            $simpan = $this->ExtModel->update('andro_id',1,'hr_set_android',$data);
+            if ($simpan >0) {
+                $this->session->set_flashdata('alert', 'success_post');
+                redirect('set/android');
+            }else{
+                $this->session->set_flashdata('alert', 'fail_post');
+                redirect('set/android');
+            }
+        }else{
+
         $data['title'] = 'Setting Android';
         $data['setting'] = $this->ExtModel->getGlobal('hr_set_android');
         // echo '<pre>';
@@ -85,6 +102,7 @@ class SettingController extends CI_Controller {
         $this->load->view('backend/templates/header',$data);
         $this->load->view('backend/android/index',$data);
         $this->load->view('backend/templates/footer',$data);
+        }
     }
 
     public function add_monitor4(){

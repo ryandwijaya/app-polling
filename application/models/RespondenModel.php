@@ -12,6 +12,7 @@ class RespondenModel extends CI_Model {
 	public function lihatByDate($start,$end,$lynn,$versi){
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
+		$this->db->order_by('kpsn_dcreated','DESC');
 		$this->db->join('hr_ptn','hr_ptn.ptn_id = hr_kpsn.kpsn_ptn');
         $this->db->join('hr_lynn','hr_lynn.lynn_id = hr_kpsn.kpsn_lynn');
         $this->db->join('hr_jwb','hr_jwb.jwb_id = hr_kpsn.kpsn_jwb');
