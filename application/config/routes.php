@@ -138,6 +138,7 @@ $route['api/jawaban'] = 'APIController/apiJawaban';
 $route['api/instansi'] = 'APIController/apiInstansi';
 $route['api/user'] = 'APIController/apiUser';
 $route['api/insert_terhubung'] = 'APIController/insertTerhubung';
+$route['api/set/android'] = 'APIController/apiSetAndroid';
 
 
 

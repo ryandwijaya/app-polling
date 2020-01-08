@@ -69,6 +69,17 @@ class APIController extends CI_Controller {
         }
         
     }
+
+    public function apiSetAndroid()
+    {
+        $data = $this->ExtModel->getGlobal('hr_set_android');
+        if ($data) {
+        echo json_encode(array('kode'=> 1,'result' => $data));    
+        }else{
+            echo json_encode(array('kode'=> 2,'pesan' => 'data tidak ditemukan'));
+        }
+        
+    }
     public function apiUser()
     {
         $data = $this->UsrModel->lihat();

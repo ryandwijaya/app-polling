@@ -191,6 +191,8 @@ class ExtModel extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+
+	
 	public function getGlobal($table){
 		$this->db->select('*');
 		$this->db->from($table);
