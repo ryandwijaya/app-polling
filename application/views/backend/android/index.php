@@ -34,11 +34,11 @@
                     <div class="row justify-content-center">
                         <div class="col-4 form-group"> 
                             <label> Gaya Tulisan </label>                           
-                                <select name="font" id="font-jam" name="andro_font">
-                                    <option value="<?= $setting[0]['andro_font'] ?>" >- Pilih Gaya Tulisan -</option>
-                                    <option>Courier New, monospace</option>
-                                    <option>Comic Sans, Comic Sans MS, cursive</option>
-                                    <option>Impact, fantasy</option>
+                                <select id="font-jam" name="font_jam">
+                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option>Courier New</option>
+                                    <option>Comic Sans</option>
+                                    <option>Impact</option>
                                     <option>Verdana</option>
                                     <option>Garamond</option>
                                     <option>Bookman</option>
@@ -50,7 +50,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" name="andro_font_color" id="color-jam" class="form-control" value="<?= $setting[0]['andro_font_color'] ?>">
+                                            <input type="text" name="color_jam" id="color-jam" class="form-control" value="#5804fb">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -80,7 +80,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-judul">Judul header aplikasi</h5>
+                            <h5 id="preview-judul"><?= $judul['isi_judul'] ?></h5>
                         </div>
                     </div>
 
@@ -88,18 +88,18 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Isi Tulisan</label>
-                                <textarea name="andro_text" id="isi-judul"  rows="2" placeholder="tulis disini" class="form-control"><?= $setting[0]['andro_text'] ?></textarea>
+                                <textarea name="isi_judul" id="isi-judul"  rows="2" placeholder="tulis disini" class="form-control"><?= $judul['isi_judul'] ?></textarea>
                             </div>
                         </div>
                     
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
-                                <select name="font" id="font-judul" name="andro_font">
-                                    <option value="<?= $setting[0]['andro_font'] ?>" >- Pilih Gaya Tulisan -</option>
-                                    <option>Courier New, monospace</option>
-                                    <option>Comic Sans, Comic Sans MS, cursive</option>
-                                    <option>Impact, fantasy</option>
+                                <select name="font_judul" id="font-judul" name="andro_font">
+                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option>Courier New</option>
+                                    <option>Comic Sans</option>
+                                    <option>Impact</option>
                                     <option>Verdana</option>
                                     <option>Garamond</option>
                                     <option>Bookman</option>
@@ -113,7 +113,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" id="color-judul" name="andro_font_color" class="form-control" value="<?= $setting[0]['andro_font_color'] ?>">
+                                            <input type="text" id="color-judul" name="color_judul" class="form-control" value="#5804fb">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -126,7 +126,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-judul" value="<?= $setting[0]['andro_font_size'] ?>" name="andro_font_size" max="999" class="form-control">
+                                <input type="number" min="1" id="size-judul"  value="12" name="size_judul" max="999" class="form-control">
                             </div>
                         </div>
 
@@ -145,7 +145,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-alamat">Alamat aplikasi</h5>
+                            <h5 id="preview-alamat"><?= $alamat['isi_alamat'] ?></h5>
                         </div>
                     </div>
 
@@ -153,18 +153,18 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Isi Tulisan</label>
-                                <textarea name="andro_text"  rows="2" placeholder="tulis disini" class="form-control"><?= $setting[0]['andro_text'] ?></textarea>
+                                <textarea name="isi_alamat"  rows="2" placeholder="tulis disini" class="form-control"><?= $alamat['isi_alamat'] ?></textarea>
                             </div>
                         </div>
                     
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
-                                <select name="font" id="font-alamat" name="andro_font">
-                                    <option value="<?= $setting[0]['andro_font'] ?>" >- Pilih Gaya Tulisan -</option>
-                                    <option>Courier New, monospace</option>
-                                    <option>Comic Sans, Comic Sans MS, cursive</option>
-                                    <option>Impact, fantasy</option>
+                                <select name="font_alamat" id="font-alamat" name="andro_font">
+                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option>Courier New</option>
+                                    <option>Comic Sans</option>
+                                    <option>Impact</option>
                                     <option>Verdana</option>
                                     <option>Garamond</option>
                                     <option>Bookman</option>
@@ -178,7 +178,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" id="color-alamat" name="andro_font_color" class="form-control" value="<?= $setting[0]['andro_font_color'] ?>">
+                                            <input type="text" id="color-alamat" name="color_alamat" class="form-control" value="#5804fb">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -191,7 +191,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-alamat" value="<?= $setting[0]['andro_font_size'] ?>" name="andro_font_size" max="999" class="form-control">
+                                <input type="number" min="1" id="size-alamat" value="12" name="size_alamat" max="999" class="form-control">
                             </div>
                         </div>
 
@@ -211,7 +211,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-ptn">Bagaimana pendapat anda ?</h5>
+                            <h5 id="preview-ptn"><?= $ptn['isi_ptn'] ?></h5>
                         </div>
                     </div>
 
@@ -219,18 +219,18 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Isi Tulisan</label>
-                                <textarea name="andro_text"  rows="2" placeholder="tulis disini" class="form-control"><?= $setting[0]['andro_text'] ?></textarea>
+                                <textarea name="isi_ptn"  rows="2" placeholder="tulis disini" class="form-control"><?= $ptn['isi_ptn'] ?></textarea>
                             </div>
                         </div>
                     
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
-                                <select name="font" id="font-ptn" name="andro_font">
-                                    <option value="<?= $setting[0]['andro_font'] ?>" >- Pilih Gaya Tulisan -</option>
-                                    <option>Courier New, monospace</option>
-                                    <option>Comic Sans, Comic Sans MS, cursive</option>
-                                    <option>Impact, fantasy</option>
+                                <select name="font-ptn" id="font-ptn" name="andro_font">
+                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option>Courier New</option>
+                                    <option>Comic Sans</option>
+                                    <option>Impact</option>
                                     <option>Verdana</option>
                                     <option>Garamond</option>
                                     <option>Bookman</option>
@@ -244,7 +244,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" id="color-ptn" name="andro_font_color" class="form-control" value="<?= $setting[0]['andro_font_color'] ?>">
+                                            <input type="text" id="color-ptn" name="color-ptn" class="form-control" value="#5804fb">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -257,7 +257,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-ptn" value="<?= $setting[0]['andro_font_size'] ?>" name="andro_font_size" max="999" class="form-control">
+                                <input type="number" min="1" id="size-ptn" value="12" name="size_ptn" max="999" class="form-control">
                             </div>
                         </div>
 
@@ -278,7 +278,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-text">Selamat Datang di Aplikasi IKM</h5>
+                            <h5 id="preview-text"><?= $text['isi_text'] ?></h5>
                         </div>
                     </div>
 
@@ -286,18 +286,18 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Isi Tulisan</label>
-                                <textarea name="andro_text"  rows="2" placeholder="tulis disini" class="form-control"><?= $setting[0]['andro_text'] ?></textarea>
+                                <textarea name="isi_text"  rows="2" placeholder="tulis disini" class="form-control"><?= $text['isi_text'] ?></textarea>
                             </div>
                         </div>
                     
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
-                                <select name="font" id="font-text" name="andro_font">
-                                    <option value="<?= $setting[0]['andro_font'] ?>" >- Pilih Gaya Tulisan -</option>
-                                    <option>Courier New, monospace</option>
-                                    <option>Comic Sans, Comic Sans MS, cursive</option>
-                                    <option>Impact, fantasy</option>
+                                <select name="font_text" id="font-text" name="andro_font">
+                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option>Courier New</option>
+                                    <option>Comic Sans</option>
+                                    <option>Impact</option>
                                     <option>Verdana</option>
                                     <option>Garamond</option>
                                     <option>Bookman</option>
@@ -311,7 +311,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" name="andro_font_color" id="color-text" class="form-control" value="<?= $setting[0]['andro_font_color'] ?>">
+                                            <input type="text" name="color_text" id="color-text" class="form-control" value="#5804fb">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -324,7 +324,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-text" value="<?= $setting[0]['andro_font_size'] ?>" name="andro_font_size" max="999" class="form-control">
+                                <input type="number" min="1" id="size-text" value="12" name="size_text" max="999" class="form-control">
                             </div>
                         </div>
 
