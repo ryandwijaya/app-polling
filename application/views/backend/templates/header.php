@@ -195,7 +195,7 @@
 								<a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
 							</li>
 							<li>
-								<a href="#"> Android (Cooming Soon)</a>
+								<a href="<?= base_url() ?>set/android"> Android (Cooming Soon)</a>
 							</li>
 						</ul>
 					</li>
