@@ -51,7 +51,7 @@
 				<a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
 					data-target="#navbar-collapse" aria-expanded="false"></a>
 				<a href="#" onClick="return false;" class="bars"></a>
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="<?= base_url() ?>beranda">
 					<img src="<?= base_url() ?>assets/images/candidate.png" width="25" height="25" alt="" />
 					<span class="logo-name">App-Polling </span>
 				</a>
@@ -195,7 +195,7 @@
 								<a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
 							</li>
 							<li>
-								<a href="<?= base_url() ?>set/android"> Android (Cooming Soon)</a>
+								<a href="<?= base_url() ?>set/android"> Android</a>
 							</li>
 						</ul>
 					</li>

@@ -124,10 +124,8 @@ class SettingController extends CI_Controller {
             // var_dump($data_simpan);exit();
             $simpan = $this->ExtModel->update('andro_id',1,'hr_set_android',$data_simpan);
             if ($simpan >0) {
-                $this->session->set_flashdata('alert', 'success_post');
                 redirect('set/android');
             }else{
-                $this->session->set_flashdata('alert', 'fail_post');
                 redirect('set/android');
             }
         }else{

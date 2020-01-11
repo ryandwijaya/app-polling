@@ -7,7 +7,7 @@
 <script src="<?= base_url() ?>/assets/js/highchart/accessibility.js"></script>
 <div class="row">
 	<div class="col-md-8">
-		<h4>Laporan hari ini : <?= date_indo(date('Y-m-d')) ?></h4>
+		<h4>Tanggal hari ini : <?= date_indo(date('Y-m-d')) ?></h4>
 	</div>
 
 </div>

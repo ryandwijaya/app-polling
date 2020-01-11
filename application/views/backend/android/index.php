@@ -80,7 +80,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-judul"><?= $judul['isi_judul'] ?></h5>
+                            <h5 id="preview-judul" style="font-family: <?= $judul['font_judul'] ?>;"><?= $judul['isi_judul'] ?></h5>
                         </div>
                     </div>
 
@@ -145,7 +145,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-alamat"><?= $alamat['isi_alamat'] ?></h5>
+                            <h5 id="preview-alamat" style="font-family: <?= $alamat['font_alamat'] ?>;"><?= $alamat['isi_alamat'] ?></h5>
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
                                 <select name="font_alamat" id="font-alamat" name="andro_font">
-                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option value='<?= $alamat['font_alamat'] ?>' disabled selected>- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -211,7 +211,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-ptn"><?= $ptn['isi_ptn'] ?></h5>
+                            <h5 id="preview-ptn" style="font-family: <?= $ptn['font_ptn'] ?>;"><?= $ptn['isi_ptn'] ?></h5>
                         </div>
                     </div>
 
@@ -227,7 +227,7 @@
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
                                 <select name="font-ptn" id="font-ptn" name="andro_font">
-                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option value='<?= $ptn['font_ptn'] ?>' disabled selected>- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -278,7 +278,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h5 id="preview-text"><?= $text['isi_text'] ?></h5>
+                            <h5 id="preview-text"  style="font-family: <?= $text['font_text'] ?>;"><?= $text['isi_text'] ?></h5>
                         </div>
                     </div>
 
@@ -294,7 +294,7 @@
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
                                 <select name="font_text" id="font-text" name="andro_font">
-                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option value='<?= $text['font_text'] ?>' disabled selected>- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
