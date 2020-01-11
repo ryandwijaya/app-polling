@@ -81,7 +81,8 @@ class SettingController extends CI_Controller {
             
             $jam = [
                 'font_jam' => $this->input->post('font_jam'), 
-                'color_jam' => $this->input->post('color_jam') 
+                'color_jam' => $this->input->post('color_jam'), 
+                'size_jam' => $this->input->post('size_jam') 
             ];
 
             $judul = [
@@ -109,6 +110,7 @@ class SettingController extends CI_Controller {
                 'font_text' => $this->input->post('font_text'), 
                 'color_text' => $this->input->post('color_text'), 
                 'size_text' => $this->input->post('size_text'), 
+                'status_text' => $this->input->post('status'), 
             ];
 
             // var_dump($text);exit();

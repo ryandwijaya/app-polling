@@ -32,6 +32,12 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <label>Preview</label>
+                            <h4 class="mt-3" id="preview-jam"><?= date("h:i:s") ?></h4>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
                         <div class="col-4 form-group"> 
                             <label> Gaya Tulisan </label>                           
                                 <select id="font-jam" name="font_jam">
@@ -45,7 +51,7 @@
                                     <option>Candara</option>
                                 </select>
                         </div>
-                        <div class="col-4">
+                        <div class="col-5">
                             <div class="form-group">
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
@@ -58,9 +64,11 @@
                                     </div>
                             </div>
                         </div>
-                        <div class="col-2">
-                            <label>Preview</label>
-                            <h4 class="mt-3" id="preview-jam"><?= date("h:i:s") ?></h4>
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label>Size</label>
+                                <input type="number" min="1" id="size-jam"  value="12" name="size_jam" max="999" class="form-control">
+                            </div>
                         </div>
                     </div>
                     
@@ -269,8 +277,19 @@
                     <!-- PENGATURAN PERTANYAAN BAWAH -->
 
                     <div class="row justify-content-center mt-5">
-                        <div class="col-md-10">
-                            <h5>Pengaturan Text Berjalan</h5>
+                        <div class="col-md-10 form-group">
+                            <h5>Pengaturan Text Berjalan 
+
+                                  
+                                        <label class="ml-5">
+                                            <input class="with-gap" name="status" type="radio" checked value='on'>
+                                            <span>On</span>
+                                        </label>
+                                        <label>
+                                            <input class="with-gap" name="status" type="radio"  value='off'>
+                                            <span>Off</span>
+                                        </label>
+                            </h5>
                         <hr>
                         </div>
                     </div>

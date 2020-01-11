@@ -8,6 +8,11 @@ $("#color-jam").change(function () {
 	$('#preview-jam').css("color", colorTulisan);
 });
 
+$("#size-jam").change(function () {
+	var sizeTulisan = $(this).val();
+	$('#preview-jam').css("font-size", sizeTulisan+'pt');
+});
+
 
 //judul
 $("#font-judul").change(function () {
