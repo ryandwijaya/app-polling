@@ -81,7 +81,7 @@ class APIController extends CI_Controller {
             'text' => json_decode($data[0]['andro_text'])
         ];
         if ($data) {
-        echo json_encode(array('kode'=> 1,'result' => $data_api));    
+        echo json_encode(array('kode'=> 1,'setting' => $data_api));    
         }else{
             echo json_encode(array('kode'=> 2,'pesan' => 'data tidak ditemukan'));
         }
