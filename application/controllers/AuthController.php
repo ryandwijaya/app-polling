@@ -70,7 +70,11 @@
 
 
 			}else{
-				$this->load->view('auth/new',$data);
+				if (!$this->session->userdata('sess_hr_id')) {
+					$this->load->view('auth/new',$data);
+				}else{
+					redirect(base_url('beranda'));
+				}
 			}
 		}
         
