@@ -73,15 +73,15 @@ class APIController extends CI_Controller {
     public function apiSetAndroid()
     {
         $data = $this->ExtModel->getGlobal('hr_set_android');
-        $data_api = [
-            'jam' => json_decode($data[0]['andro_jam']),
-            'ptn' => json_decode($data[0]['andro_ptn']),
-            'judul' => json_decode($data[0]['andro_judul']),
-            'alamat' => json_decode($data[0]['andro_alamat']),
-            'text' => json_decode($data[0]['andro_text'])
-        ];
+        // $data_api = [
+        //     'jam' => json_decode($data[0]['andro_jam']),
+        //     'ptn' => json_decode($data[0]['andro_ptn']),
+        //     'judul' => json_decode($data[0]['andro_judul']),
+        //     'alamat' => json_decode($data[0]['andro_alamat']),
+        //     'text' => json_decode($data[0]['andro_text'])
+        // ];
         if ($data) {
-        echo json_encode(array('kode'=> 1,'setting' => $data_api));    
+        echo json_encode(array('kode'=> 1,'setting' => $data));    
         }else{
             echo json_encode(array('kode'=> 2,'pesan' => 'data tidak ditemukan'));
         }
