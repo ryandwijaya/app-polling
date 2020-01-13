@@ -86,27 +86,27 @@ class SettingController extends CI_Controller {
             ];
 
             $judul = [
-                'isi_judul' => $this->input->post('isi_judul'), 
+                'isi_judul' => str_replace(array(':', ','), '', $this->input->post('isi_judul')), 
                 'font_judul' => $this->input->post('font_judul'), 
                 'color_judul' => $this->input->post('color_judul'), 
                 'size_judul' => $this->input->post('size_judul'), 
             ];
 
             $ptn = [
-                'isi_ptn' => $this->input->post('isi_ptn'), 
+                'isi_ptn' => str_replace(array(':', ','), '', $this->input->post('isi_ptn')), 
                 'font_ptn' => $this->input->post('font_ptn'), 
                 'color_ptn' => $this->input->post('color_ptn'), 
                 'size_ptn' => $this->input->post('size_ptn'), 
             ];
             $alamat = [
-                'isi_alamat' => $this->input->post('isi_alamat'), 
+                'isi_alamat' => str_replace(array(':', ','), '', $this->input->post('isi_alamat')), 
                 'font_alamat' => $this->input->post('font_alamat'), 
                 'color_alamat' => $this->input->post('color_alamat'), 
                 'size_alamat' => $this->input->post('size_alamat'), 
             ];
 
             $text = [
-                'isi_text' => $this->input->post('isi_text'), 
+                'isi_text' => str_replace(array(':', ','), '', $this->input->post('isi_text')), 
                 'font_text' => $this->input->post('font_text'), 
                 'color_text' => $this->input->post('color_text'), 
                 'size_text' => $this->input->post('size_text'), 
@@ -135,6 +135,7 @@ class SettingController extends CI_Controller {
         $data['title'] = 'Setting Android';
         $setting = $this->ExtModel->getGlobal('hr_set_android');
 
+        $data['jam'] = json_decode($setting[0]['andro_jam'], true);
         $data['ptn'] = json_decode($setting[0]['andro_ptn'], true);
         $data['judul'] = json_decode($setting[0]['andro_judul'], true);
         $data['alamat'] = json_decode($setting[0]['andro_alamat'], true);

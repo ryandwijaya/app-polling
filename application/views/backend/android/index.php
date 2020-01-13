@@ -34,14 +34,14 @@
                     <div class="row justify-content-center">
                         <div class="col-md-10">
                             <label>Preview</label>
-                            <h4 class="mt-3" id="preview-jam"><?= date("h:i:s") ?></h4>
+                            <h4 class="mt-3" id="preview-jam" style="font-family:<?= $jam['font_jam'] ?>;color:<?= $jam['color_jam'] ?>; "><?= date("h:i:s") ?></h4>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-4 form-group"> 
                             <label> Gaya Tulisan </label>                           
                                 <select id="font-jam" name="font_jam">
-                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option value="<?= $jam['font_jam'] ?>">- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -56,7 +56,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" name="color_jam" id="color-jam" class="form-control" value="#5804fb">
+                                            <input type="text" name="color_jam" id="color-jam" class="form-control" value="<?= $jam['color_jam'] ?>">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -67,7 +67,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-jam"  value="12" name="size_jam" max="999" class="form-control">
+                                <input type="number" min="1" id="size-jam"  value="<?= $jam['size_jam'] ?>" name="size_jam" max="999" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
                                 <select name="font_judul" id="font-judul" name="andro_font">
-                                    <option disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option  value="<?= $judul['font_judul'] ?>">- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -121,7 +121,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" id="color-judul" name="color_judul" class="form-control" value="#5804fb">
+                                            <input type="text" id="color-judul" name="color_judul" class="form-control" value="<?= $judul['color_judul'] ?>">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -134,7 +134,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-judul"  value="12" name="size_judul" max="999" class="form-control">
+                                <input type="number" min="1" id="size-judul"  value="<?= $judul['size_judul'] ?>" name="size_judul" max="999" class="form-control">
                             </div>
                         </div>
 
@@ -169,7 +169,7 @@
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
                                 <select name="font_alamat" id="font-alamat" name="andro_font">
-                                    <option value='<?= $alamat['font_alamat'] ?>' disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option value='<?= $alamat['font_alamat'] ?>'>- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -186,7 +186,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" id="color-alamat" name="color_alamat" class="form-control" value="#5804fb">
+                                            <input type="text" id="color-alamat" name="color_alamat" class="form-control" value="<?= $alamat['color_alamat'] ?>">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -199,7 +199,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-alamat" value="12" name="size_alamat" max="999" class="form-control">
+                                <input type="number" min="1" id="size-alamat" value="<?= $alamat['size_alamat'] ?>" name="size_alamat" max="999" class="form-control">
                             </div>
                         </div>
 
@@ -234,8 +234,8 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
-                                <select name="font-ptn" id="font-ptn" name="andro_font">
-                                    <option value='<?= $ptn['font_ptn'] ?>' disabled selected>- Pilih Gaya Tulisan -</option>
+                                <select name="font_ptn" id="font-ptn" name="andro_font">
+                                    <option value='<?= $ptn['font_ptn'] ?>'>- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -252,7 +252,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" id="color-ptn" name="color-ptn" class="form-control" value="#5804fb">
+                                            <input type="text" id="color-ptn" name="color_ptn" class="form-control" value="<?= $ptn['color_ptn'] ?>;">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -265,7 +265,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-ptn" value="12" name="size_ptn" max="999" class="form-control">
+                                <input type="number" min="1" id="size-ptn" value="<?= $ptn['size_ptn'] ?>" name="size_ptn" max="999" class="form-control">
                             </div>
                         </div>
 
@@ -313,7 +313,7 @@
                             <div class="form-group">
                                 <label >Gaya Tulisan</label>
                                 <select name="font_text" id="font-text" name="andro_font">
-                                    <option value='<?= $text['font_text'] ?>' disabled selected>- Pilih Gaya Tulisan -</option>
+                                    <option value='<?= $text['font_text'] ?>'>- Pilih Gaya Tulisan -</option>
                                     <option>Courier New</option>
                                     <option>Comic Sans</option>
                                     <option>Impact</option>
@@ -330,7 +330,7 @@
                                 <label> Warna Tulisan </label>
                                     <div class="input-group colorpicker">
                                         <div class="form-line">
-                                            <input type="text" name="color_text" id="color-text" class="form-control" value="#5804fb">
+                                            <input type="text" name="color_text" id="color-text" class="form-control" value="<?= $text['color_text'] ?>">
                                         </div>
                                         <span class="input-group-addon">
                                             <i></i>
@@ -343,7 +343,7 @@
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Size</label>
-                                <input type="number" min="1" id="size-text" value="12" name="size_text" max="999" class="form-control">
+                                <input type="number" min="1" id="size-text" value="<?= $text['size_text'] ?>" name="size_text" max="999" class="form-control">
                             </div>
                         </div>
 
