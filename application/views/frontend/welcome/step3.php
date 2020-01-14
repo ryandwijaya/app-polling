@@ -1,3 +1,11 @@
+<!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.css">
+  <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/demo.css"> -->
+
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=<?= time()?>"></script>
+  <script src="<?= base_url() ?>assets/virtual-keyboard/demo.js"></script>
+
 <div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
@@ -22,7 +30,7 @@
                     <h4>Nomor Responden</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="number" class="form-control" name="no_responden" autocomplete="off">
+                    <input type="number" class="form-control example-1" name="no_responden" autocomplete="off">
                 </div>
             </div>
             <div class="row">
@@ -35,7 +43,7 @@
                     <h4>Nama</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="form-control" name="nama"  required autocomplete="off">
+                    <input type="text" class="form-control example-2" name="nama"  required autocomplete="off">
                 </div>
             </div>
             <div class="row">
@@ -43,7 +51,7 @@
                     <h4>Umur</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="number" min="1" max="99" class="form-control" name="umur" required  autocomplete="off">
+                    <input type="text" class="form-control example-3" name="umur" required  autocomplete="off">
                 </div>
                 <div class="col-md-2 pt-4">
                     <h4>Tahun</h4>

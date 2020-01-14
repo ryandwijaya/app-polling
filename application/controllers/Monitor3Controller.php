@@ -88,6 +88,7 @@ class Monitor3Controller extends CI_Controller {
     		    'responden_pendidikan' => $pendidikan, 
     		    'responden_pekerjaan' => $pekerjaan
     		];
+            // var_dump($responden);exit();
 
     		$simpan = $this->ExtModel->insert('hr_responden',$responden);
     		if ($simpan > 0){
@@ -110,7 +111,7 @@ class Monitor3Controller extends CI_Controller {
             $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
         	$this->load->view('frontend/templates/header',$data);
         	$this->load->view('frontend/monitor3/step1',$data);
-        	$this->load->view('frontend/templates/footer',$data);
+        	// $this->load->view('frontend/templates/footer',$data);
     	}
 	}
 

@@ -12,6 +12,11 @@
 
 </div>
 <hr>
+<div class="row">
+	<div class="col-md-12 text-center mb-5">
+		<h4>Persentase Kepuasan Sepanjang Masa</h4>
+	</div>
+</div>
 <div class="row state-overview">
 	<!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div width="100%" class="info-box5 animate-bar bg-b-purple">
