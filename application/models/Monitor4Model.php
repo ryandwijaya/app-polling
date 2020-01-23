@@ -16,6 +16,14 @@ class Monitor4Model extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+	public function getJmlResponden($tgl){
+		$this->db->distinct();
+		$this->db->select('kpsn4_responden');
+		$this->db->from('hr_kpsn4');
+		$this->db->where('date(kpsn4_dcreated)',$tgl);
+		$query = $this->db->get();
+		return $query->result_array();
+	}
 
 	public function getIdPtn($ptn){
 		$this->db->select('*');

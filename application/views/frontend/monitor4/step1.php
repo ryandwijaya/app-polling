@@ -2,7 +2,7 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.css">
   <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/demo.css"> -->
 
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="<?= base_url() ?>assets/js/jquery-1.11.0.min.js"></script>
   <script src="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=<?= time()?>"></script>
   <script src="<?= base_url() ?>assets/virtual-keyboard/demo.js"></script>
 
@@ -22,7 +22,7 @@
     <hr>
     
 
-    <form action="<?= base_url() ?>mntr4/step1" method="POST">
+    <form action="<?= base_url() ?>mntr4/step1" name='myForm' method="POST">
     
     <div class="row mt-3">
         <div class="col-md-12">
@@ -31,7 +31,7 @@
                     <h4>Nomor Responden</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="number" class="form-control example-1" name="no_responden" autocomplete="off">
+                    <input type="text" class="form-control example-1 nomor" onKeyUp="numericOnly(this)"  name="no_responden" autocomplete="off">
                 </div>
             </div>
             <div class="row">
@@ -52,7 +52,7 @@
                     <h4>Umur</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="form-control example-3" name="umur" required  autocomplete="off">
+                    <input type="text" class="form-control example-3" id="umur" name="umur" onKeyUp="numericOnly(this)" required  autocomplete="off">
                 </div>
                 <div class="col-md-2 pt-4">
                     <h4>Tahun</h4>
@@ -115,3 +115,27 @@
     </div>
     </form>
 </div>
+
+<script>
+    
+    // $('#umur').change(function() {
+    //     var isi = $(this).val;
+    //     if ($.isNumeric(isi) ) {
+    //         alert('ini adalah nomor');
+    //         return false;
+    //     }
+    // });
+
+    $("#umum").change(function() {
+        numericOnly($(this));
+    });
+
+    function numericOnly(e)
+    {
+        var val = e.value.replace(/[^\d]/g, "");
+        if(val != e.value){
+            e.value = val;
+        }
+    }
+
+</script>

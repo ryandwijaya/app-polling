@@ -1,10 +1,10 @@
 <!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.css">
+<!--  <link rel="stylesheet" type="text/css" href="--><?//= base_url() ?><!--assets/virtual-keyboard/jquery.ml-keyboard.css">-->
   <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/demo.css"> -->
 
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=<?= time()?>"></script>
-  <script src="<?= base_url() ?>assets/virtual-keyboard/demo.js"></script>
+<!--  <script src="--><?//= base_url() ?><!--assets/js/jquery-1.11.0.min.js"></script>-->
+<!--  <script src="--><?//= base_url() ?><!--assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=--><?//= time()?><!--"></script>-->
+<!--  <script src="--><?//= base_url() ?><!--assets/virtual-keyboard/demo.js"></script>-->
 
 <div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">

@@ -6,10 +6,10 @@ class APIController extends CI_Controller {
     {
         parent::__construct();
         $model = ['ExtModel','LynModel','PtnModel','SettingModel','JwbModel','UsrModel'];
-        $this->load->model($model);
+        $this->load->model($model);  //load model yang dibutuh kan
     }
 
-    public function apiLayanan()
+    public function apiLayanan() //menyediakan data layanan aplikasi app-polling
     {
         $data = $this->LynModel->lihat();
         if ($data) {
@@ -19,7 +19,7 @@ class APIController extends CI_Controller {
         }
         
     }
-    public function apiPertanyaan()
+    public function apiPertanyaan() // menyediakan data pertanyaan aplkasi app-polling
     {
         $data = $this->PtnModel->lihat();
         if ($data) {
@@ -29,7 +29,7 @@ class APIController extends CI_Controller {
         }
         
     }
-    public function apiKpsn()
+    public function apiKpsn() // menyediakan data votes atau jumpah polling aplikasi app-polling
     {
         $data = $this->ExtModel->getKpsn();
         if ($data) {
@@ -39,7 +39,7 @@ class APIController extends CI_Controller {
         }
         
     }
-    public function apiResponden()
+    public function apiResponden() //menyediakan data responden aplikasi app-polling
     {
         $data = $this->ExtModel->getResponden();
         if ($data) {
@@ -70,7 +70,7 @@ class APIController extends CI_Controller {
         
     }
 
-    public function apiSetAndroid()
+    public function apiSetAndroid() // menyediakan data pengaturan android
     {
         $data = $this->ExtModel->getGlobal('hr_set_android');
         // $data_api = [
@@ -87,7 +87,7 @@ class APIController extends CI_Controller {
         }
         
     }
-    public function apiUser()
+    public function apiUser() //menyediakan data user app-polling
     {
         $data = $this->UsrModel->lihat();
         if ($data) {
@@ -97,7 +97,7 @@ class APIController extends CI_Controller {
         }
         
     }
-    public function insertTerhubung()
+    public function insertTerhubung() // memasukkan data dari android ke app-polling
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             

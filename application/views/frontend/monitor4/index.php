@@ -11,7 +11,6 @@
         </div>
     </div>
     <hr>
-    <input type="text" id="AA">
     <?php 
         foreach ($ptn as $i => $var) { ?>
             
@@ -36,13 +35,16 @@
         >
 
             <div class="col-md-12 justify-content-md-center text-center">
-    
+				<div class="row justify-content-md-center">
                 <?php 
                 $get_jwb = $this->Monitor4Model->getJwb($var['ptn4_id']);
                  ?>            
                 <?php foreach ($get_jwb as $value): ?>
-                <button class="btn btn-success btn-lg lanjut" id="<?= $var['ptn4_id'] ?>" value="<?= $value['jwb4_option'] ?>" style="width: auto;height: auto;margin: 10px;"><h5><?= $value['jwb4_option'] ?>. <?= $value['jwb4_ket'] ?></h5></button> 
+                <button class="btn btn-success btn-lg lanjut col-md-4" id="<?= $var['ptn4_id'] ?>" value="<?= $value['jwb4_option'] ?>" style="width: auto;height: auto;margin: 10px;"><h5><?= $value['jwb4_option'] ?>. <?= $value['jwb4_ket'] ?></h5></button>
                 <?php endforeach ?>
+
+
+				</div>
 
                 
 

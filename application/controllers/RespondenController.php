@@ -32,10 +32,8 @@ class RespondenController extends CI_Controller {
 	        $this->load->view('backend/templates/header',$data);
 			$this->load->view('backend/responden/index',$data);
 			$this->load->view('backend/templates/footer',$data);
-	
 			
 		}else{
-
 			$tgl_start = date('Y-m-d');
 			$versi = $this->session->userdata('sess_hr_versi');
 			$lyn = $this->session->userdata('sess_hr_lyn');

@@ -1,3 +1,8 @@
+<style>
+	.lanjut{
+		transform: skew(20deg);
+	}
+</style>
 <div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
@@ -11,7 +16,7 @@
         </div>
     </div>
     <hr>
-    <input type="text" id="AA">
+
     <?php 
         for ($i = 0; $i < count($ptn) ; $i++) { ?>
             
@@ -36,13 +41,13 @@
         >
 
             <div class="col-md-12 justify-content-md-center text-center">
-    
-                            
-                <button class="btn btn-success btn-lg lanjut" value="A"  style="width: auto;height: auto;margin: 10px;"><h5>A. <?= $jwb[$i+1][0] ?></h5></button> 
-                <button class="btn btn-success btn-lg lanjut" value="B" style="width: auto;height: auto;margin: 10px;"><h5>B. <?= $jwb[$i+1][1] ?></h5></button> 
-                <button class="btn btn-success btn-lg lanjut" value="C" style="width: auto;height: auto;margin: 10px;"><h5>C. <?= $jwb[$i+1][2] ?></h5></button> 
-                <button class="btn btn-success btn-lg lanjut" value="D" style="width: auto;height: auto;margin: 10px;"><h5>D. <?= $jwb[$i+1][3] ?></h5></button> 
 
+				<div class="row justify-content-md-center">
+                <button class="btn btn-success btn-lg lanjut col-md-4" value="A"  style="width: auto;height: auto;margin: 10px;"><h5>A. <?= $jwb[$i+1][0] ?></h5></button>
+                <button class="btn btn-success btn-lg lanjut col-md-4" value="B" style="width: auto;height: auto;margin: 10px;"><h5>B. <?= $jwb[$i+1][1] ?></h5></button>
+                <button class="btn btn-success btn-lg lanjut col-md-4" value="C" style="width: auto;height: auto;margin: 10px;"><h5>C. <?= $jwb[$i+1][2] ?></h5></button>
+                <button class="btn btn-success btn-lg lanjut col-md-4" value="D" style="width: auto;height: auto;margin: 10px;"><h5>D. <?= $jwb[$i+1][3] ?></h5></button>
+				</div>
                 
 
             </div>

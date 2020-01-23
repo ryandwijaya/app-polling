@@ -21,6 +21,12 @@
 <script src="<?= base_url() ?>assets/js/sweetalert2.js"></script>
 <script src="<?= base_url() ?>assets/js/app-polling/android.js"></script>
 
+<!--<script>-->
+<!--	function fullScreen(theURL) {-->
+<!--		window.open(theURL, '', 'fullscreen=yes, scrollbars=auto');-->
+<!--	}-->
+<!--</script>-->
+
 <?php if ($this->session->flashdata('alert') == 'success_post') { ?>
 <style>
 	.swal2-select,

@@ -24,10 +24,12 @@ class LynController extends CI_Controller {
 		$this->load->view('backend/lynn/index',$data);
 		$this->load->view('backend/templates/footer',$data);
 	}
+
 	public function ajaxGetOne($id){
 		$data = $this->LynModel->lihat_satu($id);
 		echo json_encode($data);
 	}
+	
 	public function tambah(){
     	if (isset($_POST['simpan'])){
 			$lyn = $this->input->post('lyn');

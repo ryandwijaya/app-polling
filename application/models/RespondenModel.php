@@ -9,7 +9,7 @@ class RespondenModel extends CI_Model {
 		$this->load->database();
 	}
 
-	public function lihatByDate($start,$end,$lynn,$versi){
+	public function lihatByDate($start,$end,$lynn,$versi){ //mengambil data responden berdasarkan tanggal
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
 		$this->db->order_by('kpsn_dcreated','DESC');
@@ -25,7 +25,7 @@ class RespondenModel extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
 	}
-	public function getRespondenByData($nama,$umur,$jk,$pnd){
+	public function getRespondenByData($nama,$umur,$jk,$pnd){ //mengambil data responden berdasarkan data yang diinputkan
 		$this->db->select('*');
 		$this->db->from('hr_responden');
 		$this->db->where('responden_nama',$nama);

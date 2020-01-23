@@ -207,7 +207,7 @@
 						</a>
 						<ul class="ml-menu">
 							<li>
-								<a href="<?= base_url() ?>monitor" target="_blank"> Monitor 1</a>
+								<a href="<?= base_url() ?>monitor"  target="_blank"> Monitor 1</a>
 							</li>
 							<li>
 								<a href="<?= base_url() ?>step-1" target="_blank"> Monitor 2</a>

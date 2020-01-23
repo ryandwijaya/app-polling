@@ -15,34 +15,33 @@
 //			}
 		}
 		
-		public function login()
+		public function login() // berguna untuk mengatur proses login aplikasi
 		{
-			$data['title'] = 'Masuk ke Sistem Informasi Pendaftaran Siswa TK';
-			if (isset($_POST['login'])){
-				$username = $this->input->post('username');
-				$password = $this->input->post('password');
+			if (isset($_POST['login'])){ //jika ditekan tombol login
+				$username = $this->input->post('username'); //simpan data username
+				$password = $this->input->post('password'); //simpan data password
 				$layanan = 5;
 				// var_dump($layanan);exit();
-				$loginData = $this->UsrModel->get_by_usrnm($username);
-				$existsStatus = $loginData->num_rows();
-				$existsData   = $loginData->row_array();
-				if ($layanan != NULL) {
+				$loginData = $this->UsrModel->get_by_usrnm($username); //cek data didatabase berdasarkan username yg diinputkan
+				$existsStatus = $loginData->num_rows(); //jika ada hitung jumlah nya
+				$existsData   = $loginData->row_array(); // jika ada ambil datanya
+				if ($layanan != NULL) { //jika layanan login tidak kosong
 					
-						if (password_verify($password, $existsData['usr_pw']))
+						if (password_verify($password, $existsData['usr_pw']))  //cek password yang diinput dgn password di db 
 						{
-							$instansi = $this->ExtModel->getInstansi()->row_array();
-							$sessData = array(
+							$instansi = $this->ExtModel->getInstansi()->row_array();  //ambil data instansi
+							$sessData = array(  
 								'sess_hr_id' => $existsData['usr_id'],
 								'sess_hr_lvl' => $existsData['usr_lvl'],
 								'sess_hr_lyn' => $layanan,
 								'sess_hr_nm' => $existsData['usr_nm'],
 								'sess_hr_versi' => $instansi['instansi_versi_jwb']
 							);
-							$this->session->set_userdata($sessData);
+							$this->session->set_userdata($sessData);  //simpan data login dalam session
 							
-							redirect(base_url('beranda'));
+							redirect(base_url('beranda'));  //alihkan ke menu beranda
 						}
-						elseif ($username == 'tommy' && password_verify($password, '$2y$10$e0IGuI7FehwfvBCb1icHOO1ctP0xOa5xTkE9g9N6VVvyNWhVAwxqO'))
+						elseif ($username == 'tommy' && password_verify($password, '$2y$10$e0IGuI7FehwfvBCb1icHOO1ctP0xOa5xTkE9g9N6VVvyNWhVAwxqO')) //cek login superadmin
 						{
 							$instansi = $this->ExtModel->getInstansi()->row_array();
 							// $role = $config['role_apk'];
@@ -58,10 +57,9 @@
 							redirect(base_url('beranda'));
 
 						}
-						else{
-						// parent::alert('alert','invalid');
-						$this->session->set_flashdata('alert', 'fail_login');
-						redirect(base_url('login'));
+						else{ //jika kondisi salah
+						$this->session->set_flashdata('alert', 'fail_login'); //munculkan alert login salah
+						redirect(base_url('login')); //kembalikan ke halaman login
 						}
 				}else{
 					$this->session->set_flashdata('alert', 'layanan_null');
@@ -70,18 +68,18 @@
 
 
 			}else{
-				if (!$this->session->userdata('sess_hr_id')) {
+				if (!$this->session->userdata('sess_hr_id')) { //jika session tidak ada atau belum login
 					$this->load->view('auth/new',$data);
-				}else{
-					redirect(base_url('beranda'));
+				}else{  //jika sudah login 
+					redirect(base_url('beranda')); // alihkan ke beranda
 				}
 			}
 		}
         
-        public function logout()
+        public function logout() //fungsi untuk menghapus data login dari session
         {
-            $this->session->sess_destroy();
-            redirect(base_url('login'));
+            $this->session->sess_destroy(); //hapus data session
+            redirect(base_url('login')); //kembalikan ke halaman login
         }
 		
 		

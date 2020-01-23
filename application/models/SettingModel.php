@@ -9,14 +9,14 @@ class SettingModel extends CI_Model {
 		$this->load->database();
 	}
 
-	public function lihat(){
+	public function lihat(){  //MENGAMBIL DATA PENGATURAN PADA MONITOR2
 		$this->db->select('*');
 		$this->db->from('hr_set_monitor2');
 		$this->db->order_by('set_dcreated','DESC');
 		return $this->db->get();
 	}
 
-	public function getByMonitor($lynn){
+	public function getByMonitor($lynn){ //MENGAMBIL DATA PENGATURAN MONITOR 2 DENGAN FILTER BY LAYANAN
 		$this->db->select('*');
 		$this->db->from('hr_set_monitor2');
 		$this->db->where('set_lyn',$lynn);
@@ -24,7 +24,7 @@ class SettingModel extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function lihat_satu($id){
+	public function lihat_satu($id){ //MENGAMBIL SATU DATA PADA PENGATURAN MONITOR 2
 		$this->db->select('*');
 		$this->db->from('hr_set_monitor2');
 		$this->db->where('set_lyn',$id);
@@ -32,7 +32,7 @@ class SettingModel extends CI_Model {
 		return $query->row_array();
 	}
 
-	public function tambah($data){
+	public function tambah($data){ 
 		$this->db->insert('hr_set_monitor2', $data);
 		return $this->db->affected_rows();
 	}

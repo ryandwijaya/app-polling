@@ -23,12 +23,10 @@
 
 </head>
 <style>
-    *{
-        padding: 0;
-        margin:0;
-    }
+
     body{
-        position: fixed;
+        overflow: hidden;
+		clear: both;
         margin:0;
         padding: 0;
         background: url('<?= base_url() ?>/assets/upload/bg/Digtive.png');
@@ -48,11 +46,7 @@
     .footer-marquee{
         background : <?= $getData['umum_bg_marquee'] ?> ; 
     }
-    @media all and (display-mode: fullscreen) {
-      body {
-        zoom:107%;
-      }
-    }
+
 
 </style>
 <body>
@@ -78,15 +72,16 @@
                 <source src="<?= base_url() ?>assets/upload/video/<?= $getData['umum_video'] ?>">
                   Your browser does not support HTML5 video.
                 </video>
-                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button  type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal">
                   Playlist
                 </button>
+<!--				<p class="btn btn-info" id="fulls" onclick="gofull()"><i class="fa fa-home"></i></p>-->
             </div>
             <div class="col-5 rounded  body-chart pt-3 pb-3">
                 <div class="row">
                     <div class="col-12">
                         <h5>Grafik Kepuasan </h5>
-                        <div id="grafik-kpsn" style="min-width: 400px; height: 350px; max-width: 600px; margin: 0 auto"></div>
+                        <div id="grafik-kpsn" style="width: 500px;height: 300px;"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -121,7 +116,7 @@
         </div>
         <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 
-        <script src="<?= base_url() ?>/assets/js/highchart/jquery-3.1.1.min.js"></script>
+<!--        <script src="--><?//= base_url() ?><!--/assets/js/highchart/jquery-3.1.1.min.js"></script>-->
         <script src="<?= base_url() ?>/assets/js/highchart/highcharts.js"></script>
         <script src="<?= base_url() ?>/assets/js/highchart/highcharts-3d.js"></script>
         <script src="<?= base_url() ?>/assets/js/highchart/exporting.js"></script>
@@ -168,11 +163,19 @@
 
         
 </body>
+<!--<script>-->
+<!--	$(document).ready(function () {-->
+<!--		$('p').click();-->
+<!--	})-->
+<!--</script>-->
 <script src="<?= base_url() ?>assets/js/app-polling/playlist-video.js"></script>
 
 <script src="<?= base_url() ?>assets/js/app-polling/jam.js"></script>
 
-<script src="<?= base_url() ?>assets/js/app-polling/fullscreen.js?v=1.0.0&&load=<?= time()?>"></script>
+<!--<script src="--><?//= base_url() ?><!--assets/js/app-polling/fullscreen.js?v=1.0.0&&load=--><?//= time()?><!--"></script>-->
+
+
+
 
 <!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->  
 <?php if ($this->session->userdata('sess_hr_versi')=='tiga'): ?>

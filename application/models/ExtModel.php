@@ -9,18 +9,18 @@ class ExtModel extends CI_Model {
 		$this->load->database();
 	}
 
-	public function getVotes(){
+	public function getVotes(){      // MENGAMBIL SEMUA JUMLAH VOTE YANG ADA 
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
 		return $this->db->get();
 	}
-	public function getVideo(){
+	public function getVideo(){    // MENGAMBIL SEMUA LIST VIDEO YANG ADA DI DATABASE
 		$this->db->select('*');
 		$this->db->from('hr_video');
 		return $this->db->get();
 	}
 
-	public function getVotesBetween($start,$end,$ptn,$versi){
+	public function getVotesBetween($start,$end,$ptn,$versi){ //MENGAMBIL JUMLAH VOTE BERDASARKAN TANGGAL MULAI-TANGGAL AKHIR 
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
 		$this->db->order_by('kpsn_dcreated','DESC');
@@ -35,7 +35,7 @@ class ExtModel extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function getSetUmum(){
+	public function getSetUmum(){  //UNTUK MENGAMBIL DATA PENGATURAN UMUM
 		$this->db->select('*');
 		$this->db->from('hr_umum');
 		return $this->db->get();
@@ -46,26 +46,26 @@ class ExtModel extends CI_Model {
 		$this->db->from('hr_pertanyaan');
 		return $this->db->get();
 	}
-	public function getPertanyaanById($id){
+	public function getPertanyaanById($id){  //MENGAMBIL DATA PERTANYAAN BY ID
 		$this->db->select('*');
 		$this->db->from('hr_ptn');
 		$this->db->where('ptn_id',$id);
 		return $this->db->get()->row_array();
 	}
 
-	public function getPertanyaanByLyn($lyn){
+	public function getPertanyaanByLyn($lyn){  //MENGAMBIL DATA PERTANYAAN BY LAYANAN
 		$this->db->select('*');
 		$this->db->from('hr_set_monitor2');
 		$this->db->where('set_lyn',$lyn);
 		return $this->db->get()->row_array();
 	}
 
-	public function getJawaban(){
+	public function getJawaban(){  //MENGAMBIL DATA JAWABAN
 		$this->db->select('*');
 		$this->db->from('hr_jwb');
 		return $this->db->get();
 	}
-	public function getJawabanByKat($kategori){
+	public function getJawabanByKat($kategori){  //MENGAMBIL DATA JAWABAN BY KATEGORI
 		$this->db->select('*');
 		$this->db->from('hr_jwb');
 		$this->db->where('jwb_kategori',$kategori);
@@ -83,13 +83,13 @@ class ExtModel extends CI_Model {
 		$this->db->from('hr_umum');
 		return $this->db->get();
 	}
-	public function edit_instansi($id,$data){
+	public function edit_instansi($id,$data){  //BERGUNA UNTUK MENGUBAH DATA INSTANSI
 		$this->db->where('instansi_id',$id);
 		$this->db->update('hr_instansi',$data);
 		return $this->db->affected_rows();
 	}
 
-	public function getVotesNow($now,$lyn,$versi){
+	public function getVotesNow($now,$lyn,$versi){  
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
         $this->db->join('hr_jwb','hr_jwb.jwb_id = hr_kpsn.kpsn_jwb');
@@ -150,7 +150,7 @@ class ExtModel extends CI_Model {
 		return $this->db->get()->result_array();
 	}
 
-	public function getVoteReport($ptn,$lyn,$tgl_start,$tgl_end,$versi){
+	public function getVoteReport($ptn,$lyn,$tgl_start,$tgl_end,$versi){ // MENGAMBIL JUMLAH VOTE DENGAN FILTER PERTANYAAN,LAYANAN,TGL-AWAL,TGL-AKHIR,DAN VERSI
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
         $this->db->join('hr_ptn','hr_ptn.ptn_id = hr_kpsn.kpsn_ptn');
@@ -177,11 +177,11 @@ class ExtModel extends CI_Model {
 		$this->db->where('date(kpsn_dcreated) <= ', $tgl_end);
 		return $this->db->get();
 	}
-	function insert($table,$data){
+	function insert($table,$data){  //FUNGSI GLOBAL UNTUK MEMASUKKAN DATA KE DATABASE
 		$this->db->insert($table, $data);
 		return $this->db->affected_rows();
     }
-    function update($key,$id,$table,$data){
+    function update($key,$id,$table,$data){ //FUNGSI GLOBAL UNTUK MENGUBAH DATA KE DATABASE
         $this->db->where($key,$id);
         return $this->db->update($table,$data);
     }
@@ -191,20 +191,18 @@ class ExtModel extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
-
-	
-	public function getGlobal($table){
+	public function getGlobal($table){ //FUNGSI GLOBAL UNTUK MENGAMBIL DATA KE DATABASE
 		$this->db->select('*');
 		$this->db->from($table);
 		return $this->db->get()->result_array();
 	}
-	public function getOneGlobal($references,$key,$table){
+	public function getOneGlobal($references,$key,$table){ //FUNGSI GLOBAL UNTUK MANGAMBIL SATU DATA KE DATABASE
 		$this->db->select('*');
 		$this->db->from($table);
 		$this->db->where($references,$key);
 		return $this->db->get()->row_array();
 	}
-	public function hapus($key,$id,$table){
+	public function hapus($key,$id,$table){ //FUNGSI GLOBAL UNTUK MENGHAPUS DATA KE DATABASE
 		$this->db->where($key, $id);
 		$this->db->delete($table);
 		return $this->db->affected_rows();

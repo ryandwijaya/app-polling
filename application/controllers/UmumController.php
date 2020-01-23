@@ -218,6 +218,7 @@ class UmumController extends CI_Controller {
                 'kpsn_jwb' => $jwb,
                 'kpsn_petugas' => $this->session->userdata('sess_hr_id')
             ];
+
             $simpan = $this->ExtModel->insert('hr_kpsn',$data1);
             // var_dump($data1);exit();
             if ($simpan > 0){
@@ -287,7 +288,6 @@ class UmumController extends CI_Controller {
             $jwb = 5;
             $lynn = $this->session->userdata('sess_hr_lyn');
             $ptn = $this->input->post('ptn');
-            
 
             $nama = $this->input->post('nama');
             $umur = $this->input->post('umur');
