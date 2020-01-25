@@ -18,6 +18,8 @@
 	<!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
 	<link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
 	<script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
+	<link rel="stylesheet" href="<?= base_url() ?>assets/css/dropify.css">
+
 
 </head>
 

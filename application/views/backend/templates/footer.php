@@ -21,6 +21,11 @@
 <script src="<?= base_url() ?>assets/js/sweetalert2.js"></script>
 <script src="<?= base_url() ?>assets/js/app-polling/android.js"></script>
 
+<script src="<?= base_url() ?>assets/js/dropify.js"></script>
+<script>
+	$('.dropify').dropify();
+</script>
+
 <!--<script>-->
 <!--	function fullScreen(theURL) {-->
 <!--		window.open(theURL, '', 'fullscreen=yes, scrollbars=auto');-->

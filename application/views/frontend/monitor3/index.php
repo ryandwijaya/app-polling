@@ -1,7 +1,14 @@
 <style>
 	.lanjut{
-		transform: skew(20deg);
+		-webkit-clip-path: polygon(92% 1%, 100% 48%, 93% 100%, 8% 100%, 0 48%, 8% 0);
+		clip-path: polygon(92% 1%, 100% 48%, 93% 100%, 8% 100%, 0 48%, 8% 0);
 	}
+	/*body{*/
+	/*	background: url('*/<?//= base_url() ?>/*/assets/upload/bg/bg-2.jpg');*/
+	/*	background-repeat: no-repeat;*/
+	/*	background-size: cover;*/
+	/*	background-position: fixed;*/
+	/*}*/
 </style>
 <div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">

@@ -13,6 +13,7 @@
     <link href="<?= base_url() ?>assets/css/app.min.css" rel="stylesheet">
     <!-- Custom Css -->
     <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet" />
     <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
     <script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>

@@ -1,11 +1,12 @@
-<div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
+<div class="container p-5 animated fadeIn mt-3" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
             <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">
         </div>
-        <div class="col-md-8 text-center pt-4">
-            <h1><?= $instansi['instansi_nama'] ?></h1>    
-        </div>
+		<div class="col-md-8 text-center pt-3">
+			<h1><?= $instansi['instansi_nama'] ?></h1>
+			<h4><?= $instansi['instansi_alamat'] ?>, <?= $instansi['instansi_telepon'] ?></h4>
+		</div>
         <div class="col-md-2 text-right">
             <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">
         </div>

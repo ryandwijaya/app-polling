@@ -296,7 +296,7 @@ class LprnController extends CI_Controller
 			->getStyle('C' . $row)->applyFromArray($styleArray);
 		$activeSheet->setCellValue('C' . 5, '' . date_indo($tgl_start) . '-' . date_indo($tgl_end))
 			->getStyle('C' . $row)->applyFromArray($styleArray);
-		$activeSheet->setCellValue('C' . 6, '' . $no)
+		$activeSheet->setCellValue('C' . 6, '' . $no-1)
 			->getStyle('C' . $row)->applyFromArray($styleArray);
 
 		$filename = 'Laporan Semua Layanan';

@@ -151,7 +151,16 @@
 										<td class="text-center"><?= $d ?></td>
 										<?php $persentase = (($b * 33.3) + ($c * 66.6) + ($d * 100)) / (100*($a+$b+$c+$d))*100; ?>
 
-										<td class="text-center"><?= round($persentase, 2) ?>%</td>
+										<td class="text-center">
+										<?php
+										if($a == 0 && $b == 0 && $c == 0 && $d == 0){ ?>
+											<span class="badge badge-warning text-light">Belum ada</span>
+										<?php
+											}else{
+										?>
+											<?= round($persentase, 2) ?>%
+										<?php } ?>
+										</td>
 
 									</tr>
 

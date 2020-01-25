@@ -12,13 +12,13 @@
 				
                 <div class="row mt-4">
                     <div class="col-md-2"></div>
-                    <div class="col-md-8 input-field">
+                    <div class="col-md-4">
                         <div class="input-field">
                         <select name="font" id="font">
                             <option value="<?= $umum[0]['umum_font'] ?>" disabled selected>- Pilih Font -</option>
-                            <option>Courier New, monospace</option>
-                            <option>Comic Sans, Comic Sans MS, cursive</option>
-                            <option>Impact, fantasy</option>
+                            <option>Courier New</option>
+                            <option>Comic Sans</option>
+                            <option>Impact</option>
                             <option>Verdana</option>
                             <option>Garamond</option>
                             <option>Bookman</option>
@@ -27,6 +27,17 @@
                         <label style="color: black;">Gaya tulisan --- Pratinjau : <span id="contoh-font" style="color: black;;margin-left: 20px;font-size: 12pt;"> Contoh Tulisan !!</span></label>
                         </div>
                     </div>
+					<div class="col-md-4">
+						<label> Warna Tulisan </label>
+						<div class="input-group colorpicker">
+							<div class="form-line">
+								<input type="text" name="font_color" class="form-control" value="<?= $umum[0]['umum_font_color'] ?>">
+							</div>
+							<span class="input-group-addon border bg-light">
+                                <i></i>
+                            </span>
+						</div>
+					</div>
                     <div class="col-md-2"></div>
                 </div>
 
@@ -135,30 +146,34 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div> -->
+				<div class="row mt-4 justify-content-center">
+					<div class="col-md-4">
+						<label>Background Belakang :</label>
+						<img src="<?= base_url() ?>assets/upload/bg/<?= $umum[0]['umum_background'] ?>" alt="">
+					</div>
+					<div class="col-md-4">
+						<label>Ganti Background ?</label>
+						<input type="file" class="dropify" name="background" data-max-file-size="2M" data-min-width="1280" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
+					</div>
+				</div>
 
                 <div class="row mt-4">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
+						<hr>
                         <div class="row">
-                            <div class="col-md-4">
-                                <video width="220" height="140" controls>
-                                  <source src="<?= base_url() ?>assets/upload/video/<?= $umum[0]['umum_video'] ?>#t=6.0" type="video/mp4">
-                                </video>
+                            <div class="col-md-5">
+								<label>Tambah Playlist ?</label><br>
+								<input type="file" class="dropify" name="video" value="<?= $umum[0]['umum_video'] ?>" data-max-file-size="50M" data-allowed-file-extensions="mp4 mkv 3gp MKV MP4 3GP">
                             </div>
-                            <div class="col-md-7 ml-3">
+                            <div class="col-md-6 ml-3">
+
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Tambah Playlist ?</label><br>
-                                        <input type="file" name="video" value="<?= $umum[0]['umum_video'] ?>" >
-                                    </div>
-                                    
-                                </div>
-                                <hr>
-                                <div class="row">
+									<label>Playlist :</label>
                                     <div class="col-md-12">
                                             <ul>
-                                        <?php foreach ($playlist as $value): ?>
-                                                <li style="font-size: 12pt;"> - <?= $value['video_judul'] ?> <a href="<?= base_url() ?>playlist/hapus/<?= $value['video_id'] ?>" class="float-right text-danger" data-toggle="tooltip" data-placement="right" title="Hapus ?" onclick="return confirm('Yakin ingin menghapus video ini?')"><i class="far fa-times-circle"></i></a></li>
+                                        <?php foreach ($playlist as $no => $value): ?>
+                                                <li style="font-size: 10pt;list-style-type: disc;"><?= str_replace('_', ' ',$value['video_judul']) ?> <a href="<?= base_url() ?>playlist/hapus/<?= $value['video_id'] ?>" class="float-right text-danger" data-toggle="tooltip" data-placement="right" title="Hapus ?" onclick="return confirm('Yakin ingin menghapus video ini?')"><i class="far fa-times-circle"></i></a></li>
                                         <?php endforeach ?>
                                             </ul>
                                     </div>
@@ -188,4 +203,3 @@
 </div>
 
 
-		

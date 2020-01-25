@@ -1,4 +1,4 @@
-<div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
+<div class="container p-5 mt-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
             <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">
