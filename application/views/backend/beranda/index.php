@@ -310,7 +310,7 @@
 			</div>
 			<div class="card-body">
 				<div class="row">
-					<?php if ($this->session->userdata(sess_hr_versi)== 'monitor3'){ ?>
+					<?php if ($this->session->userdata(sess_hr_versi)== 'monitor3' || $this->session->userdata(sess_hr_versi)== 'monitor4'){ ?>
 						<div class="col-md-12">
 							<div id="chartBar" style="width: 1000px; height: auto;"></div>
 
@@ -403,6 +403,103 @@
 						echo $array_persen[$i] . ',';
 					}
 					?>]
+			}]
+		});
+
+	</script>
+<?php endif ?>
+
+<?php if ($this->session->userdata('sess_hr_versi') == 'monitor4'): ?>
+	<?php
+		$no = 1;
+		$array_persen = array();
+		$array_pertanyaan = array();
+		foreach ($ptn as $key => $var):
+		$a = 0;$b = 0;$c = 0;$d = 0;
+	?>
+
+		<?php foreach ($kpsn as $value): ?>
+		<?php if ($value['kpsn4_ptn'] == $var['ptn4_id']):
+
+
+			if ($value['kpsn4_A'] == '1') {
+				$a += 1;
+			} elseif ($value['kpsn4_B'] == '1') {
+				$b += 1;
+			} elseif ($value['kpsn4_C'] == '1') {
+				$c += 1;
+			} elseif ($value['kpsn4_D'] == '1') {
+				$c += 1;
+			}
+			?>
+		<?php endif ?>
+		<?php endforeach ?>
+
+		<?php $persentase = (($b * 33.3) + ($c * 66.6) + ($d * 100)) / (100 * ($a + $b + $c + $d)) * 100; ?>
+
+	<?php
+	if ($key == count($ptn) - 1) {
+		$a_last = $a;
+		$b_last = $b;
+		$c_last = $c;
+		$d_last = $d;
+	}
+	array_push($array_persen, round($persentase, 2));
+	array_push($array_pertanyaan, $no);
+	$no++;
+	endforeach ?>
+
+	<script>
+		var chart = new Highcharts.Chart({
+
+			chart: {
+				animation: false,
+				renderTo: 'chartBar',
+				type: 'column',
+				options3d: {
+					enabled: true,
+					alpha: 0,
+					beta: 0,
+					depth: 40,
+					viewDistance: 25
+				}
+			},
+			title: {
+				text: 'Grafik Jumlah Vote'
+			},
+			xAxis: {
+				categories: [
+					<?php
+					for ($i = 0; $i < count($array_pertanyaan); $i++) {
+
+						echo $array_pertanyaan[$i] . ',';
+					}
+					?>
+				],
+				labels: {
+					skew3d: true,
+					style: {
+						fontSize: '16px'
+					}
+				}
+			},
+			// subtitle: {
+			//   text: 'Test options by dragging the sliders below'
+			// },
+			plotOptions: {
+				column: {
+					depth: 25
+				}
+			},
+			series: [{
+				name: 'Jumlah',
+				data: [<?php
+					for ($i = 0; $i < count($array_persen); $i++) {
+
+						echo $array_persen[$i] . ',';
+					}
+					?>
+				]
 			}]
 		});
 

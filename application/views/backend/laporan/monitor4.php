@@ -118,29 +118,25 @@
 								$array_persen = array();
 								$array_pertanyaan = array();
 								foreach ($ptn as $key => $var):
-									$a = 0;
-									$b = 0;
-									$c = 0;
-									$d = 0;
-									?>
+								$a = 0;$b = 0;$c = 0;$d = 0;
+								?>
 
 									<?php foreach ($kpsn as $value): ?>
-									<?php if ($value['kpsn4_ptn'] == $var['ptn4_id']):
+										<?php if ($value['kpsn4_ptn'] == $var['ptn4_id']):
 
 
-										if ($value['kpsn4_A'] == '1') {
-											$a += 1;
-										} elseif ($value['kpsn4_B'] == '1') {
-											$b += 1;
-										} elseif ($value['kpsn4_C'] == '1') {
-											$c += 1;
-										} elseif ($value['kpsn4_D'] == '1') {
-											$c += 1;
-										}
-
-										?>
-									<?php endif ?>
-								<?php endforeach ?>
+											if ($value['kpsn4_A'] == '1') {
+												$a += 1;
+											} elseif ($value['kpsn4_B'] == '1') {
+												$b += 1;
+											} elseif ($value['kpsn4_C'] == '1') {
+												$c += 1;
+											} elseif ($value['kpsn4_D'] == '1') {
+												$c += 1;
+											}
+											?>
+										<?php endif ?>
+									<?php endforeach ?>
 									<tr>
 										<td class="text-center"><?= $no ?></td>
 										<td><?= $var['ptn4_txt'] ?></td>
@@ -149,17 +145,17 @@
 										<td class="text-center"><?= $b ?></td>
 										<td class="text-center"><?= $c ?></td>
 										<td class="text-center"><?= $d ?></td>
-										<?php $persentase = (($b * 33.3) + ($c * 66.6) + ($d * 100)) / (100*($a+$b+$c+$d))*100; ?>
+										<?php $persentase = (($b * 33.3) + ($c * 66.6) + ($d * 100)) / (100 * ($a + $b + $c + $d)) * 100; ?>
 
 										<td class="text-center">
-										<?php
-										if($a == 0 && $b == 0 && $c == 0 && $d == 0){ ?>
-											<span class="badge badge-warning text-light">Belum ada</span>
-										<?php
-											}else{
-										?>
-											<?= round($persentase, 2) ?>%
-										<?php } ?>
+											<?php
+											if ($a == 0 && $b == 0 && $c == 0 && $d == 0) { ?>
+												<span class="badge badge-warning text-light">Belum ada</span>
+												<?php
+											} else {
+												?>
+												<?= round($persentase, 2) ?>%
+											<?php } ?>
 										</td>
 
 									</tr>

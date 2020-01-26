@@ -62,6 +62,13 @@ class Monitor4Model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getAllKpsn(){
+		$this->db->select('*');
+		$this->db->from('hr_kpsn4');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 
 	public function hapus($id){
 		$this->db->where('ptn4_id', $id);

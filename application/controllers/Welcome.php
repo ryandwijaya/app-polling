@@ -5,7 +5,7 @@ class Welcome extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $model = ['ExtModel','LynModel','JwbModel','Monitor3Model'];
+        $model = ['ExtModel','LynModel','JwbModel','Monitor3Model','Monitor4Model'];
         $this->load->model($model);
         date_default_timezone_set("Asia/Bangkok");
 
@@ -86,9 +86,13 @@ class Welcome extends CI_Controller {
         $data['stidak'] = $stidak;
 
 
-        }
+        }elseif($this->session->userdata('sess_hr_versi') == 'monitor4'){
+        	$data['kpsn'] = $this->Monitor4Model->getAllKpsn();
+			$data['ptn'] = $this->Monitor4Model->getPtn();
+		}
         
         //data
+
         $data['layanan'] = $this->LynModel->lihat();
         $data['jawaban'] = $this->JwbModel->lihat_by_versi($this->session->userdata('sess_hr_versi'));
 
