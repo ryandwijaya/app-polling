@@ -69,6 +69,14 @@ class Monitor4Model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getVotesNow(){
+		$this->db->select('*');
+		$this->db->from('hr_kpsn4');
+		$this->db->where('date(kpsn4_dcreated)', date('Y-m-d'));
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 
 	public function hapus($id){
 		$this->db->where('ptn4_id', $id);

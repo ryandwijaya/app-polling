@@ -49,8 +49,8 @@
         background : <?= $getData['umum_bg_marquee'] ?> ; 
     }
 	@media all and (display-mode: fullscreen) {
-		body{
-			zoom : 110%;
+		body {
+			zoom:110%;
 		}
 	}
 </style>
@@ -90,13 +90,13 @@
                     </div>
                 </div>
                 <div class="row">
-                        <?php if ($this->session->userdata('sess_hr_versi')=='empat' ||  $this->session->userdata('sess_hr_versi')=='lima'): ?>
+                        <?php if ($instansi['instansi_versi_jwb']=='empat' ||  $instansi['instansi_versi_jwb']=='lima'): ?>
                         <div class="col">
                             <h3 id="persen-sangat">Sangat Puas :</h3>
                         </div>
                         <?php endif ?>
 
-						<?php if ($this->session->userdata('sess_hr_versi')=='empat' ||  $this->session->userdata('sess_hr_versi')=='lima' ||  $this->session->userdata('sess_hr_versi')=='tiga'): ?>
+						<?php if ($instansi['instansi_versi_jwb']=='empat' ||  $instansi['instansi_versi_jwb']=='lima' ||  $instansi['instansi_versi_jwb']=='tiga'): ?>
                         <div class="col">
                             <h3 id="persen-puas">Puas :</h3>
                         </div>
@@ -108,7 +108,7 @@
                         </div>
 						<?php endif ?>
 
-                        <?php if ($this->session->userdata('sess_hr_versi')=='lima'): ?>
+                        <?php if ($instansi['instansi_versi_jwb']=='lima'): ?>
                         <div class="col">
                             <h3 id="persen-stidak">Sangat Puas :</h3>
                         </div>
@@ -180,27 +180,32 @@
 
 
 
-<!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->  
-<?php if ($this->session->userdata('sess_hr_versi')=='monitor3'): ?>
+<!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->
+<?php if ($instansi['instansi_versi_jwb']=='monitor4'): ?>
+
+	<script src="<?= base_url() ?>assets/js/app-polling/votes/monitor4.js"></script>
+<?php endif ?>
+<!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->
+<?php if ($instansi['instansi_versi_jwb']=='monitor3'): ?>
     
 <script src="<?= base_url() ?>assets/js/app-polling/votes/monitor3.js"></script>
 <?php endif ?>
 
 <!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->
-<?php if ($this->session->userdata('sess_hr_versi')=='tiga'): ?>
+<?php if ($instansi['instansi_versi_jwb']=='tiga'): ?>
 
 <script src="<?= base_url() ?>assets/js/app-polling/tiga/monitor1.js"></script>
 <?php endif ?>
 
 
-<?php if ($this->session->userdata('sess_hr_versi')=='empat'): ?>
+<?php if ($instansi['instansi_versi_jwb']=='empat'): ?>
     
 <script src="<?= base_url() ?>assets/js/app-polling/empat/monitor1.js"></script>
 
 <?php endif ?>
 
 
-<?php if ($this->session->userdata('sess_hr_versi')=='lima'): ?>
+<?php if ($instansi['instansi_versi_jwb']=='lima'): ?>
     
 <script src="<?= base_url() ?>assets/js/app-polling/lima/monitor1.js"></script>
 

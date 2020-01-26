@@ -5,7 +5,7 @@ class APIController extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $model = ['ExtModel','LynModel','PtnModel','SettingModel','JwbModel','UsrModel','Monitor3Model'];
+        $model = ['ExtModel','LynModel','PtnModel','SettingModel','JwbModel','UsrModel','Monitor3Model','Monitor4Model'];
         $this->load->model($model);  //load model yang dibutuh kan
     }
 
@@ -130,6 +130,11 @@ class APIController extends CI_Controller {
     }
 	public function ajaxGetMonitor3(){
 		$data = $this->Monitor3Model->getVotesNow();
+		echo json_encode($data);
+	}
+	public function ajaxGetMonitor4(){
+		$data['ptn']= $this->Monitor4Model->getPtn();
+		$data['votes'] = $this->Monitor4Model->getVotesNow();
 		echo json_encode($data);
 	}
 	

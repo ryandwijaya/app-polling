@@ -6,7 +6,7 @@
 <!--  <script src="--><?//= base_url() ?><!--assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=--><?//= time()?><!--"></script>-->
 <!--  <script src="--><?//= base_url() ?><!--assets/virtual-keyboard/demo.js"></script>-->
 
-<div class="container p-5 animated fadeIn" style="background: <?= $setting['set_background'] ?>;">
+<div class="container p-5 animated fadeIn mt-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
             <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">

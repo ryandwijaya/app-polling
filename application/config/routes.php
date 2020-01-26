@@ -126,6 +126,7 @@ $route['laporan/ajaxGet/(:any)/(:any)/(:any)/(:any)'] = 'LprnController/ajaxGetL
 
 $route['ajax/getVotes'] = 'Welcome/ajaxGetVotes';
 $route['ajax/getVotesMonitor3'] = 'APIController/ajaxGetMonitor3';
+$route['ajax/getVotesMonitor4'] = 'APIController/ajaxGetMonitor4';
 $route['ajaxUpdate/(:any)/(:any)/(:any)'] = 'Monitor3Controller/ajaxUpdate/$1/$2/$3';
 $route['ajaxInsert/(:any)/(:any)/(:any)'] = 'Monitor4Controller/ajaxInsert/$1/$2/$3';
 

@@ -113,6 +113,7 @@ class Welcome extends CI_Controller {
         $data['getData'] = $this->ExtModel->getSetUmum()->row_array();
         $data['getVideo'] = $this->ExtModel->getVideo()->result_array();
         $data['getLynn'] = $this->LynModel->lihat();
+
         $this->load->view('frontend/monitor/monitor1',$data);
     }
 
@@ -154,7 +155,8 @@ class Welcome extends CI_Controller {
 
     public function ajaxGetVotes(){
         $tgl_now = date('Y-m-d');
-        $data = $this->ExtModel->getVoteNow($tgl_now,$this->session->userdata('sess_hr_versi'))->result_array();
+		$instansi = $this->ExtModel->getInstansi()->row_array();
+        $data = $this->ExtModel->getVoteNow($tgl_now,$instansi['instansi_versi_jwb'])->result_array();
         echo json_encode($data);
     }
     
