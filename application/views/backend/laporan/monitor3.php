@@ -166,7 +166,7 @@
 									<?php
 									array_push($array_persen, round((($persenB+$persenC+$persenD)/(100*($totalA+$totalC+$totalB+$totalD)))*100, 1));
 									$no++;
-								} ?>
+									} ?>
 
 								</tbody>
 							</table>

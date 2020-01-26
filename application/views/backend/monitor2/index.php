@@ -9,7 +9,7 @@
 				
 				<form action="<?= base_url() ?>set/monitor2" method="POST">
                 
-                <div class="row mt-4">
+                <div class="row mt-4" style="display: none;">
                     <div class="col-md-2"></div>
                     <div class="col-md-8 input-field col s12">
                         <select name="id_lynn"  required>
@@ -23,7 +23,7 @@
                     <div class="col-md-2"></div>
                 </div>
 
-				<div class="row mt-4">
+				<div class="row mt-4" style="display: none;">
                     <div class="col-md-2"></div>
                     <div class="col-md-8 input-field col s12">
                         <select name="ptn" required>
@@ -121,4 +121,3 @@
 
  -->
 
-		

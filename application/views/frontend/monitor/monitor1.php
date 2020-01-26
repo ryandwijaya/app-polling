@@ -95,6 +95,8 @@
                             <h3 id="persen-sangat">Sangat Puas :</h3>
                         </div>
                         <?php endif ?>
+
+						<?php if ($this->session->userdata('sess_hr_versi')=='empat' ||  $this->session->userdata('sess_hr_versi')=='lima' ||  $this->session->userdata('sess_hr_versi')=='tiga'): ?>
                         <div class="col">
                             <h3 id="persen-puas">Puas :</h3>
                         </div>
@@ -104,11 +106,14 @@
                         <div class="col">
                             <h3 id="persen-tidak">Tidak Puas :</h3>
                         </div>
+						<?php endif ?>
+
                         <?php if ($this->session->userdata('sess_hr_versi')=='lima'): ?>
                         <div class="col">
                             <h3 id="persen-stidak">Sangat Puas :</h3>
                         </div>
                         <?php endif ?>
+
                 </div>
             </div>
         </div>
@@ -176,8 +181,14 @@
 
 
 <!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->  
-<?php if ($this->session->userdata('sess_hr_versi')=='tiga'): ?>
+<?php if ($this->session->userdata('sess_hr_versi')=='monitor3'): ?>
     
+<script src="<?= base_url() ?>assets/js/app-polling/votes/monitor3.js"></script>
+<?php endif ?>
+
+<!-- CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART CHART  -->
+<?php if ($this->session->userdata('sess_hr_versi')=='tiga'): ?>
+
 <script src="<?= base_url() ?>assets/js/app-polling/tiga/monitor1.js"></script>
 <?php endif ?>
 

@@ -51,14 +51,18 @@ var root = window.location.origin+'/app-polling/';
                                 }
                               },
                               title: {
-                                text: 'Grafik Jumlah Vote'
+                                text: 'Grafik Jumlah Vote',
+								  style: {
+									  color: 'yellow'
+								  }
                               },
                               xAxis: {
                                 categories: ['Puas', 'Cukup Puas', 'Tidak Puas'],
                                 labels: {
                                   skew3d: true,
                                   style: {
-                                    fontSize: '16px'
+                                    fontSize: '16px',
+									  color: 'yellow'
                                   }
                                 }
                               },

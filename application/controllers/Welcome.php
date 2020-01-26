@@ -5,7 +5,7 @@ class Welcome extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $model = ['ExtModel','LynModel','JwbModel'];
+        $model = ['ExtModel','LynModel','JwbModel','Monitor3Model'];
         $this->load->model($model);
         date_default_timezone_set("Asia/Bangkok");
 
@@ -21,7 +21,6 @@ class Welcome extends CI_Controller {
         }
         $now = date('Y-m-d');
         $data['title'] = 'Beranda';
-        
 
         if ($this->session->userdata('sess_hr_versi') == 'tiga') {
         //Votes num

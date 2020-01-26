@@ -51,6 +51,8 @@ class Monitor4Model extends CI_Model {
 		return $query->num_rows();
 	}
 
+
+
 	public function getKpsn($start,$end){
 		$this->db->select('*');
 		$this->db->from('hr_kpsn4');

@@ -142,6 +142,7 @@
 							<span>Laporan</span>
 						</a>
 						<ul class="ml-menu">
+							<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
 							<li>
 								<a href="<?= base_url() ?>laporan/semua"> Semua</a>
 							</li>
@@ -151,12 +152,19 @@
 							<li>
 								<a href="<?= base_url() ?>responden"> Responden</a>
 							</li>
+							<?php endif ?>
+
+							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor3'): ?>
 							<li>
 								<a href="<?= base_url() ?>laporan/monitor3"> Monitor 3</a>
 							</li>
+							<?php endif ?>
+
+							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor4'): ?>
 							<li>
 								<a href="<?= base_url() ?>laporan/monitor4"> Monitor 4</a>
 							</li>
+							<?php endif ?>
 						</ul>
 					</li>
 					<!-- <li >
@@ -191,11 +199,14 @@
 								<a href="<?= base_url() ?>umum"> Umum</a>
 							</li>
 							<li>
-								<a href="<?= base_url() ?>set/monitor2"> Monitor 2</a>
+								<a href="<?= base_url() ?>set/monitor2"> Monitor</a>
 							</li>
+							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor4'): ?>
 							<li>
 								<a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
 							</li>
+							<?php endif ?>
+
 							<li>
 								<a href="<?= base_url() ?>set/android"> Android</a>
 							</li>
@@ -211,15 +222,22 @@
 							<li>
 								<a href="<?= base_url() ?>monitor"  target="_blank"> Monitor 1</a>
 							</li>
+							<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
 							<li>
 								<a href="<?= base_url() ?>step-1" target="_blank"> Monitor 2</a>
 							</li>
+							<?php endif ?>
+							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor3'): ?>
 							<li>
 								<a href="<?= base_url() ?>mntr3/step1" target="_blank"> Monitor 3</a>
 							</li>
+							<?php endif ?>
+
+							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor4'): ?>
 							<li>
 								<a href="<?= base_url() ?>mntr4/step1" target="_blank"> Monitor 4</a>
 							</li>
+							<?php endif ?>
 						</ul>
 					</li>
 

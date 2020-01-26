@@ -5,7 +5,7 @@ class APIController extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $model = ['ExtModel','LynModel','PtnModel','SettingModel','JwbModel','UsrModel'];
+        $model = ['ExtModel','LynModel','PtnModel','SettingModel','JwbModel','UsrModel','Monitor3Model'];
         $this->load->model($model);  //load model yang dibutuh kan
     }
 
@@ -128,5 +128,9 @@ class APIController extends CI_Controller {
             echo json_encode(array('kode' => 101, 'pesan' => 'request tidak valid'));
         }
     }
+	public function ajaxGetMonitor3(){
+		$data = $this->Monitor3Model->getVotesNow();
+		echo json_encode($data);
+	}
 	
 }

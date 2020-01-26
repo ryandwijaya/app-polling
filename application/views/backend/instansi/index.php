@@ -64,7 +64,8 @@
                     <div class="col-md-4 input-field col s-12">
                         <select name="int_versi" class="inputan">
                             <option value="<?= $instansi[0]['instansi_versi_jwb'] ?>">- Silahkan Pilih Versi Jawaban -</option>
-                            <option value="tiga"> 3 - Puas,Cukup PUas,Tidak Puas</option>
+							<option value="monitor3"> Monitor 3</option>
+							<option value="tiga"> 3 - Puas,Cukup PUas,Tidak Puas</option>
                             <option value="empat"> 4 - Sangat Puas,Puas,Cukup Puas,Tidak Puas</option>
                             <option value="lima"> 5 - Sangat Puas,Puas,Cukup Puas,Tidak Puas,Sangat Tidak Puas</option>
                         </select>
@@ -114,4 +115,3 @@
 </div>
 
 
-		
