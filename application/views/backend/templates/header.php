@@ -149,10 +149,11 @@
 							<li>
 								<a href="<?= base_url() ?>laporan"> Per Layanan</a>
 							</li>
+							<?php endif ?>
 							<li>
 								<a href="<?= base_url() ?>responden"> Responden</a>
 							</li>
-							<?php endif ?>
+
 
 							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor3'): ?>
 							<li>
@@ -206,10 +207,11 @@
 								<a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
 							</li>
 							<?php endif ?>
-
+							<?php if ($this->session->userdata('sess_hr_versi') == 'android'): ?>
 							<li>
 								<a href="<?= base_url() ?>set/android"> Android</a>
 							</li>
+							<?php endif ?>
 						</ul>
 					</li>
 

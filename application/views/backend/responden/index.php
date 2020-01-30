@@ -7,6 +7,8 @@
             <div class="card-body">
                 <form action="<?= base_url() ?>responden" method="POST">
                 <div class="row p-2">
+					<?php if ($instansi['instansi_versi_jwb'] == 'tiga' || $instansi['instansi_versi_jwb'] == 'empat' || $instansi['instansi_versi_jwb'] == 'lima'){ ?>
+
                     <div class="col-md-3 input-field">
                         <select name="lyn" id="lyn">
                             <option disabled selected>- Pilih Layanan -</option>
@@ -15,6 +17,8 @@
                             <?php endforeach ?>
                         </select>
                     </div>
+
+					<?php } ?>
 
                     <div class="col-md-3">
                         <input type="date" name="tgl_start" class="form-control">
@@ -43,6 +47,7 @@
             <div class="card-header d-print-none">
                 <h4 class="float-left d-print-none">Data Responden</h4>
                 <button class="d-print-none btn btn-info float-right" onclick="printContent()"><i class="fa fa-print"></i> PDF</button>
+				<?php if ($instansi['instansi_versi_jwb'] == 'tiga' || $instansi['instansi_versi_jwb'] == 'empat' || $instansi['instansi_versi_jwb'] == 'lima'){ ?>
                 <form action="<?= base_url() ?>laporan/export/responden" method="POST">
                 <input type="hidden" name="llyn" value="<?= $this->input->post('lyn') ?>">
                 <input type="hidden" name="ltgl_start" value="<?= $this->input->post('tgl_start') ?>">
@@ -50,6 +55,7 @@
                 <!-- <a href="<?= base_url() ?>laporan/export/semua/<?= $this->input->post('tgl_start') ?>/<?= $this->input->post('tgl_end') ?>/<?= $this->input->post('ptn') ?>" class="d-print-none btn btn-success float-right mr-3" onclick="printContent()"><i class="fa fa-file-excel"></i> Excel</a> -->
                 <button class="d-print-none btn btn-success float-right mr-3" type="submit"><i class="fa fa-file-excel"></i> Excel</button>
                 </form>
+				<?php } ?>
             </div>
             <div class="card-body" style="font-size: 12pt;">
                 
@@ -96,8 +102,8 @@
                             <div style="margin-right: 30px;">:</div>
                             <div><?= count($kpsn) ?></div>
                         </div>
-                        
 
+						<?php if ($instansi['instansi_versi_jwb'] == 'tiga' || $instansi['instansi_versi_jwb'] == 'empat' || $instansi['instansi_versi_jwb'] == 'lima'){ ?>
                         <div style="display: flex;">
                             <div style="width: 200px;">Layanan</div>
                             <div style="margin-right: 30px;">:</div>
@@ -108,6 +114,8 @@
                                     
                             </div>
                         </div>
+						<?php } ?>
+
                     </div>
                 </div>
 
@@ -119,16 +127,25 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
-                                    <th>Tanggal</th>
+									<?php
+									if($instansi['instansi_versi_jwb'] == 'monitor4') {?>
+										<th>No</th>
+									<?php }else{ ?>
+										<th>Tanggal</th>
+									<?php }	?>
                                     <th>Usia</th>
                                     <th>Pekerjaan</th>
                                     <th>Pendidikan</th>
                                     <th>Gender</th>
+
+									<?php if ($instansi['instansi_versi_jwb'] == 'tiga' || $instansi['instansi_versi_jwb'] == 'empat' || $instansi['instansi_versi_jwb'] == 'lima'){ ?>
                                     <th>Jawaban</th>
                                     <th>Layanan</th>
                                     <th>Saran</th>
+									<?php } ?>
                                 </tr>
                             </thead>
+							<?php if ($instansi['instansi_versi_jwb'] == 'tiga' || $instansi['instansi_versi_jwb'] == 'empat' || $instansi['instansi_versi_jwb'] == 'lima'){ ?>
                             <tbody>
                                 <?php
                                 foreach ($kpsn as $var): ?>
@@ -146,6 +163,45 @@
                                 <?php 
                                 endforeach ?>
                             </tbody>
+							<?php } ?>
+							<?php if ($instansi['instansi_versi_jwb'] == 'monitor3'){ ?>
+								<tbody>
+								<?php
+								foreach ($kpsn as $var): ?>
+
+									<tr>
+										<td style="width: 180px;" class="text-center"><?= $var['mnt3_dcreated'] ?></td>
+										<td style="width: 80px;" class="text-center"><?= $var['responden_umur'] ?></td>
+										<td style="width: 220px;" class="text-center"><?= $var['responden_pekerjaan'] ?></td>
+										<td style="width: 220px;" class="text-center"><?= $var['responden_pendidikan'] ?></td>
+										<td style="width: 220px;" class="text-center"><?= $var['responden_jk'] ?></td>
+
+									</tr>
+								<?php
+								endforeach ?>
+								</tbody>
+							<?php } ?>
+							<?php if ($instansi['instansi_versi_jwb'] == 'monitor4'){?>
+								<tbody>
+								<?php
+								$no = 1;
+								foreach ($kpsn as $var):
+								$responden = $this->RespondenModel->getRespondenById($var['kpsn4_responden']);
+								?>
+
+									<tr>
+										<td style="width: 80px;" class="text-center"><?= $no ?></td>
+										<td style="width: 80px;" class="text-center"><?= $responden['responden_umur'] ?></td>
+										<td style="width: 220px;" class="text-center"><?= $responden['responden_pekerjaan'] ?></td>
+										<td style="width: 220px;" class="text-center"><?= $responden['responden_pendidikan'] ?></td>
+										<td style="width: 220px;" class="text-center"><?= $responden['responden_jk'] ?></td>
+
+									</tr>
+								<?php
+								$no++;
+								endforeach ?>
+								</tbody>
+							<?php } ?>
                         </table>
                     </div>
                     </div>

@@ -129,6 +129,7 @@ class ExtModel extends CI_Model {
         $this->db->join('hr_jwb','hr_jwb.jwb_id = hr_kpsn.kpsn_jwb');
 		$this->db->where('date(kpsn_dcreated)', $now);
 		$this->db->where('jwb_kategori',$versi);
+		$this->db->where('kpsn_lynn',5);
 		return $this->db->get();
 	}
 

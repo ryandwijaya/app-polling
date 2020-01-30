@@ -24,9 +24,15 @@ class RespondenController extends CI_Controller {
 			$lyn = $this->input->post('lyn');
 			$versi = $this->session->userdata('sess_hr_versi');
 	        $data['title'] = 'Data Responden';
-	        $data['kpsn'] = $this->RespondenModel->lihatByDate($tgl_start,$tgl_end,$lyn,$versi);
-	        $data['lynn'] = $this->LynModel->lihat();
-	        $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
+			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
+			if ($this->session->userdata('sess_hr_versi')=='monitor3'){
+				$data['kpsn'] = $this->RespondenModel->Monitor3ByDate($tgl_start,$tgl_end);
+			}if ($this->session->userdata('sess_hr_versi')=='monitor4'){
+				$data['kpsn'] = $this->RespondenModel->Monitor4ByDate($tgl_start,$tgl_end);
+			}else{
+				$data['kpsn'] = $this->RespondenModel->lihatByDate($tgl_start,$tgl_end,$lyn,$versi);
+			}
+			$data['lynn'] = $this->LynModel->lihat();
 	        $data['layananCurrent'] = $this->LynModel->lihat_satu($lyn);
 
 	        $this->load->view('backend/templates/header',$data);

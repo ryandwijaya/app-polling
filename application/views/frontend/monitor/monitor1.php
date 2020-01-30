@@ -92,25 +92,25 @@
                 <div class="row">
                         <?php if ($instansi['instansi_versi_jwb']=='empat' ||  $instansi['instansi_versi_jwb']=='lima'): ?>
                         <div class="col">
-                            <h3 id="persen-sangat">Sangat Puas :</h3>
+                            <h4 id="persen-sangat">Sangat Puas :</h4>
                         </div>
                         <?php endif ?>
 
 						<?php if ($instansi['instansi_versi_jwb']=='empat' ||  $instansi['instansi_versi_jwb']=='lima' ||  $instansi['instansi_versi_jwb']=='tiga'): ?>
                         <div class="col">
-                            <h3 id="persen-puas">Puas :</h3>
+                            <h4 id="persen-puas">Puas :</h4>
                         </div>
                         <div class="col">
-                            <h3 id="persen-cukup">Cukup Puas :</h3>
+                            <h4 id="persen-cukup">Cukup Puas :</h4>
                         </div>
                         <div class="col">
-                            <h3 id="persen-tidak">Tidak Puas :</h3>
+                            <h4 id="persen-tidak">Tidak Puas :</h4>
                         </div>
 						<?php endif ?>
 
                         <?php if ($instansi['instansi_versi_jwb']=='lima'): ?>
                         <div class="col">
-                            <h3 id="persen-stidak">Sangat Puas :</h3>
+                            <h4 id="persen-stidak">Sangat Puas :</h4>
                         </div>
                         <?php endif ?>
 
