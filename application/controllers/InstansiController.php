@@ -43,7 +43,7 @@ class InstansiController extends CI_Controller {
 
                 $simpan = $this->ExtModel->edit_instansi($id,$data);
 				if ($simpan > 0){
-					$this->session->set_flashdata('alert', 'success_edit');
+					$this->session->set_flashdata('alert', 'success_versi');
 					redirect('instansi');
 				} else {
 					$this->session->set_flashdata('alert', 'fail_edit');
@@ -64,7 +64,7 @@ class InstansiController extends CI_Controller {
 
                 $simpan = $this->ExtModel->edit_instansi($id,$data);
 				if ($simpan > 0){
-					$this->session->set_flashdata('alert', 'success_post');
+					$this->session->set_flashdata('alert', 'success_versi');
 					redirect('instansi');
 				} else {
 					$this->session->set_flashdata('alert', 'fail_edit');

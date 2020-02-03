@@ -74,6 +74,37 @@
 </script>
 <?php } ?>
 
+
+<?php if ($this->session->flashdata('alert') == 'success_versi') { ?>
+	<style>
+		.swal2-select,
+		.select-dropdown,
+		.dropdown-trigger,
+		.select-wrapper {
+			display: none;
+			visibility: hidden;
+		}
+
+
+	</style>
+	<script>
+		Swal.fire({
+			title: 'Berhasil di ubah, silahkan login kembali untuk melanjutkan.',
+			icon: 'success',
+			showCancelButton: false,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Re-login !'
+		}).then((result) => {
+			if (result.value) {
+				var root = window.origin + '/app-polling/';
+				location.replace(root + 'logout');
+			}
+		});
+
+	</script>
+<?php } ?>
+
 <?php if ($this->session->flashdata('alert') == 'success_edit') { ?>
 <style>
 	.swal2-select,
@@ -153,6 +184,7 @@
 			}
 		})
 	}
+
 
 	function printContent() {
 		$('#kop').css('display', 'block');

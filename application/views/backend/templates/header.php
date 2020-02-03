@@ -19,6 +19,7 @@
 	<link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
 	<script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
 	<link rel="stylesheet" href="<?= base_url() ?>assets/css/dropify.css">
+<!--	<script src="--><?//= base_url() ?><!--assets/js/app.min.js"></script>-->
 
 
 </head>
