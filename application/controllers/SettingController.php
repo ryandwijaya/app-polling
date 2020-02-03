@@ -20,7 +20,10 @@ class SettingController extends CI_Controller {
                 $data = array(
                     'set_lyn' => $id ,
                     'set_ptn' => $this->input->post('ptn') ,
-                    'set_background' => $this->input->post('background') 
+                    'set_background' => $this->input->post('background') ,
+                    'set_background_kop' => $this->input->post('background_kop'),
+					'set_background_button' => $this->input->post('background_button'),
+					'set_font_color' => $this->input->post('font_color')
                 );
                 $simpan = $this->SettingModel->update($id,$data);
                 if ($simpan > 0){
@@ -34,7 +37,10 @@ class SettingController extends CI_Controller {
                 $data = array(
                     'set_lyn' => $id ,
                     'set_ptn' => $this->input->post('ptn') ,
-                    'set_background' => $this->input->post('background') 
+                    'set_background' => $this->input->post('background'),
+                    'set_background_kop' => $this->input->post('background_kop'),
+                    'set_background_button' => $this->input->post('background_button'),
+                    'set_font_color' => $this->input->post('font_color')
                 );
                 $simpan = $this->SettingModel->tambah($data);
                 if ($simpan > 0){
@@ -49,10 +55,9 @@ class SettingController extends CI_Controller {
 
         }else{
 
-            $data['title'] = 'Setting Monitor 2';
+            $data['title'] = 'Setting Monitor';
             $data['ptn'] = $this->PtnModel->lihat();
             $data['lyn'] = $this->LynModel->lihat();
-
             $data['set2'] = $this->SettingModel->lihat()->result_array();
             $data['set_monitor'] = $this->SettingModel->getByMonitor(5)->row_array();
 

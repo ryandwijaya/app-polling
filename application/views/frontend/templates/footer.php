@@ -11,16 +11,16 @@
     <script src="<?= base_url() ?>assets/js/pages/sparkline/sparkline-data.js"></script>
     <script src="<?= base_url() ?>assets/js/pages/medias/carousel.js"></script>
 <script> 
-$(document).ready(function(){
-
-   $('#btn-edit').click(function(){
-
-     
-         $(".inputan").prop("readonly", false); 
-         $(".btn-simpan").prop("disabled", false); 
-
-   });
-});
+// $(document).ready(function(){
+//
+//    $('#btn-edit').click(function(){
+//
+//
+//          $(".inputan").prop("readonly", false);
+//          $(".btn-simpan").prop("disabled", false);
+//
+//    });
+// });
 </script>
     
     

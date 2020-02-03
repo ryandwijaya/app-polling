@@ -11,8 +11,8 @@ class Monitor4Controller extends CI_Controller {
 	
 	public function index($id)
 	{
-		
-        $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
+		$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
+		$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
         $data['title'] = 'Layar Monitor';
         $data['ptn'] = $this->Monitor4Model->getPtn();
        	// echo '<pre>';

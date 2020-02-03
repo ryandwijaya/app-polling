@@ -13,6 +13,7 @@ class Monitor3Controller extends CI_Controller {
 	{
 		
         $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
+		$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
         $data['title'] = 'Layar Monitor';
         $data['ptn'] = 
         [   "Bagaimana pemahaman Saudara tentang prosedur pelayanandi unit ini?",

@@ -10,13 +10,21 @@
     <!-- Favicon-->
     <link rel="icon" href="<?= base_url() ?>assets/images/interview.png" type="image/x-icon">
     <!-- Plugins Core Css -->
-    <link href="<?= base_url() ?>assets/css/app.min.css" rel="stylesheet">
-    <!-- Custom Css -->
-    <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet" />
-    <!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
-    <link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
+	<link href="<?= base_url() ?>assets/css/app.min.css" rel="stylesheet">
+	<!-- Custom Css -->
+	<?php if ($this->uri->segment(2) == 'step1'): ?>
+	<link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" />
+	<?php endif; ?>
+<!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+	<link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet" />
+	<!-- Theme style. You can choose a theme from css/themes instead of get all themes -->
     <script src="<?= base_url() ?>assets/js/Chart.bundle.js"></script>
     <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 </head>
-<body class="light" >
+<style>
+
+
+</style>
+<body>
+

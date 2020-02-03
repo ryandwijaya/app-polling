@@ -1,5 +1,16 @@
+<style>
+	body{
+		background: url('<?= base_url() ?>/assets/upload/bg/batik.jpg');
+		background-size: cover;
 
-
+	}
+	.container{
+		color: <?= $setting['set_font_color'] ?>;
+	}
+	input:type[text]{
+		color: <?= $setting['set_font_color'] ?>;
+	}
+</style>
 <!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.css">
   <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/demo.css"> -->
