@@ -13,8 +13,10 @@
 	<link href="<?= base_url() ?>assets/css/styles/all-themes.css" rel="stylesheet" />
 	<link href="<?= base_url() ?>assets/css/app.min.css" rel="stylesheet">
 	<!-- Custom Css -->
-	<?php if ($this->uri->segment(2) == 'step1'): ?>
+	<?php if ($this->uri->segment(1) != 'monitor3'): ?>
+		<?php if ($this->uri->segment(1) != 'monitor4'): ?>
 	<link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" />
+		<?php endif; ?>
 	<?php endif; ?>
 <!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
 	<link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet" />
@@ -23,8 +25,10 @@
     <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 </head>
 <style>
-
-
+	input{
+		background: white !important;
+		/*border-radius: 10px;*/
+	}
 </style>
 <body>
 

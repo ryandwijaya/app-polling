@@ -63,14 +63,15 @@
                         <input type="text"  class="form-control inputan" name="int_email" value="<?= $instansi[0]['instansi_email'] ?>">
                     </div>
                     <div class="col-md-2 mt-4 input-field col s-12">
-                        <select name="label_versi" class="inputan" id="label-versi">
+                        <select name="label" class="inputan" id="label-versi">
                             <option>- Silahkan Pilih Versi -</option>
 							<option value="android">Android</option>
-							<option value="android">1 Pertanyaan</option>
+							<option value="monitor">1 Pertanyaan</option>
 							<option value="statis">15 Pertanyaan</option>
 							<option value="dinamis">Dinamis Pertanyaan</option>
                         </select>
                         <label>Pilih Versi</label>
+						<input type="hidden" name="version" id="version">
                     </div>
 					<div class="col-md-2 mt-4 input-field col s-12">
 
@@ -135,16 +136,25 @@
 			$('.statis').remove();
 			$('.dinamis').remove();
 			$('.opt-val').formSelect();
+			$('#version').val('android');
+		}else if(label == 'monitor') {
+			$('.opt-val').html(android);
+			$('.statis').remove();
+			$('.dinamis').remove();
+			$('.opt-val').formSelect();
+			$('#version').val('monitor');
 		}else if(label == 'statis'){
 			$('.opt-val').html(statis);
 			$('.android').remove();
 			$('.dinamis').remove();
 			$('.opt-val').formSelect();
+			$('#version').val('monitor');
 		}else if(label == 'dinamis'){
 			$('.opt-val').html(dinamis);
 			$('.statis').remove();
 			$('.android').remove();
 			$('.opt-val').formSelect();
+			$('#version').val('monitor');
 		}
 	});
 </script>

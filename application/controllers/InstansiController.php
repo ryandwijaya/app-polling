@@ -25,6 +25,7 @@ class InstansiController extends CI_Controller {
 			$email = $this->input->post('int_email');
 			$dinas = $this->input->post('int_dns');
 			$versi = $this->input->post('int_versi');
+			$version = $this->input->post('version');
 
 
 			$config['upload_path'] = './assets/upload/logo/';
@@ -38,7 +39,8 @@ class InstansiController extends CI_Controller {
 			    'instansi_telepon' => $telepon, 
 			    'instansi_email' => $email,
 			    'instansi_dinas' => $dinas,
-			    'instansi_versi_jwb' => $versi
+			    'instansi_versi_jwb' => $versi,
+			    'instansi_versi' => $version
 				];
 
                 $simpan = $this->ExtModel->edit_instansi($id,$data);
@@ -59,6 +61,7 @@ class InstansiController extends CI_Controller {
 			    'instansi_email' => $email,
 			    'instansi_dinas' => $dinas,
 			    'instansi_versi_jwb' => $versi,
+			    'instansi_versi' => $version,
 			    'instansi_logo' => $logo
 				];
 

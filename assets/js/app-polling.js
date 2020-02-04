@@ -216,3 +216,26 @@ function doughnutChart(id,sgtbaik,baik,cukup,buruk) {
 }
 
 
+$("#select-button").change(function(){
+	var theme = $(this).val();
+	if (theme == 'Theme 1'){
+		$("#preview-btn").css("clip-path", "polygon(93% 0, 100% 50%, 94% 100%, 0% 100%, 3% 53%, 0% 0%)");
+	}
+	else if(theme == 'Theme 2'){
+		$("#preview-btn").css("clip-path", "polygon(50% 0%, 95% 0, 100% 35%, 100% 70%, 95% 100%, 50% 100%, 6% 100%, 0% 70%, 0% 35%, 6% 0)");
+	}
+	else if(theme == 'Theme 3'){
+		$("#preview-btn").css("clip-path", "polygon(15% 3%, 100% 0%, 86% 100%, 0% 100%)");
+	}
+	else if(theme == 'Theme 4'){
+		$("#preview-btn").css("clip-path", "polygon(92% 1%, 100% 48%, 93% 100%, 8% 100%, 0 48%, 8% 0)");
+	}
+	else if(theme == 'Theme 5'){
+		$("#preview-btn").css("clip-path", "polygon(50% 0%, 100% 0, 96% 50%, 100% 100%, 68% 100%, 32% 100%, 0 100%, 5% 51%, 0 0)");
+	}
+});
+$("#color-button").change(function () {
+	var colorButton = $(this).val();
+	$('#preview-btn').css("background", colorButton);
+});
+

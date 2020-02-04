@@ -23,6 +23,7 @@ class SettingController extends CI_Controller {
                     'set_background' => $this->input->post('background') ,
                     'set_background_kop' => $this->input->post('background_kop'),
 					'set_background_button' => $this->input->post('background_button'),
+					'set_shape_button' => $this->input->post('shape_button'),
 					'set_font_color' => $this->input->post('font_color')
                 );
                 $simpan = $this->SettingModel->update($id,$data);
@@ -40,6 +41,7 @@ class SettingController extends CI_Controller {
                     'set_background' => $this->input->post('background'),
                     'set_background_kop' => $this->input->post('background_kop'),
                     'set_background_button' => $this->input->post('background_button'),
+					'set_shape_button' => $this->input->post('shape_button'),
                     'set_font_color' => $this->input->post('font_color')
                 );
                 $simpan = $this->SettingModel->tambah($data);

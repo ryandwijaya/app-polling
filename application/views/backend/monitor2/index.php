@@ -73,6 +73,31 @@
 						<div class="col-md-2"></div>
 					</div>
 
+
+
+					<div class="row mt-4">
+						<div class="col-md-2"></div>
+						<div class="col-md-4 col s12">
+							<label> Bentuk Button </label>
+							<select name="shape_button" id="select-button">
+								<option value="<?= $set_monitor['set_shape_button'] ?>" selected>Pilih Style</option>
+								<option value="Theme 1">Theme 1</option>
+								<option value="Theme 2">Theme 2</option>
+								<option value="Theme 3">Theme 3</option>
+								<option value="Theme 4">Theme 4</option>
+								<option value="Theme 5">Theme 5</option>
+							</select>
+						</div>
+						<div class="col-md-4 col s12 text-center">
+							<div class="btn mt-4 text-light pt-2"
+								 style="width: 200px;background: <?= $set_monitor['set_background_button'] ?> ;"
+								 id="preview-btn">A. Option 1
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+
+
 					<div class="row mt-4">
 						<div class="col-md-2"></div>
 						<div class="col-md-8 col s12">
@@ -80,7 +105,7 @@
 							<label> Color Button </label>
 							<div class="input-group colorpicker">
 								<div class="form-line">
-									<input type="text" name="background_button" class="form-control"
+									<input type="text" name="background_button" id="color-button" class="form-control"
 										   value="<?= $set_monitor['set_background_button'] ?>">
 								</div>
 								<span class="input-group-addon">
@@ -112,8 +137,9 @@
 
 					<div class="row mt-4">
 						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<button class="float-right btn btn-success btn-sm" type="submit" name="set">Simpan</button>
+						<div class="col-md-4"></div>
+						<div class="col-md-4 text-center">
+							<button class="btn btn-success btn-sm" style="width: 200px;" type="submit" name="set">Simpan</button>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
@@ -125,52 +151,4 @@
 	</div>
 </div>
 
-
-<!-- <div class="row">
-    <div class="col-md-12">
-        
-        <div class="card">
-            <div class="card-header">
-                <h5>Settings</h5>
-            </div>
-            <div class="card-body">
-                
-                
-                                <table class="table table-bordered table-hover js-basic-example dataTable">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th width="60">No</th>
-                                            <th>Layanan</th>
-                                            <th>Pertanyaan</th>
-                                            <th>Background</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-$no = 1;
-foreach ($set2 as $get):
-
-	$ptnn = $this->PtnModel->lihat_satu($get['set_ptn']);
-	$lynn = $this->LynModel->lihat_satu($get['set_lyn']);
-	?>
-                                            
-                                        <tr>
-                                            <td class="text-center"><?= $no ?></td>
-                                            <td class="text-center"><?= $lynn['lynn_nm'] ?></td>
-                                            <td class="text-center"><?= $ptnn['ptn_txt'] ?></td>
-                                            <td class="text-center"><button style="font-size: 10px;width: 80px;height: 25px;border: 0;outline: 0;background: <?= $get['set_background'] ?> ;"> <?= $get['set_background'] ?>  </button></td>
-                                           
-                                        </tr>
-                                        <?php
-	$no++;
-endforeach ?>
-                                    </tbody>
-                                </table>
-                            
-            </div>
-        </div>
-    </div>
-</div>
-
- -->
 

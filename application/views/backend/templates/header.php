@@ -208,7 +208,7 @@
 								<a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
 							</li>
 							<?php endif ?>
-							<?php if ($this->session->userdata('sess_hr_versi') == 'android'): ?>
+							<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
 							<li>
 								<a href="<?= base_url() ?>set/android"> Android</a>
 							</li>
