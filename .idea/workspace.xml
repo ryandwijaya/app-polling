@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/controllers/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app-polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +71,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -124,7 +125,7 @@
       <workItem from="1580785487950" duration="606000" />
       <workItem from="1580805701670" duration="9360000" />
       <workItem from="1580901525048" duration="42000" />
-      <workItem from="1581166776473" duration="1764000" />
+      <workItem from="1581166776473" duration="2826000" />
     </task>
     <servers />
   </component>

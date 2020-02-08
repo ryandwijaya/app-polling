@@ -142,12 +142,12 @@
 						<div class="col-md-2"></div>
 						<div class="col-md-8 col s12">
 							<label> Background Body</label>
-							<div class="input-group colorpicker">
+							<div class="input-group">
 								<div class="form-line">
 									<input type="file" class="dropify" name="background_body" data-default-file="<?= base_url('assets/upload/bg/')  ?><?= $set_monitor['set_background_body'] ?>" data-max-file-size="2M" data-min-width="1280" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
 								</div>
 								<span class="input-group-addon">
-                                <i class="border"></i>
+                                <i ></i>
                             </span>
 							</div>
 						</div>
