@@ -16,44 +16,73 @@ class SettingController extends CI_Controller {
             $id = $this->input->post('id_lynn');
             $check = $this->LynModel->check_lyn($id);
 
-            if ($check>0) {
-                $data = array(
-                    'set_lyn' => $id ,
-                    'set_ptn' => $this->input->post('ptn') ,
-                    'set_background' => $this->input->post('background') ,
-                    'set_background_kop' => $this->input->post('background_kop'),
+			$config['upload_path'] = './assets/upload/bg/';
+			$config['allowed_types'] = 'jpg|png|jpeg|JPEG|JPG|PNG';
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			if (!$this->upload->do_upload('background_body')) {
+				$data = array(
+					'set_lyn' => $id ,
+					'set_ptn' => $this->input->post('ptn') ,
+					'set_background' => $this->input->post('background') ,
+					'set_background_kop' => $this->input->post('background_kop'),
 					'set_background_button' => $this->input->post('background_button'),
 					'set_shape_button' => $this->input->post('shape_button'),
 					'set_font_color' => $this->input->post('font_color')
-                );
-                $simpan = $this->SettingModel->update($id,$data);
-                if ($simpan > 0){
-                    $this->session->set_flashdata('alert', 'success_post');
-                    redirect('set/monitor2');
-                } else {
-                    $this->session->set_flashdata('alert', 'fail_edit');
-                    redirect('set/monitor2');
-                }
-            }else{
-                $data = array(
-                    'set_lyn' => $id ,
-                    'set_ptn' => $this->input->post('ptn') ,
-                    'set_background' => $this->input->post('background'),
-                    'set_background_kop' => $this->input->post('background_kop'),
-                    'set_background_button' => $this->input->post('background_button'),
+				);
+				$simpan = $this->SettingModel->update($id,$data);
+				if ($simpan > 0){
+					$this->session->set_flashdata('alert', 'success_post');
+					redirect('set/monitor2');
+				} else {
+					$this->session->set_flashdata('alert', 'fail_edit');
+					redirect('set/monitor2');
+				}
+			}else{
+				$bg = $this->upload->data('file_name');
+				$data = array(
+					'set_lyn' => $id ,
+					'set_ptn' => $this->input->post('ptn') ,
+					'set_background' => $this->input->post('background') ,
+					'set_background_kop' => $this->input->post('background_kop'),
+					'set_background_body' => $bg,
+					'set_background_button' => $this->input->post('background_button'),
 					'set_shape_button' => $this->input->post('shape_button'),
-                    'set_font_color' => $this->input->post('font_color')
-                );
-                $simpan = $this->SettingModel->tambah($data);
-                if ($simpan > 0){
-                    $this->session->set_flashdata('alert', 'success_post');
-                    redirect('set/monitor2');
-                } else {
-                    $this->session->set_flashdata('alert', 'fail_edit');
-                    redirect('set/monitor2');
-                }
+					'set_font_color' => $this->input->post('font_color')
+				);
+				$simpan = $this->SettingModel->update($id,$data);
+				if ($simpan > 0){
+					$this->session->set_flashdata('alert', 'success_post');
+					redirect('set/monitor2');
+				} else {
+					$this->session->set_flashdata('alert', 'fail_edit');
+					redirect('set/monitor2');
+				}
+			}
 
-            }
+
+//            if ($check>0) {
+
+//            }else{
+//                $data = array(
+//                    'set_lyn' => $id ,
+//                    'set_ptn' => $this->input->post('ptn') ,
+//                    'set_background' => $this->input->post('background'),
+//                    'set_background_kop' => $this->input->post('background_kop'),
+//                    'set_background_button' => $this->input->post('background_button'),
+//					'set_shape_button' => $this->input->post('shape_button'),
+//                    'set_font_color' => $this->input->post('font_color')
+//                );
+//                $simpan = $this->SettingModel->tambah($data);
+//                if ($simpan > 0){
+//                    $this->session->set_flashdata('alert', 'success_post');
+//                    redirect('set/monitor2');
+//                } else {
+//                    $this->session->set_flashdata('alert', 'fail_edit');
+//                    redirect('set/monitor2');
+//                }
+
+//            }
 
         }else{
 

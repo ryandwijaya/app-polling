@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/application/controllers/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/mikey179/vfsStream" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1WgqlHsuaVQUZOHHPOh3ftvgisE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="" />
+      <created>1579581734781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579581734781</updated>
+      <workItem from="1579581736828" duration="2356000" />
+      <workItem from="1579593675195" duration="741000" />
+      <workItem from="1579611813546" duration="8728000" />
+      <workItem from="1579669956805" duration="1238000" />
+      <workItem from="1579692247382" duration="1198000" />
+      <workItem from="1579699719596" duration="3860000" />
+      <workItem from="1579756911923" duration="2868000" />
+      <workItem from="1579763230034" duration="4626000" />
+      <workItem from="1579785247677" duration="167000" />
+      <workItem from="1579924099896" duration="5194000" />
+      <workItem from="1579929915295" duration="4966000" />
+      <workItem from="1579951774148" duration="5632000" />
+      <workItem from="1580013895817" duration="600000" />
+      <workItem from="1580020560264" duration="6129000" />
+      <workItem from="1580039803674" duration="2866000" />
+      <workItem from="1580127058627" duration="1535000" />
+      <workItem from="1580212866054" duration="1106000" />
+      <workItem from="1580294158062" duration="1915000" />
+      <workItem from="1580362802994" duration="4637000" />
+      <workItem from="1580433114479" duration="625000" />
+      <workItem from="1580622988577" duration="2416000" />
+      <workItem from="1580712630190" duration="4158000" />
+      <workItem from="1580726101777" duration="6075000" />
+      <workItem from="1580785487950" duration="606000" />
+      <workItem from="1580805701670" duration="9360000" />
+      <workItem from="1580901525048" duration="42000" />
+      <workItem from="1581166776473" duration="1764000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1580901566288">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1580901566288" />
+    <state x="184" y="12" width="1094" height="713" key="SettingsEditor" timestamp="1580816744475">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="12" width="1094" height="713" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1580816744475" />
+    <state x="0" y="0" width="737" height="738" key="find.popup" timestamp="1579616544794">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="0" width="737" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1579616544794" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1580819108163">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1580819108163" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1579953265957">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1579953265957" />
+  </component>
+</project>

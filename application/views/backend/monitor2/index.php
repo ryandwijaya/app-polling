@@ -7,7 +7,7 @@
 			</div>
 			<div class="card-body pb-4">
 
-				<form action="<?= base_url() ?>set/monitor2" method="POST">
+				<form action="<?= base_url() ?>set/monitor2" enctype="multipart/form-data" method="POST">
 
 					<div class="row mt-4" style="display: none;">
 						<div class="col-md-2"></div>
@@ -59,7 +59,7 @@
 						<div class="col-md-2"></div>
 						<div class="col-md-8 col s12">
 
-							<label> Background Monitor </label>
+							<label> Background Pertanyaan </label>
 							<div class="input-group colorpicker">
 								<div class="form-line">
 									<input type="text" name="background" class="form-control"
@@ -86,6 +86,11 @@
 								<option value="Theme 3">Theme 3</option>
 								<option value="Theme 4">Theme 4</option>
 								<option value="Theme 5">Theme 5</option>
+								<option value="Theme 6">Theme 6</option>
+								<option value="Theme 7">Theme 7</option>
+								<option value="Theme 8">Theme 8</option>
+								<option value="Theme 9">Theme 9</option>
+								<option value="Theme 10">Theme 10</option>
 							</select>
 						</div>
 						<div class="col-md-4 col s12 text-center">
@@ -101,7 +106,6 @@
 					<div class="row mt-4">
 						<div class="col-md-2"></div>
 						<div class="col-md-8 col s12">
-
 							<label> Color Button </label>
 							<div class="input-group colorpicker">
 								<div class="form-line">
@@ -119,12 +123,28 @@
 					<div class="row mt-4">
 						<div class="col-md-2"></div>
 						<div class="col-md-8 col s12">
-
 							<label> Font Color</label>
 							<div class="input-group colorpicker">
 								<div class="form-line">
 									<input type="text" name="font_color" class="form-control"
 										   value="<?= $set_monitor['set_font_color'] ?>">
+								</div>
+								<span class="input-group-addon">
+                                <i class="border"></i>
+                            </span>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+					</div>
+
+
+					<div class="row mt-4">
+						<div class="col-md-2"></div>
+						<div class="col-md-8 col s12">
+							<label> Background Body</label>
+							<div class="input-group colorpicker">
+								<div class="form-line">
+									<input type="file" class="dropify" name="background_body" data-default-file="<?= base_url('assets/upload/bg/')  ?><?= $set_monitor['set_background_body'] ?>" data-max-file-size="2M" data-min-width="1280" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
 								</div>
 								<span class="input-group-addon">
                                 <i class="border"></i>

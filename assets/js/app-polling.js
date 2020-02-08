@@ -233,6 +233,21 @@ $("#select-button").change(function(){
 	else if(theme == 'Theme 5'){
 		$("#preview-btn").css("clip-path", "polygon(50% 0%, 100% 0, 96% 50%, 100% 100%, 68% 100%, 32% 100%, 0 100%, 5% 51%, 0 0)");
 	}
+	else if(theme == 'Theme 6'){
+		$("#preview-btn").css("clip-path", "polygon(0 0, 91% 0, 96% 42%, 96% 68%, 100% 100%, 11% 100%, 6% 65%, 6% 41%)");
+	}
+	else if(theme == 'Theme 7'){
+		$("#preview-btn").css("clip-path", "polygon(50% 0%, 100% 38%, 93% 100%, 5% 100%, 0% 38%)");
+	}
+	else if(theme == 'Theme 8'){
+		$("#preview-btn").css("clip-path", "polygon(0% 15%, 6% 14%, 6% 1%, 91% 0, 91% 12%, 100% 15%, 100% 85%, 92% 88%, 92% 100%, 5% 100%, 5% 85%, 0% 85%)");
+	}
+	else if(theme == 'Theme 9'){
+		$("#preview-btn").css("clip-path", "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 44% 100%, 50% 75%, 0% 75%)");
+	}
+	else if(theme == 'Theme 10'){
+		$("#preview-btn").css("clip-path", "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)");
+	}
 });
 $("#color-button").change(function () {
 	var colorButton = $(this).val();

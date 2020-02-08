@@ -5,7 +5,7 @@
 	}
 
 	body {
-		background: url('<?= base_url() ?>/assets/upload/bg/batik.jpg');
+		background: url('<?= base_url() ?>/assets/upload/bg/<?= $setting['set_background_body'] ?>');
 		background-size: cover;
 		color: <?= $setting['set_font_color'] ?>;
 	}
