@@ -1,6 +1,6 @@
 <style>
 	body{
-		background: url('<?= base_url() ?>/assets/upload/bg/batik.jpg');
+		background: url('<?= base_url() ?>/assets/upload/bg/<?= $setting['set_background_body'] ?>');
 		background-size: cover;
 
 	}
@@ -46,7 +46,7 @@
                     <h4>Nomor Responden</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="form-control example-1 nomor" onKeyUp="numericOnly(this)"  name="no_responden" autocomplete="off">
+                    <input type="text" class="form-control example-1 nomor pl-3" placeholder="Abaikan jika tidak ada" onKeyUp="numericOnly(this)"  name="no_responden" autocomplete="off">
                 </div>
             </div>
             <div class="row">

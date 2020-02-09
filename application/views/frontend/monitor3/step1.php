@@ -1,11 +1,12 @@
 <style>
 	body{
-		background: url('<?= base_url() ?>/assets/upload/bg/batik.jpg');
+		background: url('<?= base_url() ?>/assets/upload/bg/<?= $setting['set_background_body'] ?>');
 		background-size: cover;
 
 	}
 	.container{
 		color: <?= $setting['set_font_color'] ?>;
+		background: <?= $setting['set_background'] ?>;
 	}
 	input:type[text]{
 		color: <?= $setting['set_font_color'] ?>;
@@ -21,7 +22,7 @@
 
 
 <div id="keyboard" style="display: fixed;position: absolute;bottom: 0; left: 20%;right: 20%; width: 60%;background:black;display: none;z-index: 99999;"></div>
-<div class="container p-5" style="background: <?= $setting['set_background'] ?>;">
+<div class="container p-5 ">
     <div class="row">
         <div class="col-md-2">
             <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">
@@ -46,7 +47,7 @@
                     <h4>Nomor Responden</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="number"  class="input form-control  example-3" name="no_responden" autocomplete="off">
+                    <input type="number" placeholder="Abaikan jika tidak ada" class="input form-control pl-3  example-3" name="no_responden" autocomplete="off">
                     <!-- <div class="simple-keyboard" style="display: none;height: 70%;margin-bottom: 0;"></div> -->
                 </div>
                 

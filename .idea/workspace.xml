@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/umum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/umum/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +129,8 @@
       <workItem from="1580785487950" duration="606000" />
       <workItem from="1580805701670" duration="9360000" />
       <workItem from="1580901525048" duration="42000" />
-      <workItem from="1581166776473" duration="2826000" />
+      <workItem from="1581166776473" duration="3066000" />
+      <workItem from="1581208499398" duration="3152000" />
     </task>
     <servers />
   </component>
@@ -145,13 +150,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="737" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1579616544794" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1580819108163">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1581210051525">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1580819108163" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1579953265957">
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1581210051525" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581211239709">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1579953265957" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1581211239709" />
   </component>
 </project>

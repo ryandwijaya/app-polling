@@ -175,12 +175,14 @@
                             <span>Pertanyaan</span>
                         </a>
                     </li> -->
+					<?php if ($this->session->userdata('sess_hr_version') == 'android'): ?>
 					<li>
 						<a href="<?= base_url() ?>layanan">
 							<i class="fas fa-server"></i>
 							<span>Layanan</span>
 						</a>
 					</li>
+					<?php endif ?>
 
 					<li>
 						<a href="<?= base_url() ?>user">

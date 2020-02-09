@@ -219,38 +219,48 @@ function doughnutChart(id,sgtbaik,baik,cukup,buruk) {
 $("#select-button").change(function(){
 	var theme = $(this).val();
 	if (theme == 'Theme 1'){
-		$("#preview-btn").css("clip-path", "polygon(93% 0, 100% 50%, 94% 100%, 0% 100%, 3% 53%, 0% 0%)");
+		$(".preview-btn").css("clip-path", "polygon(93% 0, 100% 50%, 94% 100%, 0% 100%, 3% 53%, 0% 0%)");
 	}
 	else if(theme == 'Theme 2'){
-		$("#preview-btn").css("clip-path", "polygon(50% 0%, 95% 0, 100% 35%, 100% 70%, 95% 100%, 50% 100%, 6% 100%, 0% 70%, 0% 35%, 6% 0)");
+		$(".preview-btn").css("clip-path", "polygon(50% 0%, 95% 0, 100% 35%, 100% 70%, 95% 100%, 50% 100%, 6% 100%, 0% 70%, 0% 35%, 6% 0)");
 	}
 	else if(theme == 'Theme 3'){
-		$("#preview-btn").css("clip-path", "polygon(15% 3%, 100% 0%, 86% 100%, 0% 100%)");
+		$(".preview-btn").css("clip-path", "polygon(15% 3%, 100% 0%, 86% 100%, 0% 100%)");
 	}
 	else if(theme == 'Theme 4'){
-		$("#preview-btn").css("clip-path", "polygon(92% 1%, 100% 48%, 93% 100%, 8% 100%, 0 48%, 8% 0)");
+		$(".preview-btn").css("clip-path", "polygon(92% 1%, 100% 48%, 93% 100%, 8% 100%, 0 48%, 8% 0)");
 	}
 	else if(theme == 'Theme 5'){
-		$("#preview-btn").css("clip-path", "polygon(50% 0%, 100% 0, 96% 50%, 100% 100%, 68% 100%, 32% 100%, 0 100%, 5% 51%, 0 0)");
+		$(".preview-btn").css("clip-path", "polygon(50% 0%, 100% 0, 96% 50%, 100% 100%, 68% 100%, 32% 100%, 0 100%, 5% 51%, 0 0)");
 	}
 	else if(theme == 'Theme 6'){
-		$("#preview-btn").css("clip-path", "polygon(0 0, 91% 0, 96% 42%, 96% 68%, 100% 100%, 11% 100%, 6% 65%, 6% 41%)");
+		$(".preview-btn").css("clip-path", "polygon(0 0, 91% 0, 96% 42%, 96% 68%, 100% 100%, 11% 100%, 6% 65%, 6% 41%)");
 	}
 	else if(theme == 'Theme 7'){
-		$("#preview-btn").css("clip-path", "polygon(50% 0%, 100% 38%, 93% 100%, 5% 100%, 0% 38%)");
+		$(".preview-btn").css("clip-path", "polygon(50% 0%, 100% 38%, 93% 100%, 5% 100%, 0% 38%)");
 	}
 	else if(theme == 'Theme 8'){
-		$("#preview-btn").css("clip-path", "polygon(0% 15%, 6% 14%, 6% 1%, 91% 0, 91% 12%, 100% 15%, 100% 85%, 92% 88%, 92% 100%, 5% 100%, 5% 85%, 0% 85%)");
+		$(".preview-btn").css("clip-path", "polygon(0% 15%, 6% 14%, 6% 1%, 91% 0, 91% 12%, 100% 15%, 100% 85%, 92% 88%, 92% 100%, 5% 100%, 5% 85%, 0% 85%)");
 	}
 	else if(theme == 'Theme 9'){
-		$("#preview-btn").css("clip-path", "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 44% 100%, 50% 75%, 0% 75%)");
+		$(".preview-btn").css("clip-path", "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 44% 100%, 50% 75%, 0% 75%)");
 	}
 	else if(theme == 'Theme 10'){
-		$("#preview-btn").css("clip-path", "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)");
+		$(".preview-btn").css("clip-path", "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)");
 	}
 });
 $("#color-button").change(function () {
 	var colorButton = $(this).val();
-	$('#preview-btn').css("background", colorButton);
+	$('.preview-btn').css("background", colorButton);
+});
+
+$("#back-ptn").change(function () {
+	var colorPtn = $(this).val();
+	$('#preview-pertanyaan').css("background", colorPtn);
+});
+
+$("#back-kop").change(function () {
+	var colorKop = $(this).val();
+	$('#preview-kop').css("background", colorKop);
 });
 

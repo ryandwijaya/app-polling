@@ -50,7 +50,8 @@
 								'apkrole' => 'hr',
 								'sess_hr_lyn' => $layanan,
 								'sess_hr_nm' => 'Tommy',
-								'sess_hr_versi' => $instansi['instansi_versi_jwb']
+								'sess_hr_versi' => $instansi['instansi_versi_jwb'],
+								'sess_hr_version' => $instansi['instansi_versi']
 							);
 							$this->session->set_userdata($sessData);
 							

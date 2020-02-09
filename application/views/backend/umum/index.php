@@ -147,13 +147,13 @@
                     <div class="col-md-2"></div>
                 </div> -->
 				<div class="row mt-4 justify-content-center">
-					<div class="col-md-4">
-						<label>Background Belakang :</label>
-						<img src="<?= base_url() ?>assets/upload/bg/<?= $umum[0]['umum_background'] ?>" alt="">
-					</div>
-					<div class="col-md-4">
-						<label>Ganti Background ?</label>
-						<input type="file" class="dropify" name="background" data-max-file-size="2M" data-min-width="1280" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
+<!--					<div class="col-md-4">-->
+<!--						<label>Background Belakang :</label>-->
+<!--						<img src="--><?//= base_url() ?><!--assets/upload/bg/--><?//= $umum[0]['umum_background'] ?><!--" alt="">-->
+<!--					</div>-->
+					<div class="col-md-8">
+						<label>Ganti Background Belakang?</label>
+						<input type="file" class="dropify" name="background" data-default-file="<?= base_url() ?>assets/upload/bg/<?= $umum[0]['umum_background'] ?>" data-max-file-size="2M" data-min-width="1280" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
 					</div>
 				</div>
 
