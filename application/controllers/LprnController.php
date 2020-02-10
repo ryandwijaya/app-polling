@@ -34,11 +34,14 @@ class LprnController extends CI_Controller
 			$data['ptn'] = $this->PtnModel->lihat();
 			$data['lyn'] = $this->LynModel->lihat();
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
-
+			$instansi = $data['instansi'];
 			$ptn = $this->input->post('ptn');
-			$lyn = $this->input->post('lyn');
 			$tgl_start = $this->input->post('tgl_start');
 			$tgl_end = $this->input->post('tgl_end');
+			$lyn = $this->input->post('lyn');;
+
+//			var_dump($instansi['instansi_versi']);exit();
+
 
 			if ($this->session->userdata('sess_hr_versi') == 'tiga') {
 
@@ -138,12 +141,12 @@ class LprnController extends CI_Controller
 			$tgl_start = $this->input->post('tgl_start');
 			$tgl_end = $this->input->post('tgl_end');
 
-
 			$data['ptn'] = $this->PtnModel->lihat();
 			$data['lyn'] = $this->LynModel->lihat();
-			$data['kpsn'] = $this->ExtModel->getVotesBetween($tgl_start, $tgl_end, $ptn, $this->session->userdata('sess_hr_versi'))->result_array();
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
 			$data['pertanyaan'] = $this->ExtModel->getPertanyaanById($ptn);
+
+			$data['kpsn'] = $this->ExtModel->getVotesBetween($tgl_start, $tgl_end, $ptn, $this->session->userdata('sess_hr_versi'))->result_array();
 
 			$this->load->view('backend/templates/header', $data);
 			$this->load->view('backend/laporan/semua', $data);

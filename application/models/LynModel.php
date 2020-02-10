@@ -12,6 +12,7 @@ class LynModel extends CI_Model {
 	public function lihat(){
 		$this->db->select('*');
 		$this->db->from('hr_lynn');
+		$this->db->where('lynn_id !=' , 5);
 		$this->db->order_by('lynn_dcreated','DESC');
 		$query = $this->db->get();
 		return $query->result_array();

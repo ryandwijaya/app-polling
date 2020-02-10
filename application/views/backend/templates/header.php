@@ -148,13 +148,19 @@
 							<li>
 								<a href="<?= base_url() ?>laporan/semua"> Semua</a>
 							</li>
-							<li>
-								<a href="<?= base_url() ?>laporan"> Per Layanan</a>
-							</li>
+								<?php if ($this->session->userdata('sess_hr_version') == 'android'): ?>
+								<li>
+									<a href="<?= base_url() ?>laporan"> Per Layanan</a>
+								</li>
+								<?php endif ?>
+
 							<?php endif ?>
+
+							<?php if ($this->session->userdata('sess_hr_version') != 'android'): ?>
 							<li>
 								<a href="<?= base_url() ?>responden"> Responden</a>
 							</li>
+							<?php endif ?>
 
 
 							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor3'): ?>
@@ -228,10 +234,13 @@
 							<li>
 								<a href="<?= base_url() ?>monitor"  target="_blank"> Monitor 1</a>
 							</li>
+
 							<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
-							<li>
-								<a href="<?= base_url() ?>step-1" target="_blank"> Monitor 2</a>
-							</li>
+								<?php if ($this->session->userdata('sess_hr_version') != 'android'): ?>
+									<li>
+									<a href="<?= base_url() ?>step-1" target="_blank"> Monitor 2</a>
+									</li>
+								<?php endif ?>
 							<?php endif ?>
 							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor3'): ?>
 							<li>

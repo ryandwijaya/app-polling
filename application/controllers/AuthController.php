@@ -35,7 +35,8 @@
 								'sess_hr_lvl' => $existsData['usr_lvl'],
 								'sess_hr_lyn' => $layanan,
 								'sess_hr_nm' => $existsData['usr_nm'],
-								'sess_hr_versi' => $instansi['instansi_versi_jwb']
+								'sess_hr_versi' => $instansi['instansi_versi_jwb'],
+								'sess_hr_version' => $instansi['instansi_versi']
 							);
 							$this->session->set_userdata($sessData);  //simpan data login dalam session
 							

@@ -34,6 +34,11 @@ class ExtModel extends CI_Model
 		$this->db->join('hr_jwb', 'hr_jwb.jwb_id = hr_kpsn.kpsn_jwb');
 		$this->db->join('hr_usr', 'hr_usr.usr_id = hr_kpsn.kpsn_petugas');
 		$this->db->where('kpsn_ptn', $ptn);
+		if ($this->session->userdata('sess_hr_version') == 'monitor'){
+			$this->db->where('kpsn_lynn', 5);
+		}else{
+			$this->db->where('kpsn_lynn !=', 5);
+		}
 		$this->db->where('jwb_kategori', $versi);
 		$this->db->where('date(kpsn_dcreated) >= ', $start);
 		$this->db->where('date(kpsn_dcreated) <= ', $end);

@@ -309,7 +309,7 @@
                                 <td><?= $baikvotes; ?></td>
                                 <td><?= $cukupvotes; ?></td>
                                 <td><?= $burukvotes; ?></td>
-                                <td><?= $burukvotes; ?></td>
+                                <td> - </td>
                             </tr>
                         </tbody>
                         <?php endif ?>
