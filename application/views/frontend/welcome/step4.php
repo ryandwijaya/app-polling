@@ -1,4 +1,26 @@
 <script src="<?= base_url() ?>assets/js/app.min.js"></script>
+<style>
+	<?php if($this->session->userdata('sess_hr_versi') == 'lima'){ ?>
+	.tesin{
+		/*background-image: url("*/<?//= base_url() ?>/*assets/images/jwb/3versi/c_3ver_tul.png");*/
+		background-size: cover;
+		background-repeat: no-repeat;
+		border: 0;
+		width: 100%;
+		height: 70px;
+	}
+	<?php }else{ ?>
+	.tesin{
+		/*background-image: url("*/<?//= base_url() ?>/*assets/images/jwb/3versi/c_3ver_tul.png");*/
+		background-size: cover;
+		background-repeat: no-repeat;
+		border: 0;
+		width: 100%;
+		height: 90px;
+	}
+	<?php } ?>
+
+</style>
 <div class="container p-5 animated fadeIn mt-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
@@ -26,35 +48,40 @@
     <input type="hidden" value="<?= $_GET['umur'] ?>" name="umur">
     <input type="hidden" value="<?= $_GET['jk'] ?>" name="jk">
     <input type="hidden" value="<?= $_GET['pnd'] ?>" name="pnd">
-    <div class="row mt-3">
+
+		<div class="row mt-5">
+			<div class="col-md-12 text-center">
+				<h4>Silahkan pilih jawaban anda :</h4>
+			</div>
+		</div>
+    <div class="row mt-1">
 
         <?php if ($this->session->userdata('sess_hr_versi') == 'tiga') { ?>
-        
+
         <?php 
         $back=['green','yellow','red'];
         foreach ($jawaban as $key => $jwb): ?>
         
         <div class="col-md-4 mt-5 text-center">
 
-            <button class="btn btn-lg form-control" type="submit" id="jwb_<?= $jwb['jwb_id'] ?>" name="jwb_<?= $jwb['jwb_id'] ?>" style="height: auto;width:80%;font-size: 20pt;background: <?= $back[$key] ?>">
+            <button class="tesin" type="submit" id="jwb_<?= $jwb['jwb_id'] ?>" name="jwb_<?= $jwb['jwb_id'] ?>" style="background-image: url('<?= base_url() ?>assets/images/jwb/3versi/<?= $jwb['jwb_id'] ?>.png'); background-size: cover;">
                 
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <img src="<?= base_url() ?>assets/images/jwb/tiga/<?= $jwb['jwb_id'] ?>.png" alt="image not found" width="100" height="100">
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <h4><?= $jwb['jwb_ket'] ?></h4>
-                    </div>
-                </div>
-                
-
+<!--                <div class="row mt-4">-->
+<!--                    <div class="col-md-12">-->
+<!--                        <img src="--><?//= base_url() ?><!--assets/images/jwb/tiga/--><?//= $jwb['jwb_id'] ?><!--.png" alt="image not found" width="100" height="100">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row mt-4">-->
+<!--                    <div class="col-md-12">-->
+<!--                        <h4>--><?//= $jwb['jwb_ket'] ?><!--</h4>-->
+<!--                    </div>-->
+<!--                </div>-->
 
             </button>
         </div>
         
         <?php endforeach ?>
+
         
 
         <script src="<?= base_url() ?>assets/js/app-polling/tiga/keypress.js"></script>
@@ -65,20 +92,20 @@
             $back=['deeppink','aqua','yellow','red'];
             foreach ($jawaban as $key => $jwb): ?>
         
-                <div class="col-md-4 mt-4 text-center">
+                <div class="col mt-5 text-center">
 
-                    <button class="btn btn-lg" type="submit" name="jwb_<?= $jwb['jwb_id'] ?>" style="height: auto;width:80%;font-size: 20pt;background: <?= $back[$key] ?>">
+                    <button class="tesin mt-5" type="submit" id="jwb_<?= $jwb['jwb_id'] ?>" name="jwb_<?= $jwb['jwb_id'] ?>" style="background-image: url('<?= base_url() ?>assets/images/jwb/4versi/<?= $jwb['jwb_id'] ?>.png'); background-size: cover;">
                         
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <img src="<?= base_url() ?>assets/images/jwb/empat/<?= $jwb['jwb_id'] ?>.png" alt="image not found" width="100" height="100">
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12">
-                                <h4><?= $jwb['jwb_ket'] ?></h4>
-                            </div>
-                        </div>
+<!--                        <div class="row mt-3">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <img src="--><?//= base_url() ?><!--assets/images/jwb/empat/--><?//= $jwb['jwb_id'] ?><!--.png" alt="image not found" width="100" height="100">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row mt-4">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <h4>--><?//= $jwb['jwb_ket'] ?><!--</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         
 
 
@@ -95,20 +122,20 @@
             $back=['deeppink','aqua','yellow','#ddf171','red'];
             foreach ($jawaban as $key => $jwb): ?>
         
-                <div class="col-md-4 mt-4 text-center">
+                <div class="col mt-4 text-center">
 
-                    <button class="btn btn-lg" type="submit" name="jwb_<?= $jwb['jwb_id'] ?>" style="height: auto;width:80%;font-size: 20pt;background: <?= $back[$key] ?>">
+                    <button class="tesin mt-5" type="submit" id="jwb_<?= $jwb['jwb_id'] ?>" name="jwb_<?= $jwb['jwb_id'] ?>" style="background-image: url('<?= base_url() ?>assets/images/jwb/5versi/<?= $jwb['jwb_id'] ?>.png'); background-size: cover;">
                         
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <img src="<?= base_url() ?>assets/images/jwb/lima/<?= $jwb['jwb_id'] ?>.png" alt="image not found" width="100" height="100">
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12">
-                                <h4><?= $jwb['jwb_ket'] ?></h4>
-                            </div>
-                        </div>
+<!--                        <div class="row mt-3">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <img src="--><?//= base_url() ?><!--assets/images/jwb/lima/--><?//= $jwb['jwb_id'] ?><!--.png" alt="image not found" width="100" height="100">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row mt-4">-->
+<!--                            <div class="col-md-12">-->
+<!--                                <h4>--><?//= $jwb['jwb_ket'] ?><!--</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
                         
 
 

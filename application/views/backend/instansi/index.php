@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row animated bounceIn">
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header">

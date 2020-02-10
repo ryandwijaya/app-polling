@@ -1,16 +1,16 @@
 $(document).ready(function () {
                 $(document).keypress(function (key) {
                     let btnSetting = key.originalEvent.key;
-                    if (btnSetting === '5'){
+                    if (btnSetting === '1'){
                         $('#jwb_5').click();
                     }
-                    if (btnSetting === '6'){
+                    if (btnSetting === '2'){
                         $('#jwb_6').click();
                     }
-                    if (btnSetting === '7'){
+                    if (btnSetting === '3'){
                         $('#jwb_7').click();
                     }
-                    if (btnSetting === '8'){
+                    if (btnSetting === '4'){
                         $('#jwb_8').click();
                     }
                 });

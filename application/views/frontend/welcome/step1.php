@@ -1,8 +1,4 @@
-<style>
-	.container{
 
-	}
-</style>
 <div class="container p-5 animated fadeIn mt-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">

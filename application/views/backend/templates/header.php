@@ -11,6 +11,7 @@
 	<link rel="icon" href="<?= base_url() ?>assets/images/interview.png" type="image/x-icon">
 	<!-- Plugins Core Css -->
 	<link href="<?= base_url() ?>assets/css/app.min.css" rel="stylesheet">
+	<link href="<?= base_url() ?>assets/css/animate.css" rel="stylesheet">
 	<link href="<?= base_url() ?>assets/js/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css"
 		rel="stylesheet" />
 	<!-- Custom Css -->

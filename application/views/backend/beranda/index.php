@@ -39,7 +39,7 @@
 
 	<?php if ($this->session->userdata('sess_hr_versi') == 'tiga'): ?>
 
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/tiga/1.png" width="80" height="80" alt="User">
@@ -58,7 +58,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/tiga/2.png" width="80" height="80" alt="User">
@@ -77,7 +77,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/tiga/3.png" width="80" height="80" alt="User">
@@ -96,7 +96,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/vote.png" width="80" height="80" alt="User">
@@ -120,7 +120,7 @@
 
 <!-- BATAS -->
 <?php if ($this->session->userdata('sess_hr_versi') == 'empat'): ?>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/empat/5.png" width="80" height="80" alt="User">
@@ -139,7 +139,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/empat/6.png" width="80" height="80" alt="User">
@@ -158,7 +158,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/empat/7.png" width="80" height="80" alt="User">
@@ -177,7 +177,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/empat/8.png" width="80" height="80" alt="User">
@@ -202,7 +202,7 @@
 
 <!-- BATAS -->
 <?php if ($this->session->userdata('sess_hr_versi') == 'lima'): ?>
-	<div class="col ">
+	<div class="col animated slideInDown ">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/lima/9.png" width="80" height="80" alt="User">
@@ -221,7 +221,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col ">
+	<div class="col animated slideInDown ">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/lima/10.png" width="80" height="80" alt="User">
@@ -240,7 +240,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col ">
+	<div class="col animated slideInDown ">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/lima/11.png" width="80" height="80" alt="User">
@@ -259,7 +259,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col ">
+	<div class="col animated slideInDown ">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/lima/12.png" width="80" height="80" alt="User">
@@ -278,7 +278,7 @@
 			<!-- /.info-box-content -->
 		</div>
 	</div>
-	<div class="col">
+	<div class="col animated slideInDown">
 		<div width="100%" class="info-box5 animate-bar bg-b-purple">
 			<div class="knob-icon">
 				<img src="<?= base_url() ?>assets/images/jwb/lima/13.png" width="80" height="80" alt="User">
@@ -302,7 +302,7 @@
 <?php endif ?>
 
 
-<div class="row">
+<div class="row animated slideInUp">
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header">

@@ -29,6 +29,11 @@
 		background: white !important;
 		/*border-radius: 10px;*/
 	}
+	@media all and (display-mode: fullscreen) {
+		body {
+			zoom:110%;
+		}
+	}
 </style>
 <body>
 
