@@ -129,7 +129,25 @@ class APIController extends CI_Controller {
         }
     }
 	public function ajaxGetMonitor3(){
-		$data = $this->Monitor3Model->getVotesNow();
+		$array_persen = array();
+		$date_now = date('Y-m-d');
+		for ($i = 0 ; $i <15 ; $i++ ){
+			$totalA = $this->Monitor3Model->getAllJwbKetNow('mnt3_jwb'.$i, 'A',$date_now);
+			$totalB = $this->Monitor3Model->getAllJwbKetNow('mnt3_jwb'.$i, 'B',$date_now);
+			$totalC = $this->Monitor3Model->getAllJwbKetNow('mnt3_jwb'.$i, 'C',$date_now);
+			$totalD = $this->Monitor3Model->getAllJwbKetNow('mnt3_jwb'.$i, 'D',$date_now);
+
+			$persenA = $totalA*0;
+			$persenB = $totalB*33.3;
+			$persenC = $totalC*66.6;
+			$persenD = $totalD*100;
+
+			$persentase = round((($persenB+$persenC+$persenD)/(100*($totalA+$totalC+$totalB+$totalD)))*100 , 1 );
+			array_push($array_persen, $persentase);
+		}
+
+		$data['array_persen'] = $array_persen;
+//		$data['all'] = $this->Monitor3Model->getVotesNow();
 		echo json_encode($data);
 	}
 	public function ajaxGetMonitor4(){

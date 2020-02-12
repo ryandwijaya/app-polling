@@ -16,7 +16,7 @@
 		background-repeat: no-repeat;
 		border: 0;
 		width: 100%;
-		height: 90px;
+		height: 110px;
 	}
 	<?php } ?>
 

@@ -209,18 +209,22 @@
 							<li>
 								<a href="<?= base_url() ?>umum"> Umum</a>
 							</li>
+							<?php if ($this->session->userdata('sess_hr_version') == 'monitor'): ?>
 							<li>
 								<a href="<?= base_url() ?>set/monitor2"> Monitor</a>
 							</li>
+							<?php endif ?>
 							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor4'): ?>
 							<li>
-								<a href="<?= base_url() ?>set/monitor4"> Monitor 4</a>
+								<a href="<?= base_url() ?>set/monitor4"> List Pertanyaan</a>
 							</li>
 							<?php endif ?>
 							<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
-							<li>
-								<a href="<?= base_url() ?>set/android"> Android</a>
-							</li>
+							<?php if ($this->session->userdata('sess_hr_version') == 'android'): ?>
+								<li>
+									<a href="<?= base_url() ?>set/android"> Android</a>
+								</li>
+							<?php endif ?>
 							<?php endif ?>
 						</ul>
 					</li>

@@ -9,6 +9,7 @@
         font-size: 70pt;
         font-variant: inherit;
     }
+	.colorpicker-alpha {display:none !important;} .colorpicker{ min-width:128px !important;}
 </style>
 <div class="row">
 	<div class="col-md-12">

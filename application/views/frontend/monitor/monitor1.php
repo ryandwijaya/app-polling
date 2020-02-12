@@ -85,32 +85,32 @@
             <div class="col-5 rounded  body-chart pt-3 pb-3">
                 <div class="row">
                     <div class="col-12">
-                        <h5>Grafik Kepuasan </h5>
-                        <div id="grafik-kpsn" style="width: 500px;height: 300px;"></div>
+                        <h5 class="ml-5">Grafik Kepuasan </h5>
+                        <div id="grafik-kpsn" style="width: 550px;height: 350px;"></div>
                     </div>
                 </div>
                 <div class="row">
                         <?php if ($instansi['instansi_versi_jwb']=='empat' ||  $instansi['instansi_versi_jwb']=='lima'): ?>
-                        <div class="col">
-                            <h4 id="persen-sangat">Sangat Puas :</h4>
+                        <div class="col text-center">
+                            <span id="persen-sangat">Sangat Puas :</span>
                         </div>
                         <?php endif ?>
 
 						<?php if ($instansi['instansi_versi_jwb']=='empat' ||  $instansi['instansi_versi_jwb']=='lima' ||  $instansi['instansi_versi_jwb']=='tiga'): ?>
-                        <div class="col">
-                            <h4 id="persen-puas">Puas :</h4>
+                        <div class="col text-center">
+                            <span id="persen-puas">Puas :</span>
                         </div>
-                        <div class="col">
-                            <h4 id="persen-cukup">Cukup Puas :</h4>
+                        <div class="col text-center">
+                            <span id="persen-cukup">Cukup Puas :</span>
                         </div>
-                        <div class="col">
-                            <h4 id="persen-tidak">Tidak Puas :</h4>
+                        <div class="col text-center">
+                            <span id="persen-tidak">Tidak Puas :</span>
                         </div>
 						<?php endif ?>
 
                         <?php if ($instansi['instansi_versi_jwb']=='lima'): ?>
-                        <div class="col">
-                            <h4 id="persen-stidak">Sangat Puas :</h4>
+                        <div class="col text-center">
+                            <span id="persen-stidak">Sangat Puas :</span>
                         </div>
                         <?php endif ?>
 

@@ -135,6 +135,7 @@ class SettingController extends CI_Controller {
                 'color_ptn' => $this->input->post('color_ptn'), 
                 'size_ptn' => $this->input->post('size_ptn'), 
             ];
+
             $alamat = [
                 'isi_alamat' => str_replace(array(':', ','), '', $this->input->post('isi_alamat')), 
                 'font_alamat' => $this->input->post('font_alamat'), 
@@ -159,12 +160,15 @@ class SettingController extends CI_Controller {
                 'andro_alamat' => json_encode($alamat), 
                 'andro_text' => json_encode($text), 
             ];
-
+			$data_edit = [
+				'ptn_txt' => str_replace(array(':', ','), '', $this->input->post('isi_ptn'))
+			];
             // var_dump($data_simpan);exit();
             $simpan = $this->ExtModel->update('andro_id',1,'hr_set_android',$data_simpan);
-            if ($simpan >0) {
-                redirect('set/android');
-            }else{
+			if ($simpan >0) {
+				$edit = $this->ExtModel->update('ptn_id',5,'hr_ptn',$data_edit);
+				redirect('set/android');
+			}else{
                 redirect('set/android');
             }
         }else{
@@ -174,6 +178,7 @@ class SettingController extends CI_Controller {
 
         $data['jam'] = json_decode($setting[0]['andro_jam'], true);
         $data['ptn'] = json_decode($setting[0]['andro_ptn'], true);
+//        var_dump($data['ptn']);exit();
         $data['judul'] = json_decode($setting[0]['andro_judul'], true);
         $data['alamat'] = json_decode($setting[0]['andro_alamat'], true);
         $data['text'] = json_decode($setting[0]['andro_text'], true);

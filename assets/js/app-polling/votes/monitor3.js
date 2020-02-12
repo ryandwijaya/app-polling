@@ -10,28 +10,14 @@ function getVotes()
 		method : 'post',
 		contentType: "application/json; charset=utf-8", // this
 		success : function(response){
-			console.log(response);
-			var jwbA = 0;
-			var jwbB = 0;
-			var jwbC = 0;
-			var jwbD = 0;
 
-			for (var j = 0 ; j < response.length ; j++){
-				if (response[j].mnt3_jwb14 == 'A'){
-					jwbA += 1;
-				}else if(response[j].mnt3_jwb14 == 'B'){
-					jwbB += 1;
-				}else if(response[j].mnt3_jwb14 == 'C'){
-					jwbC += 1;
-				}else if(response[j].mnt3_jwb14 == 'D'){
-					jwbD += 1;
-				}
-
+			var data_array = [];
+			for (var i=0;i<response['array_persen'].length;i++){
+				data_array[i]= response.array_persen[i];
 			}
-
+			console.log	(data_array);
 			var chart = new Highcharts.Chart({
 				chart: {
-
 					backgroundColor: "rgba(0,0,0,0)",
 					renderTo: 'grafik-kpsn',
 					type: 'column',
@@ -42,8 +28,11 @@ function getVotes()
 						beta: 10,
 						depth: 40,
 						viewDistance: 25
+					},
+					style: {
+						fontSize: '16px',
+						color: 'yellow'
 					}
-
 				},
 				title: {
 					text: 'Grafik Jumlah Vote',
@@ -53,7 +42,7 @@ function getVotes()
 					}
 				},
 				xAxis: {
-					categories: ['A', 'B', 'C', 'D'],
+					categories: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
 					labels: {
 						skew3d: true,
 						style: {
@@ -76,8 +65,13 @@ function getVotes()
 					}
 				},
 				series: [{
-					name: 'Jumlah',
-					data: [jwbA,jwbB,jwbC,jwbD]
+					name: 'Persen',
+					style: {
+						fontSize: '16px',
+						color: 'yellow'
+					},
+					data: data_array,
+					// data: [1,2,3,4,5,6,7,1,2,3,4,5,4,5,2]
 				}]
 			});
 

@@ -30,9 +30,9 @@ var root = window.location.origin+'/app-polling/';
                         var valpuas = puas/response.length*100;
                         var valcukup = cukup/response.length*100
                         var valtidak = tidak/response.length*100
-                        var persenpuas = '<h4 class="text-left"> Puas : <br>' + valpuas.toFixed(1) +' %</h4>';
-                        var persencukup = '<h4 class="text-left"> Cukup Puas : <br>' + valcukup.toFixed(1) +' %</h4>';
-                        var persentidak = '<h4 class="text-left pr-4"> Tidak Puas : <br>' + valtidak.toFixed(1) +' %</h4>';
+                        var persenpuas = '<span class="text-left"> Puas : <br>' + valpuas.toFixed(1) +' %</span>';
+                        var persencukup = '<span class="text-left"> Cukup Puas : <br>' + valcukup.toFixed(1) +' %</span>';
+                        var persentidak = '<span class="text-left pr-4"> Tidak Puas : <br>' + valtidak.toFixed(1) +' %</span>';
 
 
 
