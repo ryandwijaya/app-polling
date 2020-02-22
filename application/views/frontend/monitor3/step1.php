@@ -72,7 +72,7 @@
                     <h4>Umur</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="input form-control  example-2" name="umur" required  autocomplete="off">
+                    <input type="text" class="input form-control  example-2 input-numeric" name="umur" required  autocomplete="off">
                 </div>
                 <div class="col-md-2 pt-4">
                     <h4>Tahun</h4>
@@ -131,11 +131,26 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-12 text-center">
-            <button type="submit" name="lanjut" class="btn btn-success btn-lg" style="width: 40%; height: 40pt; font-size: 20pt;">LANJUT</button>
+            <button type="submit" name="lanjut" id="button-submit" class="btn btn-success btn-lg" style="width: 40%; height: 40pt; font-size: 20pt;">LANJUT</button>
         </div>
     </div>
     </form>
 </div>
+
+
+<script>
+	$(document).ready(function () {
+		var root = window.location.origin+'/app-polling/';
+		$(document).keypress(function (key) {
+			let btnSetting = key.originalEvent.charCode;
+
+			if (btnSetting === 13){
+				$('#button-submit').click();
+			}
+		});
+	})
+</script>
+
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
 <script src="<?= base_url() ?>assets/js/app-polling/virtual-keyboard.js"></script> -->

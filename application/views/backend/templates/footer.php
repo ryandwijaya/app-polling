@@ -20,6 +20,7 @@
 
 <script src="<?= base_url() ?>assets/js/sweetalert2.js"></script>
 <script src="<?= base_url() ?>assets/js/app-polling/android.js"></script>
+<script src="<?= base_url() ?>assets/js/app-polling/instansi.js"></script>
 
 <script src="<?= base_url() ?>assets/js/dropify.js"></script>
 <script>

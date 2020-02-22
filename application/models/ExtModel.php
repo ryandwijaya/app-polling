@@ -128,6 +128,11 @@ class ExtModel extends CI_Model
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
 		$this->db->join('hr_jwb', 'hr_jwb.jwb_id = hr_kpsn.kpsn_jwb');
+		if ($this->session->userdata('sess_hr_version') == 'monitor'){
+			$this->db->where('kpsn_lynn', 5);
+		}else{
+			$this->db->where('kpsn_lynn !=', 5);
+		}
 		$this->db->where('jwb_kategori', $versi);
 		return $this->db->get();
 	}
@@ -146,6 +151,11 @@ class ExtModel extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('hr_kpsn');
+		if ($this->session->userdata('sess_hr_version') == 'monitor'){
+			$this->db->where('kpsn_lynn', 5);
+		}else{
+			$this->db->where('kpsn_lynn !=', 5);
+		}
 		$this->db->where('kpsn_jwb', $ket);
 		return $this->db->get();
 	}

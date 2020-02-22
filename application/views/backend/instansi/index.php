@@ -52,16 +52,21 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div>
+
+				<div class="row mt-4">
+                    <div class="col-md-2"></div>
+					<div class="col-md-8">
+						<label>Email</label>
+						<input type="text"  class="form-control inputan" name="int_email" value="<?= $instansi[0]['instansi_email'] ?>">
+					</div>
+                    <div class="col-md-2"></div>
+                </div>
                 
 
 
                 <?php if ($this->session->userdata('apkrole')=='hr'): ?>           
                 <div class="row mt-4">
                     <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        <label>Email</label>
-                        <input type="text"  class="form-control inputan" name="int_email" value="<?= $instansi[0]['instansi_email'] ?>">
-                    </div>
                     <div class="col-md-2 mt-4 input-field col s-12">
                         <select name="label" class="inputan" id="label-versi">
                             <option>- Silahkan Pilih Versi -</option>
@@ -80,6 +85,31 @@
 						</select>
 						<label>Versi  [ <?= $instansi[0]['instansi_versi_jwb'] ?> ] , Ganti ? <i class="fas fa-question-circle" title="Abaikan jika tidak ingin ganti"></i></label>
 
+					</div>
+					<div class="col-md-3" id="app-responden" style="display: none;">
+						<div class="row ml-3">
+							<div class="col">
+								<label>Responden :</label>
+							</div>
+						</div>
+						<div class="row mt-3 ml-3">
+							<div class="col">
+								<div class="form-check form-check-radio">
+									<label>
+										<input name="app_responden"  type="radio" value="yes" checked>
+										<span>Yes</span>
+									</label>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-check form-check-radio">
+									<label>
+										<input name="app_responden" type="radio" value="no">
+										<span>No</span>
+									</label>
+								</div>
+							</div>
+						</div>
 					</div>
                     <div class="col-md-2"></div>
                 </div>
@@ -122,39 +152,4 @@
 		</div>
 	</div>
 </div>
-<script src="<?= base_url() ?>assets/js/app.min.js"></script>
-<script>
-	$('#label-versi').change(function () {
-		var label = $(this).val();
-		var android = '<option class="android"  value="tiga"> 3 - Puas,Cukup PUas,Tidak Puas</option>' +
-			'<option class="android"  value="empat"> 4 - Sangat Puas,Puas,Cukup Puas,Tidak Puas</option>' +
-			'<option class="android"  value="lima"> 5 - Sangat Puas,Puas,Cukup Puas,Tidak Puas,Sangat Tidak Puas</option>';
-		var statis = '<option class="statis"  value="monitor3"> Monitor 3</option>';
-		var dinamis = '<option class="dinamis"  value="monitor4"> Monitor 4</option>';
-		if (label == 'android'){
-			$('.opt-val').html(android);
-			$('.statis').remove();
-			$('.dinamis').remove();
-			$('.opt-val').formSelect();
-			$('#version').val('android');
-		}else if(label == 'monitor') {
-			$('.opt-val').html(android);
-			$('.statis').remove();
-			$('.dinamis').remove();
-			$('.opt-val').formSelect();
-			$('#version').val('monitor');
-		}else if(label == 'statis'){
-			$('.opt-val').html(statis);
-			$('.android').remove();
-			$('.dinamis').remove();
-			$('.opt-val').formSelect();
-			$('#version').val('monitor');
-		}else if(label == 'dinamis'){
-			$('.opt-val').html(dinamis);
-			$('.statis').remove();
-			$('.android').remove();
-			$('.opt-val').formSelect();
-			$('#version').val('monitor');
-		}
-	});
-</script>
+

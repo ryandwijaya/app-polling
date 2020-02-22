@@ -1,11 +1,11 @@
+
 <!-- <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-<!--  <link rel="stylesheet" type="text/css" href="--><?//= base_url() ?><!--assets/virtual-keyboard/jquery.ml-keyboard.css">-->
-  <!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/demo.css"> -->
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.css">
+<!-- <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/virtual-keyboard/demo.css"> -->
 
-<!--  <script src="--><?//= base_url() ?><!--assets/js/jquery-1.11.0.min.js"></script>-->
-<!--  <script src="--><?//= base_url() ?><!--assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=--><?//= time()?><!--"></script>-->
-<!--  <script src="--><?//= base_url() ?><!--assets/virtual-keyboard/demo.js"></script>-->
-
+<script src="<?= base_url() ?>assets/js/jquery-1.11.0.min.js"></script>
+<script src="<?= base_url() ?>assets/virtual-keyboard/jquery.ml-keyboard.js?v=1.0.0&&load=<?= time()?>"></script>
+<script src="<?= base_url() ?>assets/virtual-keyboard/demo.js"></script>
 <div class="container p-5 animated fadeIn mt-5" style="background: <?= $setting['set_background'] ?>;">
     <div class="row">
         <div class="col-md-2">
@@ -52,7 +52,7 @@
                     <h4>Umur</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="form-control example-3" name="umur" required  autocomplete="off">
+                    <input type="text" class="form-control example-3 input-numeric" name="umur" required  autocomplete="off">
                 </div>
                 <div class="col-md-2 pt-4">
                     <h4>Tahun</h4>
@@ -110,7 +110,7 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-12 text-center">
-            <button type="submit" name="lanjut" class="btn btn-success btn-lg" style="width: 40%; height: 40pt; font-size: 20pt;">LANJUT</button>
+            <button type="submit" name="lanjut" id="button-submit" class="btn btn-success btn-lg" style="width: 40%; height: 40pt; font-size: 20pt;">LANJUT</button>
         </div>
     </div>
     </form>

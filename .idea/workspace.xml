@@ -3,13 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/LprnController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/LprnController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/InstansiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/InstansiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Monitor3Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Monitor3Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/UmumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/UmumController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/ExtModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ExtModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/LynModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/LynModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/PtnModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/PtnModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/laporan/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/laporan/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/instansi/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/instansi/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/templates/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/templates/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/umum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/umum/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor/monitor1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor/monitor1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/templates/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/templates/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step2.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step3.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step5.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/tiga/keypress.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/tiga/keypress.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +146,26 @@
       <workItem from="1581263855418" duration="56000" />
       <workItem from="1581305741343" duration="4063000" />
       <workItem from="1581324256396" duration="7779000" />
+      <workItem from="1581333964723" duration="1009000" />
+      <workItem from="1581349386821" duration="51000" />
+      <workItem from="1581478028122" duration="6817000" />
+      <workItem from="1581488491707" duration="179000" />
+      <workItem from="1581488708610" duration="41000" />
+      <workItem from="1581500693924" duration="90000" />
+      <workItem from="1581511850786" duration="5102000" />
+      <workItem from="1581561508930" duration="1121000" />
+      <workItem from="1581563457597" duration="737000" />
+      <workItem from="1581600598471" duration="2230000" />
+      <workItem from="1581604464881" duration="34000" />
+      <workItem from="1581755698769" duration="1735000" />
+      <workItem from="1582004482191" duration="31000" />
+      <workItem from="1582166806666" duration="37000" />
+      <workItem from="1582170661972" duration="1079000" />
+      <workItem from="1582186882819" duration="774000" />
+      <workItem from="1582188364652" duration="2231000" />
+      <workItem from="1582273203197" duration="1632000" />
+      <workItem from="1582278867010" duration="5368000" />
+      <workItem from="1582346754240" duration="2920000" />
     </task>
     <servers />
   </component>
@@ -143,18 +173,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="28" key="#Notifications" timestamp="1581329034660">
+    <state x="275" y="28" key="#Notifications" timestamp="1581755741628">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="28" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1581329034660" />
-    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1581263910009">
+    <state x="275" y="28" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1581755741628" />
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1581604496876">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1581263910009" />
-    <state x="184" y="12" width="1094" height="713" key="SettingsEditor" timestamp="1580816744475">
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1581604496876" />
+    <state x="517" y="294" key="NewPhpFileDialog" timestamp="1582171219800">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="12" width="1094" height="713" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1580816744475" />
+    <state x="517" y="294" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1582171219800" />
+    <state x="184" y="12" width="1173" height="713" key="SettingsEditor" timestamp="1582281097181">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="12" width="1173" height="713" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1582281097181" />
     <state x="0" y="0" width="737" height="738" key="find.popup" timestamp="1579616544794">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

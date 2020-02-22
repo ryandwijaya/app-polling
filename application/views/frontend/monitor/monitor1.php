@@ -73,7 +73,7 @@
         <div class="row body-monitor justify-content-center">
             <div class="col-5 rounded body-video pt-3 pb-3">
                 <h5>Video :</h5>
-                <video id="videoarea" width="100%" autoplay controls>
+                <video id="videoarea" width="100%" autoplay="true" controls>
                 <source src="<?= base_url() ?>assets/upload/video/<?= $getData['umum_video'] ?>">
                   Your browser does not support HTML5 video.
                 </video>
@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col-12">
                         <h5 class="ml-5">Grafik Kepuasan </h5>
-                        <div id="grafik-kpsn" style="width: 550px;height: 350px;"></div>
+                        <div id="grafik-kpsn" class="text-left" style="width: 510px;height: 310px;"></div>
                     </div>
                 </div>
                 <div class="row">

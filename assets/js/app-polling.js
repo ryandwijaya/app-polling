@@ -264,3 +264,8 @@ $("#back-kop").change(function () {
 	$('#preview-kop').css("background", colorKop);
 });
 
+
+
+
+
+

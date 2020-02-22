@@ -67,7 +67,7 @@
                     <h4>Umur</h4>
                 </div>
                 <div class="col-md-5">
-                    <input type="text" class="form-control example-3" id="umur" name="umur" onKeyUp="numericOnly(this)" required  autocomplete="off">
+                    <input type="text" class="form-control example-3 input-numeric" id="umur" name="umur" onKeyUp="numericOnly(this)" required  autocomplete="off">
                 </div>
                 <div class="col-md-2 pt-4">
                     <h4>Tahun</h4>
@@ -125,7 +125,7 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-12 text-center">
-            <button type="submit" name="lanjut" class="btn btn-success btn-lg" style="width: 40%; height: 40pt; font-size: 20pt;">LANJUT</button>
+            <button type="submit" name="lanjut" id="button-submit" class="btn btn-success btn-lg" style="width: 40%; height: 40pt; font-size: 20pt;">LANJUT</button>
         </div>
     </div>
     </form>
@@ -140,6 +140,17 @@
     //         return false;
     //     }
     // });
+	$(document).ready(function () {
+		var root = window.location.origin+'/app-polling/';
+		$(document).keypress(function (key) {
+			let btnSetting = key.originalEvent.charCode;
+
+			if (btnSetting === 13){
+				$('#button-submit').click();
+			}
+		});
+	});
+
 
     $("#umum").change(function() {
         numericOnly($(this));
@@ -154,3 +165,4 @@
     }
 
 </script>
+

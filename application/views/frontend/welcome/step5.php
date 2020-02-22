@@ -23,7 +23,7 @@
     <form action="<?= base_url() ?>step-5" method="POST">
     <div class="row mt-3">
         <div class="col-md-12 ">
-            <input type="hidden" value="<?= $_GET['rspndn'] ?>" name="no_responden">
+            <input type="hidden" value="<?= $_GET['rspndn'] ?>" name="id_kpsn">
             <h5 class="mt-5">Silahkan Isi Saran Anda :</h5>
             <textarea name="saran" class="form-control example-1" cols="30" rows="10" placeholder="Isi saran anda disini ... "></textarea>
         </div>

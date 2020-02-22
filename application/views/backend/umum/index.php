@@ -43,11 +43,7 @@
 
                 <div class="row mt-4">
                     <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        <label>Text Running Atas</label>
-                        <textarea name="text_top" rows="4" class="form-control" required><?= $umum[0]['umum_text_top'] ?></textarea>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <label>Text Running Bawah</label>
                         <textarea name="text_bot" rows="4" class="form-control" required><?= $umum[0]['umum_text_bot'] ?></textarea>
                     </div>
@@ -70,7 +66,7 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div> -->
-
+				<?php if ($this->session->userdata('apkrole')=='hr'): ?>
                 <div class="row mt-4">
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
@@ -185,6 +181,8 @@
                     </div>
                     <div class="col-md-2"></div>
                 </div>
+
+				<?php endif ?>
 
                 <div class="row mt-4">
                     <div class="col-md-2"></div>

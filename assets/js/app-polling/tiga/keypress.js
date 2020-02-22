@@ -11,4 +11,4 @@ $(document).ready(function () {
                         $('#jwb_3').click();
                     }
                 });
-            })
+});

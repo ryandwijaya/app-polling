@@ -69,6 +69,7 @@ class Monitor3Controller extends CI_Controller {
         // var_dump($data['jwb']);exit();
 
         $this->load->view('frontend/templates/header',$data);
+        $this->load->view('frontend/monitor3/styles',$data);
         $this->load->view('frontend/monitor3/index',$data);
         $this->load->view('frontend/templates/footer',$data);
 	}
@@ -112,7 +113,7 @@ class Monitor3Controller extends CI_Controller {
             $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
         	$this->load->view('frontend/templates/header',$data);
         	$this->load->view('frontend/monitor3/step1',$data);
-        	// $this->load->view('frontend/templates/footer',$data);
+        	 $this->load->view('frontend/templates/footer',$data);
     	}
 	}
 
