@@ -94,15 +94,17 @@ class Monitor3Controller extends CI_Controller {
 
     		$simpan = $this->ExtModel->insert('hr_responden',$responden);
     		if ($simpan > 0){
-    			$responden = $this->RespondenModel->getRespondenByData($nama,$umur,$jk,$pendidikan);
-            	$id =  $responden['responden_id'];
-            	
-            	$set_monitor = [
-    				'mnt3_responden' => $id
-    			];
-    			$this->ExtModel->insert('hr_monitor3',$set_monitor);
+//    			$responden = $this->RespondenModel->getRespondenByData($nama,$umur,$jk,$pendidikan);
+				$id_responden = $this->db->insert_id();
 
-				redirect('monitor3/'.$id);
+				$vote_monitor = [
+					'mnt3_responden' => $id_responden
+				];
+				$simpan_vote = $this->ExtModel->insert('hr_monitor3',$vote_monitor);
+//				var_dump($this->db->insert_id());exit();
+				$id_vote = $this->db->insert_id();
+
+				redirect('monitor3/'.$id_vote);
 			} else {
 				$this->session->set_flashdata('alert', 'fail_edit');
 				redirect('mntr3/step1');
@@ -123,7 +125,7 @@ class Monitor3Controller extends CI_Controller {
 			$data = array(
 				'mnt3_'.$field => $jwb
 			);
-			$simpan = $this->ExtModel->update('mnt3_responden',$id,'hr_monitor3',$data);
+			$simpan = $this->ExtModel->update('mnt3_id',$id,'hr_monitor3',$data);
 			if ($simpan > 0){
 				echo 'success edit';
 			} else {
@@ -131,6 +133,20 @@ class Monitor3Controller extends CI_Controller {
 			}
 			echo json_encode($data);
 		
+	}
+
+	public function ajaxReset($id){
+		$get_responden = $this->RespondenModel->getOneVote($id);
+		$id_responden = $get_responden['mnt3_responden'];
+
+		$hapus = $this->ExtModel->hapus('mnt3_id',$id,'hr_monitor3');
+
+		if ($hapus > 0){
+			$hapus_respoden = $this->ExtModel->hapus('responden_id',$id_responden,'hr_responden');
+			redirect('mntr3/step1');
+		}else{
+			return 'Error !!';
+		}
 	}
 
 	

@@ -128,6 +128,7 @@ $route['ajax/getVotes'] = 'Welcome/ajaxGetVotes';
 $route['ajax/getVotesMonitor3'] = 'APIController/ajaxGetMonitor3';
 $route['ajax/getVotesMonitor4'] = 'APIController/ajaxGetMonitor4';
 $route['ajaxUpdate/(:any)/(:any)/(:any)'] = 'Monitor3Controller/ajaxUpdate/$1/$2/$3';
+$route['ajaxReset/(:any)'] = 'Monitor3Controller/ajaxReset/$1';
 $route['ajaxInsert/(:any)/(:any)/(:any)'] = 'Monitor4Controller/ajaxInsert/$1/$2/$3';
 
 

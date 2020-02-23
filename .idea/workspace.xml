@@ -3,23 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/InstansiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/InstansiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Monitor3Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Monitor3Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/UmumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/UmumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ExtModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ExtModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/instansi/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/instansi/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/templates/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/templates/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/backend/umum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/umum/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor/monitor1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor/monitor1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/RespondenModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/RespondenModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/templates/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/templates/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step2.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step3.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step5.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app-polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/tiga/keypress.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/tiga/keypress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/styles.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/styles.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +153,9 @@
       <workItem from="1582188364652" duration="2231000" />
       <workItem from="1582273203197" duration="1632000" />
       <workItem from="1582278867010" duration="5368000" />
-      <workItem from="1582346754240" duration="2920000" />
+      <workItem from="1582346754240" duration="5100000" />
+      <workItem from="1582378960791" duration="1497000" />
+      <workItem from="1582462673078" duration="1908000" />
     </task>
     <servers />
   </component>
@@ -193,10 +183,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="737" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1579616544794" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1581210051525">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1582463841559">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1581210051525" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1582463841559" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581211239709">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

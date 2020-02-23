@@ -67,5 +67,12 @@ class RespondenModel extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	public function getOneVote($id){ //mengambil data responden berdasarkan data yang diinputkan
+		$this->db->select('*');
+		$this->db->from('hr_monitor3');
+		$this->db->where('mnt3_id',$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 
 }
