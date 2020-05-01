@@ -25,15 +25,35 @@
     <script src="<?= base_url() ?>assets/js/app.min.js"></script>
 </head>
 <style>
+	html,body{
+		height: 100%;
+	}
+	.full-height{
+		height: 100%;
+	}
+	body{
+		overflow: hidden;
+		background: url('<?= base_url() ?>/assets/upload/bg/<?= $setting['set_background_body'] ?>');
+		background-size: cover;
+	}
 	input{
 		background: white !important;
 		/*border-radius: 10px;*/
 	}
+	#fixedButton{
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		font-size: 10px;
+		z-index: 99;
+	}
 	@media all and (display-mode: fullscreen) {
 		body {
 			zoom:110%;
+			-moz-transform: scale(1.03);
 		}
 	}
 </style>
 <body>
+
 

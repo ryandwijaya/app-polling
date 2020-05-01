@@ -52,11 +52,11 @@ var root = window.location.origin+'/app-polling/';
                             //               datasets: [{
                             //                 data: [sangatpuas,puas,cukup,tidak,stidak],
                             //                 backgroundColor: [
-                            //                             'deeppink','aqua','yellow','#ddf171','red'
+                            //                             'deeppink','aqua','black','#ddf171','red'
                             //                         ],
                             //                         borderColor: [
                             //                             'green',
-                            //                             'yellow',
+                            //                             'black',
                             //                             'red',
                             //                             'black',
                             //                             'black',
@@ -131,10 +131,10 @@ var root = window.location.origin+'/app-polling/';
                                 animation : false,
                                 options3d: {
                                   enabled: true,
-                                  alpha: 10,
-                                  beta: 10,
-                                  depth: 40,
-                                  viewDistance: 25
+									alpha: 14,
+									beta: 20,
+									depth: 40,
+									viewDistance: 25
                                 }
                               },
                               title: {

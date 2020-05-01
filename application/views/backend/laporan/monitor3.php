@@ -34,6 +34,7 @@
 				<h4>Filter</h4>
 			</div>
 			<div class="card-body">
+
 				<form action="<?= base_url() ?>laporan/monitor3" method="POST">
 
 					<hr>
@@ -67,6 +68,22 @@
 				</button>
 			</div>
 			<div class="card-body" style="font-size: 12pt;">
+
+				<div id="kop" style="display: none;">
+					<div class="row" style="display: flex;padding-right: 20px;padding-left: 20px;margin-top: -30px;">
+						<div style="float: left;width: 20%; text-align: left;">
+							<img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="Gambar Tidak Ditemukan" width="80" height="80" class="border">
+						</div>
+						<div  style="text-align: center; width: 60%; padding-top:10px;">
+							<h3><?= $instansi['instansi_dinas'] ?></h3>
+							<h4><?= $instansi['instansi_nama'] ?></h4>
+							<h6><?= $instansi['instansi_alamat'] ?> , Telp : <?= $instansi['instansi_telepon'] ?> , <?= $instansi['instansi_email'] ?> </h6>                    </div>
+						<div  style="float: right; width: 20%;text-align: right;">
+							<img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="Gambar Tidak Ditemukan" width="80" height="80" class="border">
+						</div>
+					</div>
+				</div>
+				<hr style="border: 1px black solid">
 
 				<div class="row justify-content-md-center">
 					<div class="col-md-10">

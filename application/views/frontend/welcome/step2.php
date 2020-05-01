@@ -1,39 +1,45 @@
-<div class="container p-5 animated fadeIn mt-5" style="background: <?= $setting['set_background'] ?>;">
-	<div class="row">
-		<div class="col-md-2">
-			<img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80"
-				 height="80" class="border">
-		</div>
-		<div class="col-md-8 text-center pt-3">
-			<h1><?= $instansi['instansi_nama'] ?></h1>
-			<h4><?= $instansi['instansi_alamat'] ?>, <?= $instansi['instansi_telepon'] ?></h4>
-		</div>
-		<div class="col-md-2 text-right">
-			<img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80"
-				 height="80" class="border">
-		</div>
-	</div>
-	<hr>
-	<div class="row mt-3">
-		<div class="col-md-12 text-center">
-			<h2 class="mt-5">SILAHKAN MENGISI POLLING SURVEY INI</h2>
-			<h2 class="mt-5">SESUAI DENGAN PILIHAN ANDA SENDIRI</h2>
-			<h2 class="mt-5">POLLING SURVEY INI BERGUNA DEMI KEMAJUAN</h2>
-			<h2 class="mt-5">PELAYANAN YANG LEBIH BAIK</h2>
-			<h2 class="mt-5">PADA MASA YANG AKAN DATANG</h2>
-		</div>
-	</div>
-	<div class="row mt-5">
-		<div class="col-md-12 text-center">
-			<?php if ($instansi['instansi_app_responden'] == 'yes'): ?>
-				<a href="<?= base_url() ?>step-3" class="btn btn-success btn-lg"
-				   style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
-			<?php else: ?>
-				<a href="<?= base_url() ?>step-4" class="btn btn-success btn-lg"
-				   style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
+<style>
+	#konten{
+		color: <?= $setting['set_font_color'] ?>;
+		background: <?= $setting['set_background'] ?>;
+	}
+	input[type=text],input[type=number],select{
+		font-weight: 900;
+	}
+</style>
 
-			<?php endif; ?>
+<div class="row p-4 full-height" id="konten">
+	<div class="col-md-12">
+		<!--		HEADER-->
+		<div class="row p-2">
+			<div class="col-md-12 header-monitor">
+				<img src="<?= base_url() ?>assets/upload/kop/<?= $umum['umum_kop'] ?>" alt="kop kosong" height="140" width="100%">
+			</div>
 		</div>
+
+		<!--		CONTENT-->
+		<div class="row mt-4 justify-content-center">
+			<div class="col-md-10 text-center">
+				<h2 class="mt-2">SILAHKAN MENGISI POLLING SURVEY INI</h2>
+				<h2 class="mt-5">SESUAI DENGAN PILIHAN ANDA SENDIRI</h2>
+				<h2 class="mt-5">POLLING SURVEY INI BERGUNA DEMI KEMAJUAN</h2>
+				<h2 class="mt-5">PELAYANAN YANG LEBIH BAIK</h2>
+				<h2 class="mt-5">PADA MASA YANG AKAN DATANG</h2>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-md-12 text-center">
+				<?php if ($instansi['instansi_app_responden'] == 'yes'): ?>
+					<a href="<?= base_url() ?>step-3" class="btn btn-success btn-lg"
+					   style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
+				<?php else: ?>
+					<a href="<?= base_url() ?>step-4" class="btn btn-success btn-lg"
+					   style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
+
+				<?php endif; ?>
+			</div>
+		</div>
+
 	</div>
 </div>
 <script>

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('input.example-1').mlKeyboard({layout: 'en_US'});
+  $('input.example-1').mlKeyboard({layout: 'en_US',width: '1200px'});
 });
 $(document).ready(function(){
   $('input.example-2').mlKeyboard({layout: 'en_US'});

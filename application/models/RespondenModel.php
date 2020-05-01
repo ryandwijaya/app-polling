@@ -28,10 +28,10 @@ class RespondenModel extends CI_Model {
 	public function Monitor3ByDate($start,$end){ //mengambil data responden berdasarkan tanggal
 		$this->db->select('*');
 		$this->db->from('hr_monitor3');
-		$this->db->order_by('mnt3_dcreated','DESC');
 		$this->db->join('hr_responden','hr_responden.responden_id = hr_monitor3.mnt3_responden');
 		$this->db->where('date(mnt3_dcreated) >= ', $start);
 		$this->db->where('date(mnt3_dcreated) <= ', $end);
+		$this->db->order_by('mnt3_dcreated','DESC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}

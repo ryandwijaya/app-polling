@@ -155,5 +155,20 @@ class APIController extends CI_Controller {
 		$data['votes'] = $this->Monitor4Model->getVotesNow();
 		echo json_encode($data);
 	}
+	public function ajaxPostKpsn($id,$loket){
+		$data_post = array(
+			'kpsn_petugas' => $this->session->userdata('sess_hr_id'),
+			'kpsn_ptn' => 5,
+			'kpsn_lynn' => $loket,
+			'kpsn_jwb' => $id
+
+		);
+		$simpan = $this->ExtModel->insert('hr_kpsn',$data_post);
+		if ($simpan>0){
+			echo 'Berhasil';
+		}else{
+			echo 'Gagal';
+		}
+	}
 	
 }

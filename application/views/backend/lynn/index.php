@@ -25,7 +25,7 @@
                                 <td><?= $var['lynn_nm'] ?></td>
                                 <td class="text-center">
 
-                                <button type="button" value="<?= $var['lynn_id'] ?>" class="edit-lyn btn bg-lime btn-circle waves-effect waves-circle waves-float" data-toggle="modal" data-target="#mdl_edit_ptn"><i class="material-icons">mode_edit</i></button>
+                                <button type="button" value="<?= $var['lynn_id'] ?>" class="edit-lyn btn bg-lime btn-circle waves-effect waves-circle waves-float" data-toggle="modal" data-target="#mdl_edit_lyn"><i class="material-icons">mode_edit</i></button>
                                 <a href="<?= base_url() ?>layanan/hapus/<?= $var['lynn_id'] ?>" onclick="return confirm('Yakin ingin menghapus ?')" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
                         		<i class="material-icons">delete</i></a>
 
@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="mdl_edit_ptn" tabindex="-1" role="dialog"
+                <div class="modal fade" id="mdl_edit_lyn" tabindex="-1" role="dialog"
                     aria-labelledby="formModal" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -89,7 +89,7 @@
                             </div>
                                 <form method="POST" action="<?= base_url() ?>layanan/edit">
                             <div class="modal-body">
-                                    <label for="email_address1">Pertanyaan</label>
+                                    <label for="email_address1">Layanan</label>
                                     <input type="hidden" id="lynn-id" name="lynn_id">
                                     <div class="form-group">
                                         <div class="form-line">

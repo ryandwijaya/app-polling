@@ -157,9 +157,13 @@
 							<?php endif ?>
 
 							<?php if ($this->session->userdata('sess_hr_version') != 'android'): ?>
+
+							<?php if ($this->session->userdata('sess_app_responden') == 'yes'): ?>
+
 							<li>
 								<a href="<?= base_url() ?>responden"> Responden</a>
 							</li>
+							<?php endif ?>
 							<?php endif ?>
 
 
@@ -224,6 +228,9 @@
 								<li>
 									<a href="<?= base_url() ?>set/android"> Android</a>
 								</li>
+									<li>
+										<a href="<?= base_url() ?>set/key"> Key Kepuasan</a>
+									</li>
 							<?php endif ?>
 							<?php endif ?>
 						</ul>
@@ -236,31 +243,36 @@
 						</a>
 						<ul class="ml-menu">
 							<li>
-								<a href="<?= base_url() ?>monitor"  target="_blank"> Monitor 1</a>
+								<a href="<?= base_url() ?>monitor"  target="_blank"> Grafik Monitor</a>
 							</li>
 
 							<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
 								<?php if ($this->session->userdata('sess_hr_version') != 'android'): ?>
 									<li>
-									<a href="<?= base_url() ?>step-1" target="_blank"> Monitor 2</a>
+									<a href="<?= base_url() ?>step-1" target="_blank"> 1 Pertanyaan</a>
 									</li>
 								<?php endif ?>
 							<?php endif ?>
 							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor3'): ?>
 							<li>
-								<a href="<?= base_url() ?>mntr3/step1" target="_blank"> Monitor 3</a>
+								<a href="<?= base_url() ?>mntr3/step1" target="_blank"> Pertanyaan Statis</a>
 							</li>
 							<?php endif ?>
 
 							<?php if ($this->session->userdata('sess_hr_versi') == 'monitor4'): ?>
 							<li>
-								<a href="<?= base_url() ?>mntr4/step1" target="_blank"> Monitor 4</a>
+								<a href="<?= base_url() ?>mntr4/step1" target="_blank"> Pertanyaan Dinamis</a>
 							</li>
 							<?php endif ?>
 						</ul>
 					</li>
 
-
+					<li>
+						<a href="<?= base_url() ?>copyright">
+							<i class="fas fa-copyright"></i>
+							<span> Copyright</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<!-- #Menu -->

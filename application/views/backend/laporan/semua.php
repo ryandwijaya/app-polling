@@ -1,3 +1,11 @@
+<style>
+	@media print {
+		.card-body {
+			margin-top: -108px;
+			padding: 0;
+		}
+	}
+</style>
 <div class="row d-print-none">
     <div class="col-md-12">
         <div class="card">
@@ -42,7 +50,8 @@
         <div class="card">
             <div class="card-header d-print-none">
                 <h4 class="float-left d-print-none">Laporan Semua Layanan</h4>
-                <button class="d-print-none btn btn-info float-right" onclick="printContent()"><i class="fa fa-print"></i> PDF</button>
+                <button class="d-print-none btn btn-info float-right ml-3" onclick="printContent()"><i class="fa fa-print"></i> PDF (Potrait)</button>
+                <button class="d-print-none btn btn-info float-right" onclick="printLandscape()"><i class="fa fa-print"></i> PDF (Landscape)</button>
                 <form action="<?= base_url() ?>laporan/export/semua" method="POST">
                 <input type="hidden" name="lptn" value="<?= $this->input->post('ptn') ?>">
                 <input type="hidden" name="ltgl_start" value="<?= $this->input->post('tgl_start') ?>">
@@ -50,7 +59,6 @@
                 <!-- <a href="<?= base_url() ?>laporan/export/semua/<?= $this->input->post('tgl_start') ?>/<?= $this->input->post('tgl_end') ?>/<?= $this->input->post('ptn') ?>" class="d-print-none btn btn-success float-right mr-3" onclick="printContent()"><i class="fa fa-file-excel"></i> Excel</a> -->
                 <button class="d-print-none btn btn-success float-right mr-3" type="submit"><i class="fa fa-file-excel"></i> Excel</button>
                 </form>
-                
             </div>
             <div class="card-body" style="font-size: 12pt;">
                 

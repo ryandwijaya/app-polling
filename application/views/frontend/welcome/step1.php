@@ -1,31 +1,38 @@
+<style>
+	#konten{
+		color: <?= $setting['set_font_color'] ?>;
+		background: <?= $setting['set_background'] ?>;
+	}
+	input[type=text],input[type=number],select{
+		font-weight: 900;
+	}
+</style>
 
-<div class="container p-5 animated fadeIn mt-5" style="background: <?= $setting['set_background'] ?>;">
-    <div class="row">
-        <div class="col-md-2">
-            <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">
-        </div>
-        <div class="col-md-8 text-center pt-3">
-            <h1><?= $instansi['instansi_nama'] ?></h1>    
-            <h4><?= $instansi['instansi_alamat'] ?>, <?= $instansi['instansi_telepon'] ?></h4>
-        </div>
-        <div class="col-md-2 text-right">
-            <img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80" height="80" class="border">
-        </div>
-    </div>
-    <hr>
-    <div class="row mt-5">
-        <div class="col-md-12 text-center">
-            <h1 class="mt-5">SELAMAT DATANG</h1>
-            <h1 class="mt-5">DI</h1>
-            <h1 class="mt-5"><?= $instansi['instansi_nama'] ?></h1>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-12 text-center">
-            <a href="<?= base_url() ?>step-2"  class="btn btn-success btn-lg lanjut" style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
-        </div>
-    </div>
+<div class="row p-4 full-height" id="konten">
+	<div class="col-md-12">
+		<!--		HEADER-->
+		<div class="row p-2">
+			<div class="col-md-12 header-monitor">
+				<img src="<?= base_url() ?>assets/upload/kop/<?= $umum['umum_kop'] ?>" alt="kop kosong" height="140" width="100%">
+			</div>
+		</div>
+
+		<!--		CONTENT-->
+		<div class="row mt-4 justify-content-center">
+			<div class="col-md-10 text-center">
+				<h1 class="mt-5">SELAMAT DATANG</h1>
+				<h1 class="mt-5">DI</h1>
+				<h1 class="mt-5 mb-5"><?= $instansi['instansi_nama'] ?></h1>
+				<a href="<?= base_url() ?>step-2"  class="btn btn-success mt-5 btn-lg lanjut" style="width: 40%; height: 50pt; font-size: 20pt;">LANJUT</a>
+			</div>
+		</div>
+
+	</div>
 </div>
+
+
+
+
 
 <script>
     $(document).ready(function () {

@@ -29,6 +29,23 @@ class UmumController extends CI_Controller
 			$this->ExtModel->update('umum_id', 1, 'hr_umum', $data);
 		}
 	}
+	public function changeKop(){
+
+		$config['upload_path'] = './assets/upload/kop/';
+		$config['allowed_types'] = 'jpg|jpeg|png|JPEG|JPG|PNG';
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+		if (!$this->upload->do_upload('kop')) {
+			$error = array('error' => $this->upload->display_errors());
+			var_dump($error);
+		}else{
+			$kop = $this->upload->data('file_name');
+			$data = array(
+				'umum_kop' => $kop
+			);
+			$this->ExtModel->update('umum_id', 1, 'hr_umum', $data);
+		}
+	}
 
 	public function index()
 	{
@@ -43,7 +60,7 @@ class UmumController extends CI_Controller
 				$bg_header = $this->input->post('bg_header');
 				$font = $this->input->post('font');
 				$font_color = $this->input->post('font_color');
-
+				$font_size = $this->input->post('font_size');
 
 				$config['upload_path'] = './assets/upload/video/';
 				$config['allowed_types'] = 'mkv|mp4|3gp|MKV|MP4|3GP';
@@ -65,12 +82,14 @@ class UmumController extends CI_Controller
 						'umum_bg_chart' => $bg_chart,
 						'umum_bg_marquee' => $bg_marquee,
 						'umum_font' => $font,
-						'umum_font_color' => $font_color
+						'umum_font_color' => $font_color,
+						'umum_font_size' => $font_size
 					);
 
 					$simpan = $this->ExtModel->update('umum_id', 1, 'hr_umum', $data);
 					if ($simpan > 0) {
 						$this->changeBackground();
+						$this->changeKop();
 						$this->session->set_flashdata('alert', 'success_post');
 						redirect('umum');
 					} else {
@@ -90,7 +109,8 @@ class UmumController extends CI_Controller
 						'umum_video' => $video,
 						'umum_bg_marquee' => $bg_marquee,
 						'umum_font' => $font,
-						'umum_font_color' => $font_color
+						'umum_font_color' => $font_color,
+						'umum_font_size' => $font_size
 					);
 					$playlist_Video = [
 						'video_judul' => $video,
@@ -112,7 +132,8 @@ class UmumController extends CI_Controller
 				$data = array(
 					'umum_text_bot' => $this->input->post('text_bot'),
 					'umum_font' =>$this->input->post('font'),
-					'umum_font_color' => $this->input->post('font_color')
+					'umum_font_color' => $this->input->post('font_color'),
+					'umum_font_size' => $this->input->post('font_size')
 				);
 
 				$simpan = $this->ExtModel->update('umum_id', 1, 'hr_umum', $data);
@@ -188,7 +209,7 @@ class UmumController extends CI_Controller
 		$data['title'] = 'Layar Monitor';
 		$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 		$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
-
+		$data['umum'] = $this->ExtModel->getUmum()->row_array();
 
 		$this->load->view('frontend/templates/header', $data);
 		$this->load->view('frontend/welcome/step1', $data);
@@ -200,6 +221,8 @@ class UmumController extends CI_Controller
 		$data['title'] = 'Layar Monitor';
 		$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 		$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
+		$data['umum'] = $this->ExtModel->getUmum()->row_array();
+
 		$this->load->view('frontend/templates/header', $data);
 		$this->load->view('frontend/welcome/step2', $data);
 		$this->load->view('frontend/templates/footer', $data);
@@ -235,9 +258,14 @@ class UmumController extends CI_Controller
 			$data['title'] = 'Layar Monitor';
 			$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
-			$this->load->view('frontend/templates/header', $data);
-			$this->load->view('frontend/welcome/step3', $data);
-			$this->load->view('frontend/templates/footer', $data);
+			$data['umum'] = $this->ExtModel->getUmum()->row_array();
+
+//			$this->load->view('frontend/templates/header', $data);
+//			$this->load->view('frontend/welcome/step3', $data);
+//			$this->load->view('frontend/templates/footer', $data);
+			$this->load->view('frontend/welcome/layout/header', $data);
+			$this->load->view('frontend/welcome/new/step3', $data);
+			$this->load->view('frontend/welcome/layout/footer', $data);
 		}
 	}
 
@@ -311,13 +339,17 @@ class UmumController extends CI_Controller
 		} else {
 
 			$data['title'] = 'Layar Monitor';
+			$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
 			$data['pertanyaan'] = $this->ExtModel->getPertanyaanByLyn($this->session->userdata('sess_hr_lyn'));
 			// var_dump($data['pertanyaan']);exit();
 			$data['jawaban'] = $this->ExtModel->getJawabanByKat($this->session->userdata('sess_hr_versi'))->result_array();
-			$this->load->view('frontend/templates/header', $data);
-			$this->load->view('frontend/welcome/step4', $data);
-			$this->load->view('frontend/templates/footer', $data);
+			$data['umum'] = $this->ExtModel->getUmum()->row_array();
+//			var_dump($data['jawaban']);exit();
+
+			$this->load->view('frontend/welcome/layout/header', $data);
+			$this->load->view('frontend/welcome/new/step4', $data);
+			$this->load->view('frontend/welcome/layout/footer', $data);
 		}
 	}
 
@@ -343,9 +375,14 @@ class UmumController extends CI_Controller
 			$data['title'] = 'Layar Monitor';
 			$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
-			$this->load->view('frontend/templates/header', $data);
-			$this->load->view('frontend/welcome/step5', $data);
-			$this->load->view('frontend/templates/footer', $data);
+			$data['umum'] = $this->ExtModel->getUmum()->row_array();
+//			$this->load->view('frontend/templates/header', $data);
+//			$this->load->view('frontend/welcome/step5', $data);
+//			$this->load->view('frontend/templates/footer', $data);
+
+			$this->load->view('frontend/welcome/layout/header', $data);
+			$this->load->view('frontend/welcome/new/step5', $data);
+			$this->load->view('frontend/welcome/layout/footer', $data);
 		}
 
 	}
@@ -358,6 +395,7 @@ class UmumController extends CI_Controller
 			$data['title'] = 'Layar Monitor';
 			$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
+			$data['umum'] = $this->ExtModel->getUmum()->row_array();
 			$this->load->view('frontend/templates/header', $data);
 			$this->load->view('frontend/welcome/step6', $data);
 			$this->load->view('frontend/templates/footer', $data);

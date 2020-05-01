@@ -239,27 +239,23 @@ class ExtModel extends CI_Model
 		$this->db->insert($table, $data);
 		return $this->db->affected_rows();
 	}
-
 	function update($key, $id, $table, $data)
 	{ //FUNGSI GLOBAL UNTUK MENGUBAH DATA KE DATABASE
 		$this->db->where($key, $id);
 		return $this->db->update($table, $data);
 	}
-
 	public function updateMonitor3($id, $data)
 	{
 		$this->db->where('mnt3_id', $id);
 		$this->db->update('hr_lynn', $data);
 		return $this->db->affected_rows();
 	}
-
 	public function getGlobal($table)
 	{ //FUNGSI GLOBAL UNTUK MENGAMBIL DATA KE DATABASE
 		$this->db->select('*');
 		$this->db->from($table);
 		return $this->db->get()->result_array();
 	}
-
 	public function getOneGlobal($references, $key, $table)
 	{ //FUNGSI GLOBAL UNTUK MANGAMBIL SATU DATA KE DATABASE
 		$this->db->select('*');
@@ -267,7 +263,13 @@ class ExtModel extends CI_Model
 		$this->db->where($references, $key);
 		return $this->db->get()->row_array();
 	}
-
+	public function getNumGlobal($references, $key, $table)
+	{ //FUNGSI GLOBAL UNTUK MANGAMBIL SATU DATA KE DATABASE
+		$this->db->select('*');
+		$this->db->from($table);
+		$this->db->where($references, $key);
+		return $this->db->get()->num_rows();
+	}
 	public function hapus($key, $id, $table)
 	{ //FUNGSI GLOBAL UNTUK MENGHAPUS DATA KE DATABASE
 		$this->db->where($key, $id);

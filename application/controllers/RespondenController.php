@@ -24,20 +24,29 @@ class RespondenController extends CI_Controller {
 			$lyn = $this->input->post('lyn');
 			$versi = $this->session->userdata('sess_hr_versi');
 	        $data['title'] = 'Data Responden';
+			$instansi = $data['instansi'];
 			$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
-			if ($this->session->userdata('sess_hr_versi')=='monitor3'){
-				$data['kpsn'] = $this->RespondenModel->Monitor3ByDate($tgl_start,$tgl_end);
-			}if ($this->session->userdata('sess_hr_versi')=='monitor4'){
-				$data['kpsn'] = $this->RespondenModel->Monitor4ByDate($tgl_start,$tgl_end);
-			}else{
-				$data['kpsn'] = $this->RespondenModel->lihatByDate($tgl_start,$tgl_end,$lyn,$versi);
-			}
-			$data['lynn'] = $this->LynModel->lihat();
-	        $data['layananCurrent'] = $this->LynModel->lihat_satu($lyn);
 
-	        $this->load->view('backend/templates/header',$data);
-			$this->load->view('backend/responden/index',$data);
-			$this->load->view('backend/templates/footer',$data);
+			$data['lynn'] = $this->LynModel->lihat();
+			$data['layananCurrent'] = $this->LynModel->lihat_satu($lyn);
+			if ($instansi['instansi_versi_jwb'] == 'monitor3'){
+				$data['kpsn'] = $this->RespondenModel->Monitor3ByDate($tgl_start,$tgl_end);
+				$this->load->view('backend/templates/header',$data);
+				$this->load->view('backend/responden/index',$data);
+				$this->load->view('backend/templates/footer',$data);
+
+			}else if ($instansi['instansi_versi_jwb'] =='monitor4'){
+				$data['kpsn']= $this->RespondenModel->Monitor4ByDate($tgl_start,$tgl_end);
+				$this->load->view('backend/templates/header',$data);
+				$this->load->view('backend/responden/index',$data);
+				$this->load->view('backend/templates/footer',$data);
+			}else {
+				$data['kpsn'] = $this->RespondenModel->lihatByDate($tgl_start,$tgl_end,$lyn,$versi);
+				$this->load->view('backend/templates/header',$data);
+				$this->load->view('backend/responden/index',$data);
+				$this->load->view('backend/templates/footer',$data);
+			}
+
 			
 		}else{
 			$tgl_start = date('Y-m-d');
@@ -46,11 +55,12 @@ class RespondenController extends CI_Controller {
 	        $data['title'] = 'Data Responden';
 			if ($this->session->userdata('sess_hr_versi')=='monitor3'){
 				$data['kpsn'] = $this->RespondenModel->Monitor3ByDate($tgl_start,$tgl_start);
-			}if ($this->session->userdata('sess_hr_versi')=='monitor4'){
+			}else if ($this->session->userdata('sess_hr_versi')=='monitor4'){
 				$data['kpsn'] = $this->RespondenModel->Monitor4ByDate($tgl_start,$tgl_start);
 			}else{
 				$data['kpsn'] = $this->RespondenModel->lihatByDate($tgl_start,$tgl_start,$lyn,$versi);
 			}
+
 	        $data['lynn'] = $this->LynModel->lihat();
 	        $data['layananCurrent'] = $this->LynModel->lihat_satu($lyn);
 	        $data['instansi'] = $this->ExtModel->getInstansi()->row_array();

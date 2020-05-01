@@ -14,7 +14,7 @@
 <hr>
 <div class="row">
 	<div class="col-md-12 text-center mb-5">
-		<h4>Persentase Kepuasan Sepanjang Masa</h4>
+		<h4>Persentase Survey Kepuasan Sepanjang Masa</h4>
 	</div>
 </div>
 <div class="row state-overview">
@@ -32,7 +32,7 @@
                                 <h5><?= $sangatbaik ?> %</h5>
                             </span>
                         </div>
-                       
+
                     </div>
                 </div>
  -->
@@ -306,7 +306,7 @@
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header">
-				<h4>Grafik Polling Kepuasan</h4>
+				<h4>Grafik Polling Survey Kepuasan</h4>
 			</div>
 			<div class="card-body">
 				<div class="row">
@@ -328,6 +328,58 @@
 					</div>
 					<?php }	?>
 				</div>
+				<?php if ($this->session->userdata('apkrole')=='hr'): ?>
+				<?php if ($this->session->userdata('sess_hr_versi') == 'tiga' || $this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
+				<div class="row mt-4">
+					<div class="col-md-6">
+						<h5>Warna Grafik</h5>
+
+						<form action="<?= base_url('action/colorGraph') ?>" method="POST">
+							<div class="row">
+								<?php if ($this->session->userdata('sess_hr_versi') == 'empat' || $this->session->userdata('sess_hr_versi') == 'lima'): ?>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Sangat Puas</label>
+											<input type="color" class="form-group" name="spuas" value="<?= $color_graph['color_spuas'] ?>">
+										</div>
+									</div>
+								<?php endif; ?>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Puas</label>
+										<input type="color" class="form-group" name="puas" value="<?= $color_graph['color_puas'] ?>">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Cukup Puas</label>
+										<input type="color" class="form-group" name="cpuas" value="<?= $color_graph['color_cpuas'] ?>">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Tidak Puas</label>
+										<input type="color" class="form-group" name="tpuas" value="<?= $color_graph['color_tpuas'] ?>">
+									</div>
+								</div>
+								<?php if ($this->session->userdata('sess_hr_versi') == 'lima'): ?>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Sangat Tidak Puas</label>
+											<input type="color" class="form-group" name="stpuas" value="<?= $color_graph['color_stpuas'] ?>">
+										</div>
+									</div>
+								<?php endif; ?>
+								<div class="col-md-3">
+									<button type="submit" class="form-control mt-4 btn btn-success" name="submit">Simpan</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<?php endif; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -534,17 +586,20 @@
 			},
 			series: [{
 				name: 'Jumlah',
-				colorByPoint: true,
+				colorByPoint: false,
 				data: [{
 					name: 'Puas',
+					color: '<?= $color_graph['color_puas'] ?>',
 					y: <?= $baikpersen ?>,
 					sliced: true,
 					selected: true
 				}, {
 					name: 'Cukup Puas',
+					color: '<?= $color_graph['color_cpuas'] ?>',
 					y: <?= $cukuppersen ?>
 				}, {
 					name: 'Tidak Puas',
+					color: '<?= $color_graph['color_tpuas'] ?>',
 					y: <?= $burukpersen ?>
 				}]
 			}]

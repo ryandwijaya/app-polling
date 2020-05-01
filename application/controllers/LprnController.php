@@ -169,6 +169,8 @@ class LprnController extends CI_Controller
 	{
 
 		$data['title'] = 'Laporan';
+
+		$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
 //		$date_now = date('Y-m-d');
 		if ($this->input->post('start') == '') {
 			$data['responden'] = $this->Monitor3Model->getJmlResponden(date('Y-m-d'), date('Y-m-d'));

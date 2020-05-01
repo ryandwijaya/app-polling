@@ -78,7 +78,7 @@
                         <label>Pilih Versi</label>
 						<input type="hidden" name="version" id="version">
                     </div>
-					<div class="col-md-2 mt-4 input-field col s-12">
+					<div class="col-md-3 mt-4 input-field col s-12">
 
 						<select name="int_versi" class="inputan opt-val">
 							<option value="<?= $instansi[0]['instansi_versi_jwb'] ?>">- Pilih Versi -</option>
@@ -145,11 +145,16 @@
                 </div> 
                 <?php endif ?>   
 
-
-
                    </form>         
 			</div>
 		</div>
 	</div>
 </div>
 
+<?php if ($this->session->userdata('sess_hr_lvl')=='admin'): ?>
+	<script src="<?= base_url() ?>assets/js/app.min.js"></script>
+	<script>
+		$('.inputan').attr('disabled', true);
+		$('.inputan').css('color','black');
+	</script>
+<?php endif  ?>

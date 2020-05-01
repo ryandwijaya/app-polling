@@ -82,6 +82,8 @@
 
 	.lanjut {
 		background: <?= $setting['set_background_button'] ?>;
+		margin-bottom: 40px !important;
+		margin-right:50px;
 	}
 
 	/*body{*/

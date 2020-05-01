@@ -14,12 +14,14 @@ class Monitor4Controller extends CI_Controller {
 		$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
 		$data['instansi'] = $this->ExtModel->getInstansi()->row_array();
         $data['title'] = 'Layar Monitor';
+		$data['umum'] = $this->ExtModel->getUmum()->row_array();
         $data['ptn'] = $this->Monitor4Model->getPtn();
        	// echo '<pre>';
         // var_dump($data['jwb']);exit();
 
         $this->load->view('frontend/templates/header',$data);
-        $this->load->view('frontend/monitor4/index',$data);
+		$this->load->view('frontend/monitor4/style',$data);
+		$this->load->view('frontend/monitor4/index',$data);
         $this->load->view('frontend/templates/footer',$data);
 	}
 	public function step1(){
@@ -42,13 +44,7 @@ class Monitor4Controller extends CI_Controller {
 
             $simpan = $this->ExtModel->insert('hr_responden',$responden);
             if ($simpan > 0){
-                $responden = $this->RespondenModel->getRespondenByData($nama,$umur,$jk,$pendidikan);
-                $id =  $responden['responden_id'];
-                
-                $set_monitor = [
-                    'mnt3_responden' => $id
-                ];
-                $this->ExtModel->insert('hr_monitor3',$set_monitor);
+				$id = $this->db->insert_id();
 
                 redirect('monitor4/'.$id);
             } else {
@@ -57,6 +53,7 @@ class Monitor4Controller extends CI_Controller {
             }
         }else{
             $data['title'] = 'Layar Monitor';
+			$data['umum'] = $this->ExtModel->getUmum()->row_array();
             $data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
             $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
             $this->load->view('frontend/templates/header',$data);
@@ -109,6 +106,17 @@ class Monitor4Controller extends CI_Controller {
 			}
 			echo json_encode($data);
 		
+	}
+
+	public function ajaxReset($id){
+		$hapus = $this->ExtModel->hapus('kpsn4_responden',$id,'hr_kpsn4');
+
+		if ($hapus > 0){
+			$hapus_respoden = $this->ExtModel->hapus('responden_id',$id,'hr_responden');
+			redirect('mntr4/step1');
+		}else{
+			return 'Error !!';
+		}
 	}
 
 	

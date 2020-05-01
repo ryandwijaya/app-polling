@@ -22,6 +22,7 @@
 
 
 <div id="keyboard" style="display: fixed;position: absolute;bottom: 0; left: 20%;right: 20%; width: 60%;background:black;display: none;z-index: 99999;"></div>
+
 <div class="container p-5 animated fadeIn">
     <div class="row">
         <div class="col-md-2">

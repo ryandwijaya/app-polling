@@ -1,21 +1,10 @@
 
-<div class="container p-5">
+<div class="container pt-5 ">
 
-	<div class="row p-2" style="background: <?= $setting['set_background_kop'] ?>; ">
-		<div class="col-md-2 pt-2">
-			<img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80"
-				 height="80" class="border">
-		</div>
-		<div class="col-md-8 text-center pt-2">
-			<h1><?= $instansi['instansi_nama'] ?></h1>
-			<h5><?= $instansi['instansi_alamat'] ?></h5>
-			<p id='theTarget'><?= $setting['set_timer']*60 ?></p>
-		</div>
-		<div class="col-md-2 pt-2 text-right">
-			<img src="<?= base_url() ?>assets/upload/logo/<?= $instansi['instansi_logo'] ?>" alt="rusak" width="80"
-				 height="80" class="border">
-		</div>
+	<div class="row header-monitor">
+		<img src="<?= base_url() ?>assets/upload/kop/<?= $umum['umum_kop'] ?>" alt="kop kosong" height="140" width="100%">
 	</div>
+	<p id='theTarget' style="display: none"><?= $setting['set_timer'] ?></p>
 	<hr>
 
 
@@ -39,16 +28,16 @@
 
 						<div class="row justify-content-md-center">
 							<button class="btn text-light btn-lg lanjut col-md-4 button" value="A"
-									style="width: auto;height: auto;margin: 10px;"><h5>A. <?= $jwb[$i + 1][0] ?></h5>
+									style="width: auto;height: auto;"><h5>A. <?= $jwb[$i + 1][0] ?></h5>
 							</button>
 							<button class="btn text-light btn-lg lanjut col-md-4 button" value="B"
-									style="width: auto;height: auto;margin: 10px;"><h5>B. <?= $jwb[$i + 1][1] ?></h5>
+									style="width: auto;height: auto;"><h5>B. <?= $jwb[$i + 1][1] ?></h5>
 							</button>
 							<button class="btn text-light btn-lg lanjut col-md-4 button" value="C"
-									style="width: auto;height: auto;margin: 10px;"><h5>C. <?= $jwb[$i + 1][2] ?></h5>
+									style="width: auto;height: auto;"><h5>C. <?= $jwb[$i + 1][2] ?></h5>
 							</button>
 							<button class="btn text-light btn-lg lanjut col-md-4 button" value="D"
-									style="width: auto;height: auto;margin: 10px;"><h5>D. <?= $jwb[$i + 1][3] ?></h5>
+									style="width: auto;height: auto;"><h5>D. <?= $jwb[$i + 1][3] ?></h5>
 							</button>
 						</div>
 
@@ -98,8 +87,9 @@
 					}
 					a = a + 1;
 				}, 1000);
+				$(this).addClass("animated flash");
 				$('.lanjut').addClass("animated flipOutY");
-				$(this).removeClass("animated flipOutY");
+				$(this).removeClass("flipOutY");
 				setTimeout(function () {
 					$('.lanjut').removeClass("animated flipOutY");
 
@@ -160,9 +150,6 @@
 				clearInterval(timer);
 			}
 		}, 1000);
-
-
-
 	});
 </script>
 

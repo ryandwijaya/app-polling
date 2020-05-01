@@ -4,10 +4,56 @@
     <list default="true" id="f4c76e87-a47e-4c72-9fc3-783cde7a4d82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/APIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/APIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/InstansiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/InstansiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/LprnController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/LprnController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Monitor3Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Monitor3Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Monitor4Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Monitor4Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/RespondenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/RespondenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/UmumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/UmumController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/ExtModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ExtModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/LynModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/LynModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/RespondenModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/RespondenModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/beranda/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/beranda/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/instansi/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/instansi/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/laporan/monitor3.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/laporan/monitor3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/laporan/semua.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/laporan/semua.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/lynn/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/lynn/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/monitor2/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/templates/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/templates/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/backend/umum/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/backend/umum/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor/new.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor/new.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/step1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor3/styles.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor3/styles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/monitor4/step1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/templates/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/templates/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step1.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step2.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step3.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step4.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step5.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/frontend/welcome/step6.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/frontend/welcome/step6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/kop.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/kop.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/empat/monitor1.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/empat/monitor1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/instansi.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/instansi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/lima/monitor1.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/lima/monitor1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/tiga/monitor1.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/tiga/monitor1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/virtual-keyboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/virtual-keyboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/votes/monitor3.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/votes/monitor3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app-polling/votes/monitor4.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app-polling/votes/monitor4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/upload/video/videoplayback.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/upload/video/www.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/virtual-keyboard/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/virtual-keyboard/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/virtual-keyboard/jq/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/virtual-keyboard/jq/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/virtual-keyboard/jquery.ml-keyboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/virtual-keyboard/jquery.ml-keyboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +113,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1WgqlHsuaVQUZOHHPOh3ftvgisE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -155,7 +204,21 @@
       <workItem from="1582278867010" duration="5368000" />
       <workItem from="1582346754240" duration="5100000" />
       <workItem from="1582378960791" duration="1497000" />
-      <workItem from="1582462673078" duration="1908000" />
+      <workItem from="1582462673078" duration="3316000" />
+      <workItem from="1582531145579" duration="604000" />
+      <workItem from="1582545525166" duration="754000" />
+      <workItem from="1582610735522" duration="5061000" />
+      <workItem from="1582969434222" duration="3563000" />
+      <workItem from="1583122033506" duration="7513000" />
+      <workItem from="1583216324140" duration="9225000" />
+      <workItem from="1583230768834" duration="5982000" />
+      <workItem from="1583306696740" duration="13481000" />
+      <workItem from="1583365960104" duration="37000" />
+      <workItem from="1585300187716" duration="6254000" />
+      <workItem from="1585791353923" duration="7445000" />
+      <workItem from="1585813985728" duration="124000" />
+      <workItem from="1588157635691" duration="14924000" />
+      <workItem from="1588242835583" duration="7186000" />
     </task>
     <servers />
   </component>
@@ -167,29 +230,41 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="28" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1581755741628" />
-    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1581604496876">
+    <state x="463" y="125" key="FileChooserDialogImpl" timestamp="1585814107412">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1581604496876" />
-    <state x="517" y="294" key="NewPhpFileDialog" timestamp="1582171219800">
+    <state x="463" y="125" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1585814107412" />
+    <state x="517" y="294" key="NewPhpFileDialog" timestamp="1585301646741">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="517" y="294" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1582171219800" />
+    <state x="517" y="294" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1585301646741" />
     <state x="184" y="12" width="1173" height="713" key="SettingsEditor" timestamp="1582281097181">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="12" width="1173" height="713" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1582281097181" />
+    <state x="404" y="110" width="540" height="540" key="StructurePopup" timestamp="1583306868300">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="404" y="110" width="540" height="540" key="StructurePopup/0.0.1366.738@0.0.1366.738" timestamp="1583306868300" />
+    <state x="490" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583238504836">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="490" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1583238504836" />
+    <state x="92" y="92" width="1182" height="554" key="dock-window-1" timestamp="1583238578879">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="92" y="92" width="1182" height="554" key="dock-window-1/0.0.1366.738@0.0.1366.738" timestamp="1583238578879" />
     <state x="0" y="0" width="737" height="738" key="find.popup" timestamp="1579616544794">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="737" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1579616544794" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1582463841559">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1583123222766">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1582463841559" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581211239709">
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1583123222766" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1588160939896">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1581211239709" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1588160939896" />
   </component>
 </project>

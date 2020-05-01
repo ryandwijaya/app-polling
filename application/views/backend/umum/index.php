@@ -27,15 +27,20 @@
                         <label style="color: black;">Gaya tulisan --- Pratinjau : <span id="contoh-font" style="color: black;;margin-left: 20px;font-size: 12pt;"> Contoh Tulisan !!</span></label>
                         </div>
                     </div>
-					<div class="col-md-4">
+					<div class="col">
 						<label> Warna Tulisan </label>
-						<div class="input-group colorpicker">
-							<div class="form-line">
-								<input type="text" name="font_color" class="form-control" value="<?= $umum[0]['umum_font_color'] ?>">
+						<div class="input-group">
+							<div class="form-group">
+								<input type="color" name="font_color" class="form-control" value="<?= $umum[0]['umum_font_color'] ?>">
 							</div>
-							<span class="input-group-addon border bg-light">
-                                <i></i>
-                            </span>
+						</div>
+					</div>
+					<div class="col">
+						<label> Ukuran Tulisan </label>
+						<div class="input-group">
+							<div class="form-group">
+								<input type="number" min="0" name="font_size" class="form-control" value="<?= $umum[0]['umum_font_size'] ?>">
+							</div>
 						</div>
 					</div>
                     <div class="col-md-2"></div>
@@ -67,28 +72,30 @@
                     <div class="col-md-2"></div>
                 </div> -->
 				<?php if ($this->session->userdata('apkrole')=='hr'): ?>
+					<div class="row mt-4 justify-content-center">
+						<div class="col-md-8">
+							<label>Header / KOP <span class="text-warning">( min: 700x120px max: 1280x300px )</span></label>
+							<input type="file" class="dropify" name="kop" data-default-file="<?= base_url() ?>assets/upload/kop/<?= $umum[0]['umum_kop'] ?>"
+								   data-max-file-size="4M" data-min-width="700" data-min-height="120"
+								   data-max-height="300" data-allowed-file-extensions="png jpg jpeg PNG JPG JPEG">
+						</div>
+					</div>
                 <div class="row mt-4">
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
                         <label> Background Header </label>
-                        <div class="input-group colorpicker">
-                            <div class="form-line">
-                                <input type="text" name="bg_header" class="form-control" value="<?= $umum[0]['umum_bg_header'] ?>">
+                        <div class="input-group">
+                            <div class="form-group">
+                                <input type="color" name="bg_header" class="form-control" value="<?= $umum[0]['umum_bg_header'] ?>">
                             </div>
-                            <span class="input-group-addon border bg-light">
-                                <i></i>
-                            </span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label> Background Video </label>
-                        <div class="input-group colorpicker">
-                            <div class="form-line">
-                                <input type="text" name="bg_video" class="form-control" value="<?= $umum[0]['umum_bg_video'] ?>">
+                        <div class="input-group">
+                            <div class="form-group">
+                                <input type="color" name="bg_video" class="form-control" value="<?= $umum[0]['umum_bg_video'] ?>">
                             </div>
-                            <span class="input-group-addon border bg-light">
-                                <i></i>
-                            </span>
                         </div>
                     </div>
                     <div class="col-md-2"></div>
@@ -98,24 +105,18 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
                         <label> Background Text Running </label>
-                        <div class="input-group colorpicker">
-                            <div class="form-line">
-                                <input type="text" name="bg_marquee" class="form-control" value="<?= $umum[0]['umum_bg_marquee'] ?>">
+                        <div class="input-group">
+                            <div class="form-group">
+                                <input type="color" name="bg_marquee" class="form-control" value="<?= $umum[0]['umum_bg_marquee'] ?>">
                             </div>
-                            <span class="input-group-addon border bg-light">
-                                <i></i>
-                            </span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label> Background Grafik </label>
-                        <div class="input-group colorpicker">
-                            <div class="form-line">
-                                <input type="text" name="bg_chart" class="form-control" value="<?= $umum[0]['umum_bg_video'] ?>">
+                        <div class="input-group">
+                            <div class="form-group">
+                                <input type="color" name="bg_chart" class="form-control" value="<?= $umum[0]['umum_bg_video'] ?>">
                             </div>
-                            <span class="input-group-addon border bg-light">
-                                <i></i>
-                            </span>
                         </div>
                     </div>
                     <div class="col-md-2"></div>
@@ -160,7 +161,7 @@
                         <div class="row">
                             <div class="col-md-5">
 								<label>Tambah Playlist ?</label><br>
-								<input type="file" class="dropify" name="video" value="<?= $umum[0]['umum_video'] ?>" data-max-file-size="50M" data-allowed-file-extensions="mp4 mkv 3gp MKV MP4 3GP">
+								<input type="file" class="dropify" name="video" value="<?= $umum[0]['umum_video'] ?>" data-max-file-size="70M" data-allowed-file-extensions="mp4 mkv 3gp MKV MP4 3GP">
                             </div>
                             <div class="col-md-6 ml-3">
 
@@ -192,9 +193,7 @@
                     <div class="col-md-2"></div>
                 </div>
 
-
-  
-                   </form>         
+				</form>
 			</div>
 		</div>
 	</div>

@@ -37,8 +37,8 @@ function getVotes()
 					animation : false,
 					options3d: {
 						enabled: true,
-						alpha: 10,
-						beta: 10,
+						alpha: 14,
+						beta: 20,
 						depth: 40,
 						viewDistance: 25
 					}
@@ -47,7 +47,7 @@ function getVotes()
 				title: {
 					text: 'Grafik Jumlah Vote',
 					style: {
-						color: 'yellow',
+						color: 'black',
 						font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
 					}
 				},
@@ -57,7 +57,7 @@ function getVotes()
 						skew3d: true,
 						style: {
 							fontSize: '16px',
-							color: 'yellow'
+							color: 'black'
 						}
 					}
 				},

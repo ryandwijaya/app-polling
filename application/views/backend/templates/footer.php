@@ -27,6 +27,7 @@
 	$('.dropify').dropify();
 </script>
 
+
 <!--<script>-->
 <!--	function fullScreen(theURL) {-->
 <!--		window.open(theURL, '', 'fullscreen=yes, scrollbars=auto');-->
@@ -158,7 +159,6 @@
 
 		$('#btn-edit').click(function () {
 
-
 			$(".inputan").prop("readonly", false);
 			$(".inputan").prop("disabled", false);
 			$("#logo").prop("disabled", false);
@@ -191,6 +191,24 @@
 		$('#kop').css('display', 'block');
 		window.print();
 	}
+	function printLandscape() {
+		var css = '@page { size: landscape;  margin: 5mm 5mm 5mm 5mm; }',
+			head = document.head || document.getElementsByTagName('card-body')[0],
+			style = document.createElement('style');
+
+		style.type = 'text/css';
+		style.media = 'print';
+
+		if (style.styleSheet){
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+
+		head.appendChild(style);
+		$('#kop').css('display', 'block');
+		window.print();
+	}
 
 	function closeKop() {
 		$('#kop').css('display', 'none');
@@ -203,8 +221,9 @@
 		var gayaTulisan = $(this).val();
 		$('#contoh-font').css("font-family", gayaTulisan);
 	});
-
 </script>
+
+
 
 <!-- Ryan DWijaya Efendi -->
 

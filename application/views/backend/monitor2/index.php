@@ -129,7 +129,7 @@
 
 					<div class="row mt-3">
 						<div class="col-md-2"></div>
-						<div class="col-md-4 col s12">
+						<div class="col-md-2 col">
 							<label> Color Button </label>
 							<div class="input-group colorpicker">
 								<div class="form-line">
@@ -141,7 +141,7 @@
                             </span>
 							</div>
 						</div>
-						<div class="col-md-4 col s12">
+						<div class="col-md-2 ">
 							<label> Font Color</label>
 							<div class="input-group colorpicker">
 								<div class="form-line">
@@ -151,6 +151,17 @@
 								<span class="input-group-addon">
                                 <i class="border"></i>
                             </span>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<label> Waktu Reset</label>
+							<div class="input-group">
+								<div class="form-line">
+									<input type="number" name="timer" class="form-control"
+										   value="<?= $set_monitor['set_timer'] ?>">
+								</div>
+								<span class="input-group-addon"> Detk
+								</span>
 							</div>
 						</div>
 						<div class="col-md-2"></div>

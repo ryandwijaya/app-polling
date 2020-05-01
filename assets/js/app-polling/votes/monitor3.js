@@ -31,13 +31,13 @@ function getVotes()
 					},
 					style: {
 						fontSize: '16px',
-						color: 'yellow'
+						color: 'black'
 					}
 				},
 				title: {
 					text: 'Grafik Jumlah Vote',
 					style: {
-						color: 'yellow',
+						color: 'black',
 						font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
 					}
 				},
@@ -47,7 +47,7 @@ function getVotes()
 						skew3d: true,
 						style: {
 							fontSize: '16px',
-							color: 'yellow'
+							color: 'black'
 						}
 					}
 				},
@@ -68,7 +68,7 @@ function getVotes()
 					name: 'Persen',
 					style: {
 						fontSize: '16px',
-						color: 'yellow'
+						color: 'black'
 					},
 					data: data_array,
 					// data: [1,2,3,4,5,6,7,1,2,3,4,5,4,5,2]

@@ -9,7 +9,66 @@ class SettingController extends CI_Controller {
         $this->load->model($model);
 
     }
-	
+	public function key(){
+
+		if (isset($_POST['simpan'])){
+			$loket1 = array(
+				'key_1' => $this->input->post('1_key_1'),
+				'key_2' => $this->input->post('1_key_2'),
+				'key_3' => $this->input->post('1_key_3')
+			);
+			$loket2 = array(
+				'key_1' => $this->input->post('2_key_1'),
+				'key_2' => $this->input->post('2_key_2'),
+				'key_3' => $this->input->post('2_key_3')
+			);
+			$loket3 = array(
+				'key_1' => $this->input->post('3_key_1'),
+				'key_2' => $this->input->post('3_key_2'),
+				'key_3' => $this->input->post('3_key_3')
+			);
+			$loket4 = array(
+				'key_1' => $this->input->post('4_key_1'),
+				'key_2' => $this->input->post('4_key_2'),
+				'key_3' => $this->input->post('4_key_3')
+			);
+			$loket5 = array(
+				'key_1' => $this->input->post('5_key_1'),
+				'key_2' => $this->input->post('5_key_2'),
+				'key_3' => $this->input->post('5_key_3')
+			);
+
+			$data = array(
+				'loket_1' => json_encode($loket1),
+				'loket_2' => json_encode($loket2),
+				'loket_3' => json_encode($loket3),
+				'loket_4' => json_encode($loket4),
+				'loket_5' => json_encode($loket5)
+			);
+
+//			var_dump($data);exit();
+			$simpan = $this->ExtModel->update('key_id',1,'hr_set_key',$data);
+			if ($simpan>0){
+				$this->session->set_flashdata('alert', 'success_post');
+				redirect('set/key');
+			}else{
+				$this->session->set_flashdata('alert', 'fail_post');
+				redirect('set/key');
+			}
+		}else{
+			$getKey = $this->ExtModel->getGlobal('hr_set_key');
+			$data['loket1'] = json_decode($getKey[0]['loket_1'] , true);
+			$data['loket2'] = json_decode($getKey[0]['loket_2'] , true);
+			$data['loket3'] = json_decode($getKey[0]['loket_3'] , true);
+			$data['loket4'] = json_decode($getKey[0]['loket_4'] , true);
+			$data['loket5'] = json_decode($getKey[0]['loket_5'] , true);
+
+			$this->load->view('backend/templates/header',$data);
+			$this->load->view('backend/key/index',$data);
+			$this->load->view('backend/templates/footer',$data);
+		}
+
+	}
 	public function monitor2()
 	{
         if (isset($_POST['set'])) {
@@ -28,6 +87,7 @@ class SettingController extends CI_Controller {
 					'set_background_kop' => $this->input->post('background_kop'),
 					'set_background_button' => $this->input->post('background_button'),
 					'set_shape_button' => $this->input->post('shape_button'),
+					'set_timer' => $this->input->post('timer'),
 					'set_font_color' => $this->input->post('font_color')
 				);
 				$simpan = $this->SettingModel->update($id,$data);
@@ -48,6 +108,7 @@ class SettingController extends CI_Controller {
 					'set_background_body' => $bg,
 					'set_background_button' => $this->input->post('background_button'),
 					'set_shape_button' => $this->input->post('shape_button'),
+					'set_timer' => $this->input->post('timer'),
 					'set_font_color' => $this->input->post('font_color')
 				);
 				$simpan = $this->SettingModel->update($id,$data);

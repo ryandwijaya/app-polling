@@ -15,7 +15,8 @@ class Monitor3Controller extends CI_Controller {
         $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
 		$data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
         $data['title'] = 'Layar Monitor';
-        $data['ptn'] = 
+		$data['umum'] = $this->ExtModel->getUmum()->row_array();
+		$data['ptn'] =
         [   "Bagaimana pemahaman Saudara tentang prosedur pelayanandi unit ini?",
             "Bagaimana pendapat saudara tentang kesamaan persyaratan pelayanan dengan jenis pelayanan?",
             "Bagaimana pendapat Saudara tentang kejelasan dan kepastian petugas yang melayanai?",
@@ -107,14 +108,15 @@ class Monitor3Controller extends CI_Controller {
 				redirect('monitor3/'.$id_vote);
 			} else {
 				$this->session->set_flashdata('alert', 'fail_edit');
-				redirect('mntr3/step1');
+				redirect('mntr3/step');
 			}
     	}else{
+			$data['umum'] = $this->ExtModel->getUmum()->row_array();
         	$data['title'] = 'Layar Monitor';
             $data['setting'] = $this->SettingModel->lihat_satu($this->session->userdata('sess_hr_lyn'));
             $data['instansi'] = $this->ExtModel->getInstansi()->row_array();
         	$this->load->view('frontend/templates/header',$data);
-        	$this->load->view('frontend/monitor3/step1',$data);
+        	$this->load->view('frontend/monitor3/step',$data);
         	 $this->load->view('frontend/templates/footer',$data);
     	}
 	}

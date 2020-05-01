@@ -22,7 +22,7 @@ class Welcome extends CI_Controller
 		}
 		$now = date('Y-m-d');
 		$data['title'] = 'Beranda';
-
+		$data['color_graph'] = $this->ExtModel->getOneGlobal('color_id',1,'hr_color_graph');
 		if ($this->session->userdata('sess_hr_versi') == 'tiga') {
 			//Votes num
 			$data['total_vote'] = $this->ExtModel->getAllVoteByVersi($this->session->userdata('sess_hr_versi'))->num_rows();
@@ -115,8 +115,17 @@ class Welcome extends CI_Controller
 		$data['getData'] = $this->ExtModel->getSetUmum()->row_array();
 		$data['getVideo'] = $this->ExtModel->getVideo()->result_array();
 		$data['getLynn'] = $this->LynModel->lihat();
+		$getKey = $this->ExtModel->getGlobal('hr_set_key');
+		$data['loket1'] = json_decode($getKey[0]['loket_1'] , true);
+		$data['loket2'] = json_decode($getKey[0]['loket_2'] , true);
+		$data['loket3'] = json_decode($getKey[0]['loket_3'] , true);
+		$data['loket4'] = json_decode($getKey[0]['loket_4'] , true);
+		$data['loket5'] = json_decode($getKey[0]['loket_5'] , true);
 
-		$this->load->view('frontend/monitor/monitor1', $data);
+
+//		$this->load->view('frontend/monitor/monitor1', $data);
+		$this->load->view('frontend/monitor/new', $data);
+		$this->load->view('frontend/monitor/script', $data);
 	}
 
 	public function tes_chart()
@@ -164,10 +173,26 @@ class Welcome extends CI_Controller
 		} else {
 			$data = $this->ExtModel->getVoteAndroidNow($tgl_now, $instansi['instansi_versi_jwb'])->result_array();
 		}
-
-
 		echo json_encode($data);
 	}
-
-
+	public function colorGraph(){
+		if(isset($_POST['submit'])){
+			$data_post = array(
+				'color_spuas' => $this->input->post('spuas'),
+				'color_puas' => $this->input->post('puas'),
+				'color_cpuas' => $this->input->post('cpuas'),
+				'color_tpuas' => $this->input->post('tpuas'),
+				'color_stpuas' => $this->input->post('stpuas')
+			);
+			$simpan = $this->ExtModel->update('color_id',1,'hr_color_graph',$data_post);
+			if ($simpan>0){
+				$this->session->set_flashdata('alert', 'success_post');
+				redirect('beranda');
+			}else{
+				echo 'Gagal menyimpan';
+			}
+		}else{
+			echo 'Not Submited';
+		}
+	}
 }

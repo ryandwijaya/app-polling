@@ -92,10 +92,12 @@ $route['mntr4/step1'] = 'Monitor4Controller/step1';
 
 
 $route['instansi'] = 'InstansiController/index';
+$route['copyright'] = 'InstansiController/copyright';
 
 $route['umum'] = 'UmumController/index';
 $route['playlist/hapus/(:any)'] = 'UmumController/deleteVideo/$1';
 
+$route['set/key'] = 'SettingController/key';
 $route['set/monitor2'] = 'SettingController/monitor2';
 $route['set/monitor4'] = 'SettingController/monitor4';
 $route['set/android'] = 'SettingController/android';
@@ -129,9 +131,9 @@ $route['ajax/getVotesMonitor3'] = 'APIController/ajaxGetMonitor3';
 $route['ajax/getVotesMonitor4'] = 'APIController/ajaxGetMonitor4';
 $route['ajaxUpdate/(:any)/(:any)/(:any)'] = 'Monitor3Controller/ajaxUpdate/$1/$2/$3';
 $route['ajaxReset/(:any)'] = 'Monitor3Controller/ajaxReset/$1';
+$route['ajaxResetKpsn4/(:any)'] = 'Monitor4Controller/ajaxReset/$1';
 $route['ajaxInsert/(:any)/(:any)/(:any)'] = 'Monitor4Controller/ajaxInsert/$1/$2/$3';
-
-
+$route['ajaxPostKpsn/(:any)/(:any)'] = 'APIController/ajaxPostKpsn/$1/$2';
 //API
 $route['api/layanan'] = 'APIController/apiLayanan';
 $route['api/pertanyaan'] = 'APIController/apiPertanyaan';
@@ -143,8 +145,10 @@ $route['api/user'] = 'APIController/apiUser';
 $route['api/insert_terhubung'] = 'APIController/insertTerhubung';
 $route['api/set/android'] = 'APIController/apiSetAndroid';
 
+$route['action/colorGraph'] = 'Welcome/colorGraph';
 
-
+$route['license'] = 'AuthController/license';
+$route['check-expired'] = 'AuthController/checkExpired';
 $route['login'] = 'AuthController/login';
 $route['logout'] = 'AuthController/logout';
 

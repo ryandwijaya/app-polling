@@ -13,7 +13,7 @@ class LynModel extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('hr_lynn');
 		$this->db->where('lynn_id !=' , 5);
-		$this->db->order_by('lynn_dcreated','DESC');
+		$this->db->order_by('lynn_nm','ASC');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
